@@ -18,7 +18,7 @@ const express = require('express');
 const mysql = require('mysql');
 
 // Crear la conexión
-
+// Agregar puerto por si acaso
 var connection = mysql.createConnection({
     host:'localhost',
     user:'root',
