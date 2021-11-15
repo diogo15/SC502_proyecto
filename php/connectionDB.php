@@ -1,21 +1,67 @@
 <?php
-    class Database {
-    
-        function connectionDB () {
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "WebPage";
+    class ConnectionDB {
+        
+        private $server;
+        private $user;
+        private $password;
+        private $database;
+        private $port;
 
-            $connection = new msqli($servername, $username, $password, $dbname);
+        function __construct () {
+            $dataList = $this -> connection();
 
-            if (!$connection) {
-                die("Fallo al Conectar: " . msqli_connect_error());
+            foreach ($dataList as $key => $value) {
+                $this->server = $value ['server'];
+                $this->user = $value ['user'];
+                $this->password = $value ['password'];
+                $this->database = $value ['database'];
+                $this->port = $value ['port'];
             }
-            
-            echo "Conexión efectuada!";
+
+            $this->connection = new mysqli(
+                $this->server,
+                $this->user,
+                $this->password,
+                $this->database,
+                $this->port
+            );
+
+            if ($this->connection->connect_errno) {
+                echo "Fallo de Conexión a la base de datos";
+                die();
+            }
 
         }
 
+            // Esta función obtendrá el JSON de config para realizar la conexión al DB de XAMPP
+        private function connection() {
+            $pathFile = dirname(__FILE__);  //Obtiene la ruta dentro del proyecto
+            $jsonConfig = file_get_contents($pathFile . '/' . "config");  // Abrir, guardar y devolver un archivo
+
+            return json_decode($jsonConfig, true);  // Convierte el archivo config en un array JSON propiamente
+        }
+            //  Los registros que entren a esta función los estandarizará a UTF-8**
+            //  Como MySQL trabaja bajo esa nomenclatura creo que no hace falta añadir esta función, pero igualmente la consideré.
+        private function formatUTF8 ($array) {
+
+            array_walk_recursive($array, function(&$item, $key){
+                if (!mb_detect_encoding($item, 'UTF-8', true)) {
+                    
+                    $item = utf8_encode($item);
+                
+                }
+            });
+            return $array;
+        }
+
+        public function getAllData($statement){
+            $results = $this->connection->query($statement);
+            $resultArray = array();
+
+            foreach ($results as $key) {
+                $resultArray[] = $key;
+            }
+            return $resultArray;
+        }
     }
 ?>
