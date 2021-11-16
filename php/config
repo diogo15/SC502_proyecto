@@ -1,0 +1,9 @@
+{
+    "connection":{
+        "server":"localhost",
+        "user":"root",
+        "password":"",
+        "database":"WebPage",
+        "port":"3307"
+    }
+}
