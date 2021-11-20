@@ -1,4 +1,6 @@
 <?php 
+    
+    //testing
     require_once 'connectionDB.php';
 
     $conexion = new ConnectionDB();
