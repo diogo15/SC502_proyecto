@@ -29,6 +29,8 @@
             if ($this->connection->connect_errno) {
                 echo "Fallo de Conexión a la base de datos";
                 die();
+            } else {
+                echo "Conexión a " . $value['database'] . " exitosa!";
             }
 
         }
@@ -55,13 +57,39 @@
         }
 
         public function getAllData($statement){
-            $results = $this->connection->query($statement);
+            $results = $this -> connection -> query($statement);
             $resultArray = array();
 
             foreach ($results as $key) {
                 $resultArray[] = $key;
             }
-            return $resultArray;
+            return $this -> formatUTF8($resultArray);
+        }
+
+        //  INSERT ON TABLE (Afecta todas las filas de la tabla)
+
+        public function insert($statement){
+            $results = $this -> connection -> query($statement);
+            
+            return $this -> connection -> affected_rows;
+        }
+
+        //  INSERT ON TABLE BY ID (Afectaría una sola fila) = UPDATE?
+
+        public function getById($statement){
+            $results = $this -> connection -> query($statement);
+            
+            $rows = $this -> connection -> affected_rows;
+
+            if ($rows >= 1) {
+
+                return $this -> connection -> insert_id;
+
+            } else {
+
+                return 0;
+
+            }
         }
     }
 ?>
