@@ -2,9 +2,9 @@
   <transition name="slide">
     <div>
         <h1>Acerca De Nostros</h1>
-        <div v-for="cat in categories" class="categories" >
-        {{ cat.nombreCategoria }}
-        </div>
+        <p v-for="cat in categories" v-bind:key="cat.idCategoria" class="categories" >
+          {{ cat.nombreCategoria }}
+        </p>
     </div>
   </transition>
 </template>
