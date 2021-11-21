@@ -1,0 +1,22 @@
+/*
+
+#C2814D 
+#45B173 
+#7D47BB
+
+*/
+.pages{
+    display: grid;
+}
+
+.pages > div{
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.v-enter-active, .v-leave-active {
+    transition: opacity .5s;
+}
+.v-enter, .v-leave-to {
+    opacity: 0;
+}
