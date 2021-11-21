@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Acerca De Nostros</h1>
+        <h1>HOMEPAGE</h1>
         <p v-for="cat in categories" v-bind:key="cat.idCategoria" >
           {{ cat.nombreCategoria }}
         </p>

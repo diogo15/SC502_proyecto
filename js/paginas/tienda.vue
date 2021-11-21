@@ -1,5 +1,4 @@
 <template>
-  <transition name="fade">
     <div>
         <h1>Formulario Ingresar</h1>
 
@@ -10,7 +9,6 @@
         <p><input type="checkbox" v-model="mostrar"> Mostrar/Ocultar </p>
 
     </div>
-  </transition>
 </template>
 
 <script>
