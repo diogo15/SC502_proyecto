@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="wrapper">
         <h1>Acerca De Nostros</h1>
         <p v-for="cat in categories" v-bind:key="cat.idCategoria" >
           {{ cat.nombreCategoria }}
@@ -16,7 +16,7 @@ module.exports = {
   },
   mounted () {
     axios
-      .get(site_url + 'api/categories.php')
+      .get(site_url + 'api/categorias.php')
       .then(response => (this.categories = response.data.data))
       .catch(error => console.log(error));
   }

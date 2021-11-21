@@ -1,8 +1,10 @@
 <template>
-    <div>
-        <h1>HOMEPAGE</h1>
-        <p v-for="cat in categories" v-bind:key="cat.idCategoria" >
-          {{ cat.nombreCategoria }}
+    <div class="wrapper">
+        <h1>Productos Nuevos</h1>
+        <p v-for="p in productos" v-bind:key="p.idProducto" >
+          {{ p.nombreProducto }}
+          {{ p.url_imagen }}
+          <img :src="this.site_url+p.url_imagen" alt="">
         </p>
     </div>
 </template>
@@ -11,13 +13,13 @@
 module.exports = {
   data: function() {
     return{
-      categories: null
+      productos: null
     }
   },
   mounted () {
     axios
-      .get(site_url + 'api/categories.php')
-      .then(response => (this.categories = response.data.data))
+      .get(site_url + 'api/productos.php')
+      .then(response => (this.productos = response.data.data))
       .catch(error => console.log(error));
   }
 }

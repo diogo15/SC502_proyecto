@@ -142,6 +142,7 @@ create table Productos(
     codBarras int unique key not null,
     nombreProducto varchar(50) not null,
     descripProducto varchar(100) not null,
+    url_imagen varchar(100),
     precioVenta double not null,
     
     idLocal int not null,
