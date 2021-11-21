@@ -1,6 +1,5 @@
-
 <template>
-  <transition name="slide">
+  <transition name="fade">
     <div>
         <h1>TIENDA</h1>
 

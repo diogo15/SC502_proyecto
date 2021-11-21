@@ -1,5 +1,5 @@
 <template>
-  <transition name="slide">
+  <transition name="fade">
     <div>
         <h1>Acerca De Nostros</h1>
         <p v-for="cat in categories" v-bind:key="cat.idCategoria" class="categories" >
