@@ -36,7 +36,7 @@
             // Esta función obtendrá el JSON de config para realizar la conexión al DB de XAMPP
         private function connection() {
             $pathFile = dirname(__FILE__);  //Obtiene la ruta dentro del proyecto
-            $jsonConfig = file_get_contents($pathFile . '/' . "config");  // Abrir, guardar y devolver un archivo
+            $jsonConfig = file_get_contents($pathFile . '/' . "config-local");  // Abrir, guardar y devolver un archivo
 
             return json_decode($jsonConfig, true);  // Convierte el archivo config en un array JSON propiamente
         }
