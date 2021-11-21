@@ -26,7 +26,13 @@ body{
     font-size: 33px;
 
 }
-
+.products-4row{
+    display: flex;
+    justify-content: space-between;
+}
+.products-4row > div{
+    width: 23%;
+}
 .pages > div{
     grid-row: 1;
     grid-column: 1;
