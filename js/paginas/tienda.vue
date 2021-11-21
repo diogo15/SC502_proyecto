@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="wrapper">
         <h1>Formulario Ingresar</h1>
 
         <input v-model="message" placeholder="editar" >

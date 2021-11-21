@@ -1,6 +1,6 @@
 <?php
 header("Content-Type:application/json");
-require "data.php";
+require "data-categories.php";
 
 if(!empty($_GET['name']))
 {

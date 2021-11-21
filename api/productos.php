@@ -1,17 +1,17 @@
 <?php
 
 header("Content-Type:application/json");
-require "data.php";
+require "data-products.php";
 
-$cats = get_categories();
+$products = get_all_products();
 
-if(empty($cats))
+if(empty($products))
 {
-	response(200,"Categories Not Found",NULL);
+	response(200,"products Not Found",NULL);
 }
 else
 {
-	response(200,"Categories Found",$cats);
+	response(200,"products Found",$products);
 }
 
 

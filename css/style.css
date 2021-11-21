@@ -5,8 +5,26 @@
 #7D47BB
 
 */
+body{
+    background: #C2814D;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.header{
+    background: #fff;
+    padding: 20px 0;
+}
+.wrapper{
+    padding: 0 30px;
+}
 .pages{
     display: grid;
+}
+.logo{
+    margin: 0;
+    font-size: 33px;
+
 }
 
 .pages > div{

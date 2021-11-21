@@ -19,7 +19,7 @@ const router = new VueRouter({
 var app = new Vue({
     router,
     data: {
-        message: 'Hello Bitc!$%@!',
+        message: 'INTO THE ZONE',
     },
     mounted () {
         
