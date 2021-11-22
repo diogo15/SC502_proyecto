@@ -29,6 +29,8 @@
             if ($this->connection->connect_errno) {
                 echo "Fallo de Conexión a la base de datos";
                 die();
+            } else {
+                echo "Conexión a " . $value['database'] . " exitosa!";
             }
 
         }
@@ -55,13 +57,13 @@
         }
 
         public function getAllData($statement){
-            $results = $this->connection->query($statement);
+            $results = $this -> connection -> query($statement);
             $resultArray = array();
 
             foreach ($results as $key) {
                 $resultArray[] = $key;
             }
-            return $resultArray;
+            return $this -> formatUTF8($resultArray);
         }
     }
 ?>

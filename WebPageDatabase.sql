@@ -49,6 +49,12 @@ create table marcas(
     unique key idMarca(idMarca)
 );
 
+insert into marcas(nombreMarca) values 
+	(	'NINTENDO'	), 
+    (	'XBOX'	),
+    (	'FIGURAS'	),
+    (	'ACCESORIOS'	);
+
 create table paises(
 	idPais int primary key auto_increment not null,
     codPais varchar(4) not null,
