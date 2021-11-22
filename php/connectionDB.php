@@ -55,13 +55,13 @@
         }
 
         public function getAllData($statement){
-            $results = $this->connection->query($statement);
+            $results = $this -> connection -> query($statement);
             $resultArray = array();
 
             foreach ($results as $key) {
                 $resultArray[] = $key;
             }
-            return $resultArray;
+            return $this -> formatUTF8($resultArray);
         }
 
         //  INSERT ON TABLE (Afecta todas las filas de la tabla)
