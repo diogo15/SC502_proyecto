@@ -36,11 +36,6 @@ create table categorias(
     unique key idCategoria(idCategoria)
 );
 
-insert into categorias(nombreCategoria) values 
-	(	'VIDEOJUEGOS'	), 
-    (	'CONSOLAS'	),
-    (	'FIGURAS'	),
-    (	'ACCESORIOS'	);
 
 create table marcas(
 	idMarca int primary key auto_increment not null,
@@ -142,9 +137,8 @@ create table Productos(
     codBarras int unique key not null,
     nombreProducto varchar(50) not null,
     descripProducto varchar(100) not null,
-    url_imagen varchar(100),
-    precioVenta double not null,
-    
+    url_imagen varchar(150),
+    precioVenta double not null,    
     idLocal int not null,
     idCategoria int not null,
     idMarca int not null,
