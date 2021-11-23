@@ -44,3 +44,6 @@ body{
 .v-enter, .v-leave-to {
     opacity: 0;
 }
+.router-link-active{
+    background: red;
+}
