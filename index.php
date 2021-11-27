@@ -53,6 +53,8 @@
 
     </div>
 
+    <script src="js/routes.js"></script>
+    <script src="js/carrito.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
