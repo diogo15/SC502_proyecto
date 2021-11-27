@@ -18,6 +18,9 @@ body{
 .wrapper{
     padding: 0 30px;
 }
+.header .flex{
+    justify-content: space-between;
+}
 .pages{
     display: grid;
 }
@@ -25,6 +28,9 @@ body{
     margin: 0;
     font-size: 33px;
 
+}
+.flex{
+    display: flex;
 }
 .products-4row{
     display: flex;

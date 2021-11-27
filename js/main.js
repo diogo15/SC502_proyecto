@@ -23,7 +23,6 @@ var carrito = {
         items:  []
     },
     addItem (newValue) {
-        console.log(newValue+"agregado!!");
         this.state.items.push(newValue);
     },
     clearItem () {
@@ -38,6 +37,9 @@ var app = new Vue({
     },
     mounted () {
         
+    },
+    components: {
+        'carrito': httpVueLoader(site_url + 'js/componentes/btn-carrito.vue')
     }
 }).$mount('#app');
 

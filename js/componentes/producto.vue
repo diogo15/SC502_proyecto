@@ -1,7 +1,7 @@
 <template>
     <div class="product">
         <p v-if="agregado" class="agregado">Agregado</p>
-        <img :src="product.url_imagen" alt="">
+        <img :src="base_url+product.url_imagen" alt="">
         <p>{{ product.nombreProducto }}</p>
         <p>{{ product.precioVenta }}</p>
         <button v-on:click="comprar(product)" class="btn">Comprar</button>     
@@ -15,6 +15,7 @@ module.exports = {
   },
   data:function() {
     return{
+      base_url: site_url,
       agregado: false
     }
   },

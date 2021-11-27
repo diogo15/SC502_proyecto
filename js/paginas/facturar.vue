@@ -1,12 +1,12 @@
 <template>
     <div class="wrapper">
         <h1>Facturar</h1>
-
-        <input v-model="message" placeholder="editar" >
         
-        <p v-if="mostrar">Message is: {{ message }}</p>
-
-        <p><input type="checkbox" v-model="mostrar"> Mostrar/Ocultar </p>
+        <ul class="ISAAAAC">
+          <li v-for="product in carro.items" v-bind:key="product.idProducto">
+            {{ product.nombreProducto }}, {{ product.precioVenta }}
+          </li>
+        </ul>
 
     </div>
 </template>
@@ -16,7 +16,8 @@ module.exports = {
   data: function() {
     return{
       mostrar: false,
-      message: "text por defecto"
+      message: "text por defecto",
+      carro: carrito.state
     }
   },
   mounted () {
