@@ -24,16 +24,22 @@
     <div id="app">
 
         <div class="header">
-            <div class="wrapper">
+            <div class="wrapper flex">
 
-                <p class="logo">{{ message }}</p>
+                <div class="nav-wrapper">
+
+                    <p class="logo">{{ message }}</p>
+                    
+                    <div class="nav">
+                        <router-link to="/">Home</router-link> |
+                        <router-link to="/acercade">Nosotros</router-link> |
+                        <router-link to="/tienda">Tienda</router-link> |
+                        <router-link to="/facturar">facturar</router-link>
+                    </div>
                 
-                <div class="nav">
-                    <router-link to="/">Home</router-link> |
-                    <router-link to="/acercade">Nosotros</router-link> |
-                    <router-link to="/tienda">Tienda</router-link> |
-                    <router-link to="/facturar">facturar</router-link>
                 </div>
+
+                <carrito></carrito>
                 
             </div>
         </div>
@@ -47,6 +53,8 @@
 
     </div>
 
+    <script src="js/routes.js"></script>
+    <script src="js/carrito.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
