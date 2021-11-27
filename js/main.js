@@ -20,13 +20,41 @@ const router = new VueRouter({
 
 var carrito = {
     state: {
-        items:  []
+        items: []
     },
-    addItem (newValue) {
-        this.state.items.push(newValue);
+    addItem (newProduct) {
+        //create copy from product
+        let product = Object.assign({}, newProduct);
+        product["quantity"] = 1;
+        let found = false;
+        let index = 0;
+        let q = 0;
+
+        for(let i=0; i < this.state.items.length; i++){            
+            if(this.state.items[i].idProducto == product.idProducto){
+                found = true;
+                index = i;
+                q = this.state.items[i].quantity;
+            }
+        }
+        
+        if(found){
+            this.state.items.splice(index, 1);
+            product["quantity"] = q + 1;
+            this.state.items.push(product); 
+        }else{
+            console.log(product);
+            this.state.items.push(product);
+        }
+
+        localStorage.setItem('carritoLocal', JSON.stringify(this.state.items));      
+        
     },
-    clearItem () {
-        this.state.item = '';
+    clearItems () {
+        this.state.items = '';
+    },
+    loadItems(localItems){
+        this.state.items = localItems;
     }
 }
 
@@ -36,7 +64,9 @@ var app = new Vue({
         message: 'INTO THE ZONE',
     },
     mounted () {
-        
+        if(!!localStorage.getItem('carritoLocal')){
+            carrito.loadItems(JSON.parse(localStorage.getItem('carritoLocal')));
+        }
     },
     components: {
         'carrito': httpVueLoader(site_url + 'js/componentes/btn-carrito.vue')
