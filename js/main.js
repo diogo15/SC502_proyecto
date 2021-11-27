@@ -18,6 +18,19 @@ const router = new VueRouter({
     routes: ruticas
 });
 
+var carrito = {
+    state: {
+        items:  []
+    },
+    addItem (newValue) {
+        console.log(newValue+"agregado!!");
+        this.state.items.push(newValue);
+    },
+    clearItem () {
+        this.state.item = '';
+    }
+}
+
 var app = new Vue({
     router,
     data: {
