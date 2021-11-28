@@ -36,19 +36,37 @@ create table categorias(
     unique key idCategoria(idCategoria)
 );
 
+insert into categorias(nombreCategoria) values 
+	(	'VIDEOJUEGOS'	), 
+    (	'CONSOLAS'	),
+    (	'FIGURAS'	),
+    (	'ACCESORIOS'	);
 
+drop table if exists marcas;
 create table marcas(
 	idMarca int primary key auto_increment not null,
     nombreMarca varchar(50) not null,
     
     unique key idMarca(idMarca)
 );
+    
+INSERT INTO `marcas` (`nombreMarca`) 
+	VALUES 	('funko'),
+			('reddragon'),
+            ('amazon');
+            
+insert into marcas(nombreMarca) values 
+	(	'NINTENDO'	), 
+    (	'XBOX'	);
 
 create table paises(
 	idPais int primary key auto_increment not null,
     codPais varchar(4) not null,
     nombrePais varchar(50) not null
 );
+
+INSERT INTO `paises` (`codPais`, `nombrePais`) 
+	VALUES 	('406', 'Costa Rica');
 
 create table provincias(
 	idProvincia int primary key auto_increment not null,
@@ -59,8 +77,11 @@ create table provincias(
     constraint FK_IDPAIS foreign key(idPais) references paises(idPais)
 );
 
-/* Creación de los usuarios que pueden logearse */
-/*  */
+INSERT INTO provincias (nombreProvincia, idPais)
+	VALUES 	('SAN JOSE', 1),
+			('HEREDIA', 1),
+			('CARTAGO', 1),
+			('ALAJUELA', 1);
 
 create table roles(
 	idRol int primary key NOT NULL AUTO_INCREMENT,
@@ -71,13 +92,19 @@ create table roles(
 	unique key idRol(idRol)
 );
 
+INSERT INTO roles (rol, rolInfo, rolStatus)
+	values 	('dev', 'developers', true),
+			('user', 'usuario', true);
+
+drop table if exists usuarios;
 create table usuarios(
 	idUsuario int primary key auto_increment not null,
     nombreUser varchar(30) not null,
     apellido1Usuario varchar(30) not null,
-    apellido2Ususario varchar(30) not null,
+    apellido2Usuario varchar(30) not null,
     passwordUsuario varchar(255) not null,
-    mailUsuario varchar(50) not null,
+    mailUsuario varchar(50) not null
+    /*
     direccion varchar(200) not null,
     
     idRol int not null,
@@ -88,7 +115,11 @@ create table usuarios(
     constraint FK_IDROL foreign key (idRol) references roles(idRol),
     foreign key (idPais) references paises(idPais),
     constraint FK_IDPROVINCIA foreign key (idProvincia) references provincias(idProvincia)
+    */
 );
+
+INSERT INTO usuarios (nombreUser, apellido1Usuario, apellido2Usuario, passwordUsuario, mailUsuario)
+	values 	('Fabián', 'Madriz', 'Villalta', md5(12345), 'fabimv23@gmail.com');
 
 create table empleados(
 	idEmpleado int primary key auto_increment not null,
@@ -96,6 +127,9 @@ create table empleados(
     nombreEmpleado varchar(50) not null,
     apellidoEmpleado varchar(50) not null
 );
+
+INSERT INTO `empleados` (`cedulaEmpleado`, `nombreEmpleado`, `apellidoEmpleado`) 
+	VALUES ('114180039', 'luis', 'ramirez');
 
 drop table if exists locales;
 Create Table locales (
@@ -110,6 +144,11 @@ Create Table locales (
     foreign key(idPais) references paises(idPais),
     constraint FK_IDEMPLEADO foreign key (idEmpleado) references empleados(idEmpleado)
 );
+
+INSERT INTO `locales` (`nombreLocal`, `direccion`, `idPais`, `idProvincia`, `idEmpleado`) 
+	VALUES 	('san jose', 'sanjo', '1', '1', '1'),
+			('san pedro', 'san pedro', '1', '1', '1'),
+            ('curri', 'curri', '1', '1', '1');
 
 drop table if exists Proveedores;
 create table Proveedores(
@@ -137,8 +176,8 @@ create table Productos(
     codBarras int unique key not null,
     nombreProducto varchar(50) not null,
     descripProducto varchar(100) not null,
-    url_imagen varchar(150),
-    precioVenta double not null,    
+    precioVenta double not null,
+    
     idLocal int not null,
     idCategoria int not null,
     idMarca int not null,
@@ -148,6 +187,15 @@ create table Productos(
     foreign key(idLocal) references locales(idLocal)
 );
 
+ALTER TABLE productos ADD COLUMN url_imagen VARCHAR(150) AFTER `descripProducto`;
+
+INSERT INTO `productos` (`codBarras`, `nombreProducto`, `descripProducto`, `url_imagen`, `precioVenta`, `idLocal`, `idCategoria`, `idMarca`) 
+	VALUES 	('1232', 'Funko Loki', 'Funko Loki', 'img/productos/loki.jpg', '8000', '1', '3', '1'),
+			('1233', 'Funko Vader', 'Funko Vader', 'img/productos/vader.jpg', '8000', '1', '3', '1'),
+            ('1234', 'Funko Navas', 'Funko Navas', 'img/productos/navas.jpg', '8000', '1', '3', '2'),
+            ('1235', 'Funko Navas', 'Funko Deathpool', 'img/productos/navas.jpg', '8000', '1', '3', '2');
+
+drop table if exists repartidores;
 create table repartidores(
 	idRepartidor int primary key auto_increment not null,
     nombreRepartidor varchar(30) not null,
