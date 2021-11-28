@@ -1,7 +1,17 @@
 <template>
     <div class="wrapper">
-        <h1>PRODCUT ID: {{$route.params.pid}}</h1>
-
+      <div class="flex product-single">
+        <div class="productLeft">
+          <img :src="base_url+product.url_imagen" alt="">
+        </div>
+        <div class="productRight">
+          <h1>{{product.nombreProducto}} </h1>
+          <p>{{product.descripProducto}} </p>
+          <p>Precio: {{product.precioVenta}} </p>
+          <p>Marca: {{product.nombreMarca}} </p>
+          <p>Categoria: <router-link :to="'/category/'+product.idCategoria">{{product.nombreCategoria}}</router-link></p>
+        </div>
+      </div>
     </div>
 </template>
 
@@ -9,16 +19,26 @@
 module.exports = {
   data: function() {
     return{
-      product_data: null
+      base_url: site_url,
+      product: {},
+      pid: this.$route.params.pid
     }
   },
   mounted () {
-    /* 
+    
     axios
-      .get(site_url + 'api/product.php')
-      .then(response => (this.product_data = response.data.data))
+      .get(site_url + 'api/producto.php', { params: { pid: this.pid } })
+      .then(response => (this.product = response.data.data[0]))
       .catch(error => console.log(error));
-    */
+    
   }
 }
 </script>
+<style scoped>
+img{
+  max-width: 100%;
+}
+.product-single .productLeft{
+  max-width: 40%;
+}
+</style>
