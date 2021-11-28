@@ -1,6 +1,7 @@
 var carrito = {
     state: {
-        items: []
+        items: [],
+        total: 0
     },
     addItem (newProduct) {
         //create copy from product
@@ -27,13 +28,21 @@ var carrito = {
             this.state.items.push(product);
         }
 
-        localStorage.setItem('carritoLocal', JSON.stringify(this.state.items));      
-        
+        localStorage.setItem('carritoLocal', JSON.stringify(this.state.items)); 
+        this.getTotal();     
     },
     clearItems () {
         this.state.items = '';
     },
     loadItems(localItems){
         this.state.items = localItems;
-    }
+        this.getTotal();
+    },
+    getTotal: function () { 
+        var resultado=0;
+        for(var i=0;  this.state.items.length>i;i++){
+          resultado+= this.state.items[i].precioVenta* this.state.items[i].quantity;
+        }
+        this.state.total=resultado;
+      }
 }
