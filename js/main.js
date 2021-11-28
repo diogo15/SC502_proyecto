@@ -2,6 +2,7 @@ var app = new Vue({
     router,
     data: {
         message: 'INTO THE ZONE',
+        login: false
     },
     mounted () {
         if(!!localStorage.getItem('carritoLocal')){
@@ -9,7 +10,8 @@ var app = new Vue({
         }
     },
     components: {
-        'carrito': httpVueLoader(site_url + 'js/componentes/btn-carrito.vue')
+        'carrito': httpVueLoader(site_url + 'js/componentes/btn-carrito.vue'),
+        'login': httpVueLoader(site_url + 'js/paginas/login.vue'),
     }
 }).$mount('#app');
 

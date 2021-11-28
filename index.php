@@ -35,6 +35,7 @@
                         <router-link to="/acercade">Nosotros</router-link> |
                         <router-link to="/tienda">Tienda</router-link> |
                         <router-link to="/facturar">facturar</router-link>
+                        <router-link to="/login">Login</router-link>
                     </div>
                 
                 </div>
@@ -50,6 +51,11 @@
             </transition>
         </div>
 
+        <transition>
+            <login v-if="login"></login>
+        </transition>
+        
+        <input v-model="login" type="checkbox">
 
     </div>
 
