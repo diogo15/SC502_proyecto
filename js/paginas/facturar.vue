@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
            <h1>Carrito de compras</h1>
-    <table class="table">
+    <table class="table_morada">
     <thead>
         <tr>
             <th>Producto</th>
@@ -64,3 +64,15 @@ module.exports = {
 }
 
 </script>
+
+
+<style>
+.table_morada {
+  background: white;
+}
+.table_morada thead { 
+  color: white;
+  background: #7D47BB;
+}
+
+</style>
