@@ -1,10 +1,13 @@
 <template>
     <div class="product">
         <p v-if="agregado" class="agregado">Agregado</p>
-        <img :src="base_url+product.url_imagen" alt="">
+        <router-link :to="'/product/'+product.idProducto">
+          <img :src="base_url+product.url_imagen" alt="">
+        </router-link>
         <p>{{ product.nombreProducto }}</p>
         <p>{{ product.precioVenta }}</p>
-        <button v-on:click="comprar(product)" class="btn">Comprar</button>     
+        <router-link :to="'/product/'+product.idProducto">Ver</router-link>
+        <button v-on:click="comprar(product)" class="btn">Añadir al Carrito</button>     
     </div>
 </template>
 
