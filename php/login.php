@@ -1,5 +1,6 @@
 <?php
     require_once 'auth-class.php';
+    header("Content-Type:application/json");
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
@@ -9,11 +10,13 @@
             
             $submittedData = $loginObject -> login($_POST['email'], $_POST['password']);
 
+            echo '{login : "'.$submittedData.'"}';
+
         } else {
-            echo 'Campos faltantes por rellenar';
+            echo '{login : "0"}';
         }
     } else {
-        echo 'Método nó correspondiente!';
+        echo '{login : "0"}';
     }
 
 
