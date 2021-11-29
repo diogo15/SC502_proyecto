@@ -2,36 +2,36 @@
     <div class="login">
         <h1 class="title">Inicio de Sesión</h1>
         
-        <form v-on:submit.prevent="hacerlogin()" class="form">
+        <form v-on:submit.prevent="enviarDatos()" class="form">
             <label class="form-label" for="#email">Correo de usuario:</label>
             <input v-model="email" class="form-input" type="email" required placeholder="Email">
             <label class="form-label" for="#password">Contraseña:</label>
             <input v-model="password" class="form-input" type="password" placeholder="Contraseña">
 
-            <input class="form-submit" type="submit" value="login">
+            <input class="form-submit" type="submit" value="Iniciar sesión">
         </form>
     </div>
 </template>
 
 <script>
 module.exports = {
-  data: function() {
-    return{
-      email: "",
-      password: ""
+    data: function() {
+        return {
+            email: "",
+            password: ""
+        }   
+    },
+    
+    methods : {
+        enviarDatos () {
+            axios.post(site_url + 'php/login.php', {
+                email: this.email,
+                password : this.password
+            })
+            .then(response => console.log(response))
+            .catch(error => console.log(error));
+        }
     }
-  },
-  methods: {
-      hacerlogin() {
-              axios
-      .post(site_url + 'php/login.php', {
-          email: this.email,
-          password : this.password
-      })
-        .then(response => console.log(response))
-        .catch(error => console.log(error));
-      }
-  }
 }
 </script>
 

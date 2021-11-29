@@ -1,18 +1,17 @@
 <?php
     require_once 'auth-class.php';
 
-    session_start();
-    
-    $authObject = new auth;
-
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         
-        $submittedData = file_get_contents("php://input");
+        if ( isset($_REQUEST['email']) || isset($_REQUEST['password']) ) {
+            $loginObject = new Auth;
+            
+            $submittedData = $loginObject -> login($_POST['email'], $_POST['password']);
 
-        $dataArray = $authObject -> login($submittedData);
-        print_r (json_encode($dataArray));
-
+        } else {
+            echo 'Campos faltantes por rellenar';
+        }
     } else {
         echo 'Método nó correspondiente!';
     }
