@@ -24,12 +24,19 @@ module.exports = {
     
     methods : {
         enviarDatos () {
-            axios.post(site_url + 'php/login.php', {
-                email: this.email,
-                password : this.password
+
+            var formData = new FormData();
+            formData.append("email", this.email);
+            formData.append("password", this.password);
+
+            axios.post(site_url + 'php/login.php', formData, {
+                headers: { 'Content-Type': 'multipart/form-data' }
+            }).then(data =>
+                console.log(data)
+            ).catch(err => {
+                console.log(err)
             })
-            .then(response => console.log(response))
-            .catch(error => console.log(error));
+
         }
     }
 }

@@ -5,7 +5,7 @@
 
         public function login ($email, $password) {
             
-            if (!empty($email) || !empty($password)) {
+            if (empty($email) || empty($password)) {
                 // Cuando no se inserte un usuario o password en el form
                 echo 'Datos faltantes';
     
