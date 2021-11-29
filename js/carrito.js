@@ -1,39 +1,43 @@
 var carrito = {
     state: {
-        items: []
+        items: [],
+        total: 0
     },
     addItem (newProduct) {
-        //create copy from product
-        let product = Object.assign({}, newProduct);
-        product["quantity"] = 1;
-        let found = false;
-        let index = 0;
-        let q = 0;
 
-        for(let i=0; i < this.state.items.length; i++){            
-            if(this.state.items[i].idProducto == product.idProducto){
-                found = true;
-                index = i;
-                q = this.state.items[i].quantity;
-            }
-        }
-        
-        if(found){
-            this.state.items.splice(index, 1);
-            product["quantity"] = q + 1;
-            this.state.items.push(product); 
-        }else{
-            console.log(product);
-            this.state.items.push(product);
+        if(!newProduct.hasOwnProperty('quantity')){
+            newProduct["quantity"] = 1;
         }
 
-        localStorage.setItem('carritoLocal', JSON.stringify(this.state.items));      
+        let currentProduct = this.state.items.filter(item => item.idProducto == newProduct.idProducto);
+        let found = currentProduct.length > 0;
         
+        if (!found) {
+            var addProduct = Object.assign({}, newProduct);
+            this.state.items.push(addProduct);
+        } else {
+            currentProduct[0].quantity += 1;
+        }
+
+        localStorage.setItem('carritoLocal', JSON.stringify(this.state.items)); 
+        this.getTotal();
+    },
+    removeItem(id) {
+        let id2Delete = this.state.items.findIndex(item => item.idProducto == id);
+        this.state.items.splice(id2Delete, 1);
     },
     clearItems () {
         this.state.items = '';
     },
     loadItems(localItems){
         this.state.items = localItems;
-    }
+        this.getTotal();
+    },
+    getTotal: function () { 
+        var resultado=0;
+        for(var i=0;  this.state.items.length>i;i++){
+          resultado+= this.state.items[i].precioVenta* this.state.items[i].quantity;
+        }
+        this.state.total=resultado;
+      }
 }
