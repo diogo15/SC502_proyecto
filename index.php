@@ -32,7 +32,7 @@
                     <p class="logo">{{ message }}</p>
                     
                     <div class="nav">
-                        <router-link to="/">Home</router-link> |
+                        <router-link exact to="/">Home</router-link> |
                         <router-link to="/acercade">Nosotros</router-link> |
                         <router-link to="/tienda">Tienda</router-link> |
                         <router-link to="/facturar">facturar</router-link>
