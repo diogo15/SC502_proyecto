@@ -1,20 +1,22 @@
 <?php
     require_once 'auth-class.php';
-
-    session_start();
-    
-    $authObject = new auth;
+    header("Content-Type:application/json");
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         
-        $submittedData = file_get_contents("php://input");
+        if ( isset($_REQUEST['email']) || isset($_REQUEST['password']) ) {
+            $loginObject = new Auth;
+            
+            $submittedData = $loginObject -> login($_POST['email'], $_POST['password']);
 
-        $dataArray = $authObject -> login($submittedData);
-        print_r (json_encode($dataArray));
+            echo '{login : "'.$submittedData.'"}';
 
+        } else {
+            echo '{login : "0"}';
+        }
     } else {
-        echo 'Método nó correspondiente!';
+        echo '{login : "0"}';
     }
 
 
