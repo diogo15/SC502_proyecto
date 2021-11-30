@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
            <h1>Carrito de compras</h1>
-    <table class="table_morada">
+    <table class="table_itz">
     <thead>
         <tr>
             <th>Producto</th>
@@ -31,9 +31,9 @@
     </tbody>
     <tfoot>
         <tr>
-            <td><router-link to="/tienda">Tienda</router-link></td>
+            <td>Total</td>
             <td colspan="3"></td>
-            <td class="text-center"><strong>Total {{carro.total}}</strong></td>
+            <td class="text-center"><strong>{{carro.total}}</strong></td>
             <td><btn class="green">Pagar</btn></td>
         </tr>
     </tfoot>
@@ -71,31 +71,33 @@ module.exports = {
 
 
 <style>
-.table_morada {
+.table_itz {
+  width: 100%;
+  max-width: 800px;
   background: rgba(255,255,255,0.15);
   text-align: left;
   border-collapse: collapse;
 }
-.table_morada td,
-.table_morada th{
+.table_itz td,
+.table_itz th{
   padding: 10px 15px;
 }
-.table_morada tbody,
-.table_morada tfoot{
+.table_itz tbody,
+.table_itz tfoot{
   color: #934a10;
 }
-.table_morada tbody td{
+.table_itz tbody td{
   border-bottom: 1px solid #934a10;
 }
-.table_morada thead { 
+.table_itz thead { 
   color: #934a10;
   background: rgb(255 255 255 / 40%);
 }
-.table_morada tfoot {
+.table_itz tfoot {
   background: #333;
   color: white;
 }
-.table_morada a{
+.table_itz a{
   color: white;
 }
 tbody tr td:nth-child(3){
