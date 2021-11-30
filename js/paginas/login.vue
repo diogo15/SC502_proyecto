@@ -8,7 +8,7 @@
             <label class="form-label" for="#password">Contraseña:</label>
             <input v-model="password" class="form-input" type="password" placeholder="Contraseña">
 
-            <input class="form-submit" type="submit" value="Iniciar sesión">
+            <btn class="green" v-on:click="enviarDatos()">Iniciar sesión</btn>
         </form>
     </div>
 </template>
@@ -38,6 +38,9 @@ module.exports = {
             })
 
         }
+    },
+    components: {
+        'btn': httpVueLoader(site_url + 'js/componentes/btn.vue')
     }
 }
 </script>
@@ -47,11 +50,11 @@ module.exports = {
         padding: 10px;
     }
 
-    .title {
+    .login .title {
         text-align: center;
     }
 
-    .form {
+    .login .form {
         margin: 3rem auto;
         display: flex;
         flex-direction: column;
@@ -64,13 +67,13 @@ module.exports = {
         padding: 40px;
         box-shadow: 0 4px 10px 4px rgba(0, 0, 0, 0.3);
     }
-    .form-label {
+    .login .form-label {
         margin-top: 2rem;
         color: white;
         margin-bottom: 0.5rem;
     }
 
-    .form-input {
+    .login .form-input {
         padding: 10px 15px;
         background: none;
         background-image: none;
@@ -78,12 +81,7 @@ module.exports = {
         color: white;
     }
 
-    .form-submit {
-        background: #45B173;
-        border: none;
-        color: white;
+    .login .button  {
         margin-top: 3rem;
-        padding: 1rem 0;
-        cursor: pointer;
     }
 </style>
