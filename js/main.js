@@ -1,5 +1,13 @@
+Vue.use(VueMeta, {
+    refreshOnceOnNavigation: true
+});
+
 var app = new Vue({
     router,
+    metaInfo: {
+        title: 'Inicio',
+        titleTemplate: 'Into The Zone - %s'
+    },
     data: {
         message: 'INTO THE ZONE',
         login: false
