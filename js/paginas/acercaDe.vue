@@ -9,6 +9,12 @@
 
 <script>
 module.exports = {
+  metaInfo: {
+    title: 'Acerca de Nosotros',
+    meta: [
+      { name: 'description', content: 'Somos una empresa especializada en traer lo ultimo en juegueste geek.' },
+    ]
+  },
   data: function() {
     return{
       categories: null

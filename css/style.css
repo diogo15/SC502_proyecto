@@ -1,8 +1,14 @@
 /*
 
-#C2814D 
-#45B173 
-#7D47BB
+STYLEGUIDE - COLORS
+
+NEGRO ::::::::: #333333
+NARANJA ::::::: #C2814D 
+NARANJA_DARK :: #934a10 
+VERDE ::::::::: #45B173 
+VERDE_DARK :::: #3d9b65
+MORADO :::::::: #7D47BB
+MORADO_LIGHT :: #9959e3
 
 */
 body{
@@ -52,4 +58,4 @@ body{
 }
 .router-link-active{
     font-weight: bold;
-  }
+}

@@ -6,8 +6,8 @@
         </router-link>
         <p>{{ product.nombreProducto }}</p>
         <p>{{ product.precioVenta }}</p>
-        <router-link :to="'/product/'+product.idProducto">Ver</router-link>
-        <button v-on:click="comprar(product)" class="btn">Añadir al Carrito</button>     
+        <btn class="link"><router-link :to="'/product/'+product.idProducto">Ver</router-link></btn>
+        <btn class="white" v-on:click="comprar(product)" >Añadir al Carrito</btn>
     </div>
 </template>
 
@@ -29,6 +29,9 @@ module.exports = {
       this.agregado = true;
     }
     
+  },
+  components: {
+    'btn': httpVueLoader(site_url + 'js/componentes/btn.vue')
   }
 }
 </script>
