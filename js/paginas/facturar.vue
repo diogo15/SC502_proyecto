@@ -15,10 +15,10 @@
         <tr v-for="product in carro.items" v-bind:key="product.idProducto">
             <td> {{ product.nombreProducto }}</td>
             <td> {{ product.precioVenta }}</td>
-            <td> {{product.quantity}}<input type="button" value="+" v-on:click="sumarCarrito(product)"></td> 
+            <td> {{product.quantity}}<btn v-on:click="sumarCarrito(product)">+</btn></td> 
             <td> {{ (product.precioVenta*product.quantity) }}</td>
             <td>
-                <span v-on="eliminarProducto(product.idProducto)">Eliminar</span>
+                <btn>Eliminar</btn>
             </td>
         </tr>
     </tbody>
@@ -49,18 +49,20 @@ module.exports = {
       carro: carrito.state
     }
   },
-   computed: {
+  computed: {
   },
   mounted () {
-
   },
-   methods: {
+  methods: {
     eliminarProducto(){      
     },
     sumarCarrito(product){
       carrito.addItem(product);
     }    
   },
+  components: {
+    'btn': httpVueLoader(site_url + 'js/componentes/btn.vue')
+  }
 }
 
 </script>
@@ -68,11 +70,30 @@ module.exports = {
 
 <style>
 .table_morada {
-  background: white;
+  background: rgba(255,255,255,0.15);
+  text-align: left;
+  border-collapse: collapse;
+}
+.table_morada td,
+.table_morada th{
+  padding: 10px 15px;
+}
+.table_morada tbody,
+.table_morada tfoot{
+  color: #934a10;
+}
+.table_morada tbody td{
+  border-bottom: 1px solid #934a10;
 }
 .table_morada thead { 
   color: white;
   background: #7D47BB;
 }
-
+.table_morada tfoot {
+  background: #934a10;
+  color: white;
+}
+.table_morada a{
+  color: white;
+}
 </style>
