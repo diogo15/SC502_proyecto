@@ -92,7 +92,7 @@ module.exports = {
   background: rgb(255 255 255 / 40%);
 }
 .table_morada tfoot {
-  background: #934a10;
+  background: #333;
   color: white;
 }
 .table_morada a{
