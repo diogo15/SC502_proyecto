@@ -7,6 +7,7 @@
             <th>Producto</th>
             <th>Precio</th>
             <th>Cantidad</th>
+            <th></th>
             <th>Sub total</th>
             <th>&nbsp;</th>
         </tr>
@@ -15,7 +16,8 @@
         <tr v-for="product in carro.items" v-bind:key="product.idProducto">
             <td> {{ product.nombreProducto }}</td>
             <td> {{ product.precioVenta }}</td>
-            <td> {{product.quantity}}<btn v-on:click="sumarCarrito(product)">+</btn></td> 
+            <td> {{product.quantity}}</td> 
+            <td> <btn class="white" v-on:click="sumarCarrito(product)">+</btn> <btn>-</btn></td>
             <td> {{ (product.precioVenta*product.quantity) }}</td>
             <td>
                 <btn>Eliminar</btn>
@@ -30,9 +32,9 @@
     <tfoot>
         <tr>
             <td><router-link to="/tienda">Tienda</router-link></td>
-            <td colspan="2"></td>
+            <td colspan="3"></td>
             <td class="text-center"><strong>Total {{carro.total}}</strong></td>
-            <td>Pagar</td>
+            <td><btn class="green">Pagar</btn></td>
         </tr>
     </tfoot>
     </table>
@@ -86,8 +88,8 @@ module.exports = {
   border-bottom: 1px solid #934a10;
 }
 .table_morada thead { 
-  color: white;
-  background: #7D47BB;
+  color: #934a10;
+  background: rgb(255 255 255 / 40%);
 }
 .table_morada tfoot {
   background: #934a10;
@@ -95,5 +97,8 @@ module.exports = {
 }
 .table_morada a{
   color: white;
+}
+tbody tr td:nth-child(3){
+  text-align: center;
 }
 </style>
