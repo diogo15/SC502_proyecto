@@ -59,7 +59,7 @@ module.exports = {
         width: 20%;
         min-width: 350px;
         max-width: 100%;
-        background: rgba(19, 35, 47, 0.9);
+        background: #333333;
         border-radius: 5px;
         padding: 40px;
         box-shadow: 0 4px 10px 4px rgba(0, 0, 0, 0.3);
@@ -79,7 +79,7 @@ module.exports = {
     }
 
     .form-submit {
-        background: #1ab188;
+        background: #45B173;
         border: none;
         color: white;
         margin-top: 3rem;
