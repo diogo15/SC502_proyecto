@@ -48,6 +48,7 @@ body{
 .pages > div{
     grid-row: 1;
     grid-column: 1;
+    min-width: 0;
 }
 
 .v-enter-active, .v-leave-active {
