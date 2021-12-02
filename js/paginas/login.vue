@@ -1,12 +1,11 @@
 <template>
     <div class="login">
         <h1 class="title">Inicio de Sesión</h1>
-        
         <form v-on:submit.prevent="enviarDatos()" class="form">
             <label class="form-label" for="#email">Correo de usuario:</label>
             <input v-model="email" class="form-input" type="email" required placeholder="Email">
             <label class="form-label" for="#password">Contraseña:</label>
-            <input v-model="password" class="form-input" type="password" placeholder="Contraseña">
+            <input v-model="password" class="form-input" type="password" required placeholder="Contraseña">
 
             <btn class="green" v-on:click="enviarDatos()">Iniciar sesión</btn>
         </form>

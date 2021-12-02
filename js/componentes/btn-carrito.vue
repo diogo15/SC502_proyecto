@@ -60,6 +60,4 @@ module.exports = {
   margin-right:2px;
   height: auto;
 }
-
-
 </style>
