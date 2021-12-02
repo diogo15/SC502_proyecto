@@ -1,6 +1,7 @@
 <template>
-      <div class="modal">
-          <slot></slot>
+      <div class="modal" v-on:click="$emit('close')">
+          <btn class="white close-modal" v-on:click="$emit('close')">Close</btn>
+          <slot v-on:click.stop=""></slot>
       </div>
 </template>
 
@@ -9,6 +10,9 @@ module.exports = {
   props: {
   },
   methods: {
+  },
+  components : {
+    'btn' : httpVueLoader(site_url + 'js/componentes/btn.vue')
   }
 }
 </script>
@@ -25,7 +29,7 @@ module.exports = {
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
 }
 
 /* Modal Content */
@@ -38,17 +42,9 @@ module.exports = {
 }
 
 /* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+.close-modal{
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 </style>
