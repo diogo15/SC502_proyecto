@@ -1,7 +1,7 @@
 <template>
-      <div class="modal" v-on:click="$emit('close')">
+      <div class="modal">
           <btn class="white close-modal" v-on:click="$emit('close')">Close</btn>
-          <slot v-on:click.stop=""></slot>
+          <slot></slot>
       </div>
 </template>
 
