@@ -2,13 +2,13 @@
     <div class="wrapper">
       <h1>Productos Nuevos</h1>
 
-      <div class="products-4row">
+      <carousel>
         <producto
           v-for="product in productos"
           v-bind:key="product.idProducto"
           v-bind:product="product"
         ></producto>
-      </div>
+      </carousel>
 
     </div>
 </template>
@@ -27,7 +27,8 @@ module.exports = {
       .catch(error => console.log(error));
   },
   components: {
-    'producto': httpVueLoader(site_url + 'js/componentes/producto.vue')
+    'producto': httpVueLoader(site_url + 'js/componentes/producto.vue'),
+    'carousel': httpVueLoader(site_url + 'js/componentes/carousel.vue')
   }
 }
 </script>

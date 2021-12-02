@@ -29,7 +29,6 @@ module.exports = {
 <style>
 .carousel-container {
   position: relative;
-  padding: 0 40px;
 }
 
 .carousel {
@@ -37,28 +36,44 @@ module.exports = {
   scroll-snap-type: x mandatory;
   overflow-x: scroll;
   scroll-behavior: smooth;
+  padding-bottom: 20px;
 }
 
 .carousel > * {
   width: 28%;
-  margin-right: 2%;
+  margin-right: 15px;
   flex-shrink: 0;
   scroll-snap-align: start;
 }
 
+/** 
 .carousel::-webkit-scrollbar {
   display: none;
 }
+*/
 
 .carousel-container .arrow{
   position: absolute;
   top: 40%;
   z-index: 2;
-  left: 0;
+  left: -20px;
 }
 
 .carousel-container .arrow.right{
-  right: 0;
+  right: -20px;
   left: auto;
 }
+
+.carousel::-webkit-scrollbar {
+	height: 10px; 
+}
+.carousel::-webkit-scrollbar-track {
+	background-color: #81512a;
+  border-radius: 10px;
+}
+.carousel::-webkit-scrollbar-thumb {
+	background: #c99a75;
+	border-radius: 10px;
+}
+
 </style>
