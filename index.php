@@ -29,7 +29,7 @@
             <div class="wrapper flex">
 
                 <div class="nav-wrapper">
-
+                    
                     <p class="logo">{{ message }}</p>
                     
                     <div class="nav">
@@ -38,6 +38,7 @@
                         <router-link to="/tienda">Tienda</router-link> |
                         <router-link to="/facturar">facturar</router-link>
                         <router-link to="/login">Login</router-link>
+                        <router-link to="/registro">Registro</router-link>
                     </div>
                 
                 </div>
