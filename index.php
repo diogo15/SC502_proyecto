@@ -53,9 +53,11 @@
             </transition>
         </div>
 
+        <transition>
         <modal v-if="showModal" v-on:close="showModal = false">
             <login></login>
         </modal>
+        </transition>
 
     </div>
 
