@@ -53,6 +53,10 @@
             </transition>
         </div>
 
+        <modal v-if="showModal">
+            <login></login>
+        </modal>
+
     </div>
 
     <script src="js/routes.js"></script>
