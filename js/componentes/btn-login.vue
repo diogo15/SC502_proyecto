@@ -1,6 +1,6 @@
 <template>
 
- <div v-bind:class="[{ active : isActive }, 'btn-login']">
+ <div v-bind:class="[{ active : isActive }, 'btn-login']" v-on:click="$emit('click', $event)">
       <p class="user-icon"><icono></icono></p>
   </div>
 

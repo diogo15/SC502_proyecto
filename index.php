@@ -41,7 +41,7 @@
                 
                 </div>
 
-                <login></login>
+                <btn-login v-on:click="showModal=!showModal"></btn-login>
                 <carrito></carrito> 
                 
             </div>
