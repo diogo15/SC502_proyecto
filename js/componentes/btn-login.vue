@@ -1,15 +1,12 @@
 <template>
 
-  <div class="popup">
-    <slot />
-    <v-button></v-button>
+ <div v-bind:class="[{ active : isActive }, 'btn-login']" v-on:click="$emit('click', $event)">
+      <p class="user-icon"><icono></icono></p>
   </div>
 
 </template>
 
 <script>
-import '../paginas/login.vue';
-
 module.exports = {
   data : function () {
     return {
@@ -17,15 +14,13 @@ module.exports = {
       log : login.state
     }
   },
-  methods : {
-    logged () {
-
-
-      this.loginIcon = 'user-check'
+  computed : {
+    isActive : function () {
+      return  false;
     }
   },
   components : {
-    'icono' : httpVueLoader(site_url + 'js/svg/login-icon.vue')
+    'icono' : httpVueLoader(site_url + 'js/svg/user-unlogged.vue')
   }
 }
 </script>
@@ -43,16 +38,20 @@ module.exports = {
     color: #7D47BB;
     font-weight: bold;
     cursor: pointer;
+    margin: 0 10px 0 auto;
   }
 
   .btn-login .user-icon {
-    width: 15px;
-    margin-right: 5px;
+    width: auto;
     height: auto;
   }
 
   .btn-login.active{
     background: #7D47BB;
     color: white;
+  }
+
+  .btn-login p{
+    margin: 0;
   }
 </style>

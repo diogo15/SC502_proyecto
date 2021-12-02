@@ -83,4 +83,8 @@ module.exports = {
     .login .button  {
         margin-top: 3rem;
     }
+
+    .close{
+        padding: 10px 15px;
+    }
 </style>
