@@ -8,6 +8,7 @@
             <input v-model="password" class="form-input" type="password" required placeholder="Contraseña">
 
             <btn class="green" v-on:click="enviarDatos()">Iniciar sesión</btn>
+            <button class="close">Cancelar</button>
         </form>
     </div>
 </template>
@@ -82,5 +83,9 @@ module.exports = {
 
     .login .button  {
         margin-top: 3rem;
+    }
+
+    .close{
+        padding: 10px 15px;
     }
 </style>

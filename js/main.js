@@ -19,7 +19,7 @@ var app = new Vue({
     },
     components: {
         'carrito': httpVueLoader(site_url + 'js/componentes/btn-carrito.vue'),
-        'login': httpVueLoader(site_url + 'js/paginas/login.vue'),
+        'login': httpVueLoader(site_url + 'js/componentes/btn-login.vue'),
     }
 }).$mount('#app');
 
