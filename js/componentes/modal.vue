@@ -1,5 +1,5 @@
 <template>
-      <div class="modal">
+      <div class="modal" v-on:click.self="$emit('close')">
           <btn class="white close-modal" v-on:click="$emit('close')">Close</btn>
           <slot></slot>
       </div>
