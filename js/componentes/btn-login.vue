@@ -1,8 +1,10 @@
 <template>
 
- <div v-bind:class="[{ active : isActive }, 'btn-login']" v-on:click="$emit('click', $event)">
-      <p class="user-icon"><icono></icono></p>
+<div class="header-login">Hola{{"&nbsp;"}}<span>{{username}}</span>!
+  <div v-bind:class="[{ active : isActive }, 'btn-login']" v-on:click="$emit('click', $event)">
+    <p class="user-icon"> <icono></icono></p>
   </div>
+</div>
 
 </template>
 
@@ -11,12 +13,13 @@ module.exports = {
   data : function () {
     return {
       base_url : site_url,
-      log : login.state
+      loggedin : current_user[0],
+      username : current_user[1]
     }
   },
   computed : {
     isActive : function () {
-      return  false;
+      return  this.loggedin;
     }
   },
   components : {
@@ -26,6 +29,15 @@ module.exports = {
 </script>
 
 <style>
+  .header-login{
+    display: flex;
+    align-items: center;
+    margin: 0 10px 0 auto;
+  }
+  .header-login span{
+    font-weight: bold;
+    text-transform: capitalize;
+  }
   .btn-login {
     display: flex;
     padding: 5px;
@@ -38,7 +50,7 @@ module.exports = {
     color: #7D47BB;
     font-weight: bold;
     cursor: pointer;
-    margin: 0 10px 0 auto;
+    margin-left: 10px;
   }
 
   .btn-login .user-icon {

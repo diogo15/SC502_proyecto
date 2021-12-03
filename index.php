@@ -1,9 +1,17 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <script>
         <?php $config = json_decode(file_get_contents(dirname(__FILE__).'\php\config-local'), true); ?>
         window.site_url = "<?php echo $config["connection"]["xamp_path"]; ?>/";
+        <?php
+        if (isset($_SESSION['login']) && $_SESSION['login']=="1") {
+            echo "const current_user = [true,'".$_SESSION['name']."'];";
+        }else{
+            echo "const current_user = [false,'0'];";
+        }
+        ?>
     </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
