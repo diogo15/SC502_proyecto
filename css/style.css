@@ -20,7 +20,7 @@ body{
 }
 .header{
     background: #fff;
-    padding: 20px 0;
+    padding: 15px 0;
 }
 .wrapper{
     box-sizing: border-box;
@@ -36,14 +36,26 @@ body{
 }
 .header .flex{
     justify-content: space-between;
+    align-items: center;
 }
 .pages{
     display: grid;
 }
 .logo{
+    position: relative;
     margin: 0;
     font-size: 33px;
-
+    width: 185px;
+}
+.nav{
+    margin: 0 auto;
+}
+.nav a{
+    display: inline-block;
+    color: black;
+    margin: 0 15px;
+    min-width: 75px;
+    text-align: center;
 }
 .flex{
     display: flex;
@@ -62,4 +74,22 @@ body{
 }
 .router-link-active{
     font-weight: bold;
+}
+
+.logo:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: auto;
+    top: 8%;
+    bottom: 15%;
+    background: black;
+    animation-name: logo_itz;
+    animation-duration: 1s;
+    transform: skew(-33deg);
+}
+
+@keyframes logo_itz {
+    0%  {left:0;right:0;}
+    100%  {left:31%;right:68%;}
 }
