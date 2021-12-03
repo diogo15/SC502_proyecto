@@ -1,9 +1,17 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <script>
         <?php $config = json_decode(file_get_contents(dirname(__FILE__).'\php\config-local'), true); ?>
         window.site_url = "<?php echo $config["connection"]["xamp_path"]; ?>/";
+        <?php
+        if (isset($_SESSION['login']) && $_SESSION['login']=="1") {
+            echo "const current_user = [true,'".$_SESSION['name']."'];";
+        }else{
+            echo "const current_user = [false,'0'];";
+        }
+        ?>
     </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,19 +35,12 @@
 
         <div class="header">
             <div class="wrapper flex">
-
-                <div class="nav-wrapper">
-
-                    <p class="logo">{{ message }}</p>
-                    
-                    <div class="nav">
-                        <router-link exact to="/">Home</router-link> |
-                        <router-link to="/acercade">Nosotros</router-link> |
-                        <router-link to="/tienda">Tienda</router-link> |
-                        <router-link to="/facturar">facturar</router-link>
-                    </div>
-                
-                </div>
+                <p class="logo"><img src="img/icons/logo-into-the-zone.svg"></p>   
+                <div class="nav">
+                    <router-link exact to="/">Home</router-link> |
+                    <router-link to="/acercade">Nosotros</router-link> |
+                    <router-link to="/tienda">Tienda</router-link>
+                </div>             
 
                 <btn-login v-on:click="showModal = true"></btn-login>
                 <carrito></carrito> 
