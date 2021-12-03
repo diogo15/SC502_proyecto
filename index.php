@@ -27,23 +27,16 @@
 
         <div class="header">
             <div class="wrapper flex">
+                <p class="logo"><img src="img/icons/logo-into-the-zone.svg"></p>   
+                <div class="nav">
+                    <router-link exact to="/">Home</router-link> |
+                    <router-link to="/acercade">Nosotros</router-link> |
+                    <router-link to="/tienda">Tienda</router-link> |
+                    <router-link to="/registro">Registro</router-link>
+                </div>             
 
-                <div class="nav-wrapper">
-                    
-                    <p class="logo">{{ message }}</p>
-                    
-                    <div class="nav">
-                        <router-link exact to="/">Home</router-link> |
-                        <router-link to="/acercade">Nosotros</router-link> |
-                        <router-link to="/tienda">Tienda</router-link> |
-                        <router-link to="/facturar">facturar</router-link>
-                        <router-link to="/login">Login</router-link>
-                        <router-link to="/registro">Registro</router-link>
-                    </div>
-                
-                </div>
-
-                <carrito></carrito>
+                <btn-login v-on:click="showModal = true"></btn-login>
+                <carrito></carrito> 
                 
             </div>
         </div>
@@ -55,10 +48,10 @@
         </div>
 
         <transition>
-            <login v-if="login"></login>
+        <modal v-if="showModal" v-on:close="showModal = false">
+            <login></login>
+        </modal>
         </transition>
-        
-        <input v-model="login" type="checkbox">
 
     </div>
 

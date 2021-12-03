@@ -1,12 +1,16 @@
 <template>
     <div class="wrapper">
-        <h1>Formulario Ingresar</h1>
+        <h1>TIENDA</h1>
 
-        <input v-model="message" placeholder="editar" >
-        
-        <p v-if="mostrar">Message is: {{ message }}</p>
-
-        <p><input type="checkbox" v-model="mostrar"> Mostrar/Ocultar </p>
+        <carousel>
+          
+          <producto
+            v-for="product in productos"
+            v-bind:key="product.idProducto"
+            v-bind:product="product"
+          ></producto>
+          
+        </carousel>
 
     </div>
 </template>
@@ -15,12 +19,18 @@
 module.exports = {
   data: function() {
     return{
-      mostrar: false,
-      message: "text por defecto"
+      productos: null
     }
   },
   mounted () {
-
+    axios
+      .get(site_url + 'api/productos.php')
+      .then(response => (this.productos = response.data.data))
+      .catch(error => console.log(error));
+  },
+  components: {
+    'carousel': httpVueLoader(site_url + 'js/componentes/carousel.vue'),
+    'producto': httpVueLoader(site_url + 'js/componentes/producto.vue')
   }
 }
 </script>

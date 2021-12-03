@@ -84,13 +84,13 @@ module.exports = {
 }
 .table_itz tbody,
 .table_itz tfoot{
-  color: #934a10;
+  color: #81512a;
 }
 .table_itz tbody td{
-  border-bottom: 1px solid #934a10;
+  border-bottom: 1px solid #81512a;
 }
 .table_itz thead { 
-  color: #934a10;
+  color: #81512a;
   background: rgb(255 255 255 / 40%);
 }
 .table_itz tfoot {
