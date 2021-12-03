@@ -29,7 +29,6 @@
             <div class="wrapper flex">
 
                 <div class="nav-wrapper">
-                    
                     <p class="logo">{{ message }}</p>
                     
                     <div class="nav">
@@ -61,6 +60,56 @@
         <input v-model="login" type="checkbox">
 
     </div>
+    <footer>
+        <div class="container-footer-allO">
+
+            <div class="container-body">
+                <div class="column">
+                    <h1>Acerca de Nosostros</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore natus, nemo illo numquam explicabo debitis in possimus. Voluptas iusto, quasi recusandae blanditiis dolorum aliquid praesentium unde! Sint, nobis dignissimos libero doloremque repudiandae molestiae vero delectus ea at error ratione in.</p>
+                </div>
+                <div class="column2">
+                    <h1>Redes Sociales</h1>
+                    <div class="row">
+                        <img src="img/icons/facebook.png">
+                        <label>Siguenos en Facebook</>
+            </div>     
+                    </div>
+                    <div class="column3">
+                        <h1>Informacion Contactos</h1>
+                        <div class="row2">
+                            <img src="img/icons/sitio-web.png">
+                            <label>https://www.IntoTheZone.com</label>
+                        </div>
+                        <div class="row2">
+                            <img src="img/icons/llamada.png">
+                            <label>+506-2245-6432</label>
+                        </div>
+                        <div class="row2">
+                            <img src="img/icons/gmail.png">
+                            <label>IntoTheZone@gmaill.com</label>
+                        </div>
+                </div>
+                
+            
+        </div>
+        <div class="container-footer">
+                    <div class="footer">
+                    <div class="copyright">
+                        @ 2020 Todos los derechos Reservados | <a
+                        href=""> Into The Zone</a>
+                    </div>
+                    <div class="informacion">
+                        <a href="">Informacion de la Compania |</a>
+                        <a href="">Privacion y Politica |</a>
+                        <a href="">Terminos y Condiciones</a>
+                    </div>
+                    </div>
+                </div>
+        
+        </div>
+        
+    </footer>
 
     <script src="js/routes.js"></script>
     <script src="js/carrito.js"></script>
