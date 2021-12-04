@@ -1,18 +1,20 @@
 <template>
-    <div class="wrapper">
-        <h1>TIENDA</h1>
+  <div>
+    <titulo>Tienda</titulo>
+    <div class="wrapper">   
 
-        <carousel>
-          
-          <producto
-            v-for="product in productos"
-            v-bind:key="product.idProducto"
-            v-bind:product="product"
-          ></producto>
-          
-        </carousel>
+      <carousel>
+        
+        <producto
+          v-for="product in productos"
+          v-bind:key="product.idProducto"
+          v-bind:product="product"
+        ></producto>
+        
+      </carousel>
 
     </div>
+  </div>
 </template>
 
 <script>
@@ -30,7 +32,8 @@ module.exports = {
   },
   components: {
     'carousel': httpVueLoader(site_url + 'js/componentes/carousel.vue'),
-    'producto': httpVueLoader(site_url + 'js/componentes/producto.vue')
+    'producto': httpVueLoader(site_url + 'js/componentes/producto.vue'),
+    'titulo': httpVueLoader(site_url + 'js/componentes/titulo.vue')
   }
 }
 </script>
