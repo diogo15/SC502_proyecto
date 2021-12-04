@@ -1,6 +1,6 @@
 <template>
   <div>
-    <titulo>TIENDA</titulo>
+    <titulo>Tienda</titulo>
     <div class="wrapper">   
 
       <carousel>
