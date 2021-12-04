@@ -1,7 +1,9 @@
 <?php
 
-header("Content-Type:application/json");
-require "data-products.php";
+require_once "data-products.php";
+require_once "response.php";
+
+use IntoTheZone\JsonResponse;
 
 if(!empty($_GET['pid']) && is_numeric($_GET['pid']))
 {
@@ -11,31 +13,15 @@ if(!empty($_GET['pid']) && is_numeric($_GET['pid']))
 	
 	if(empty($product))
 	{
-		response(200,"product Not Found",NULL);
+		new JsonResponse('ok', 'Product Not Found', NULL);
 	}
 	else
 	{
-		response(200,"product Found",$product);
+		new JsonResponse('ok', 'Product Found', $product);
 	}
 	
 }
 else
 {
-	response(400,"Invalid Request",NULL);
+	new JsonResponse('badrequest', 'Invalid Request', NULL);
 }
-
-
-function response($status,$status_message,$data)
-{
-	header("HTTP/1.1 ".$status);
-	
-	$response['status']=$status;
-	$response['status_message']=$status_message;
-	$response['data']=$data;
-	
-	$json_response = json_encode($response);
-	echo $json_response;
-}
-
-
-
