@@ -1,6 +1,6 @@
 <template>
 
-<div class="header-login">Hola{{"&nbsp;"}}<span>{{username}}</span>!
+<div class="header-login"><span v-if="username>0">Hola{{"&nbsp;"}}<span>{{username}}</span>!</span>
   <div v-bind:class="[{ active : isActive }, 'btn-login']" v-on:click="$emit('click', $event)">
     <p class="user-icon"> <icono></icono></p>
   </div>

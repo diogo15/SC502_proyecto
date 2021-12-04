@@ -1,10 +1,12 @@
 <template>
-    <div class="wrapper">
-        <h1>Acerca De Nostros</h1>
+  <div>
+    <titulo>Acerca de Nosotros</titulo>
+    <div class="wrapper">        
         <p v-for="cat in categories" v-bind:key="cat.idCategoria" >
           {{ cat.nombreCategoria }}
         </p>
     </div>
+  </div>
 </template>
 
 <script>
@@ -25,6 +27,9 @@ module.exports = {
       .get(site_url + 'api/categorias.php')
       .then(response => (this.categories = response.data.data))
       .catch(error => console.log(error));
+  },
+  components: {
+    'titulo': httpVueLoader(site_url + 'js/componentes/titulo.vue')
   }
 }
 </script>
