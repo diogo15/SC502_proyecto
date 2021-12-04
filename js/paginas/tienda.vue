@@ -13,6 +13,10 @@
         
       </carousel>
 
+      <p v-for="cat in categories" v-bind:key="cat.idCategoria" >
+        {{ cat.nombreCategoria }}
+      </p>
+
     </div>
   </div>
 </template>
@@ -21,13 +25,19 @@
 module.exports = {
   data: function() {
     return{
-      productos: null
+      productos: null,
+      categories: null
     }
   },
   mounted () {
     axios
       .get(site_url + 'api/productos.php')
       .then(response => (this.productos = response.data.data))
+      .catch(error => console.log(error));
+
+    axios
+      .get(site_url + 'api/categorias.php')
+      .then(response => (this.categories = response.data.data))
       .catch(error => console.log(error));
   },
   components: {
