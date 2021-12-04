@@ -36,6 +36,7 @@ module.exports = {
     padding: 20px 50px 20px 0;
     color: #FFF;
     overflow: hidden;
+    font-weight: lighter;
 }
 .bigTitle h1:after,
 .bigTitle h1:before {

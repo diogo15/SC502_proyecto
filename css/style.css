@@ -15,8 +15,9 @@ body{
     background: #C2814D;
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #333;
+    font-family: 'Open Sans',Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: #333;    
 }
 .header{
     background: #fff;
@@ -83,7 +84,7 @@ body{
     right: auto;
     top: 8%;
     bottom: 15%;
-    background: black;
+    background: #7D47BB;
     animation-name: logo_itz;
     animation-duration: 1s;
     transform: skew(-33deg);
@@ -92,4 +93,31 @@ body{
 @keyframes logo_itz {
     0%  {left:0;right:0;}
     100%  {left:31%;right:68%;}
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: local(''),
+         url('../fonts/open-sans-v27-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/open-sans-v27-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* open-sans-700 - latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: bold;
+    src: local(''),
+        url('../fonts/open-sans-v27-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('../fonts/open-sans-v27-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* open-sans-300 - latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: lighter;
+    src: local(''),
+        url('../fonts/open-sans-v27-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('../fonts/open-sans-v27-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
