@@ -18,7 +18,7 @@
     <!-- End SECOND Section -->
     <div class="itz_section gray">
       <div class="wrapper">
-        <div class="itz_hero_full">
+        <div class="itz_hero_full alien_width">
           <alien class="alien"></alien>
         </div>
       </div>
@@ -95,6 +95,9 @@ module.exports = {
 .itz_hero_full{
   padding: 40px 0;
 }
+.alien_width{
+  padding-right: 200px;
+}
 .itz_section .bigger{
   font-weight: lighter;
   font-size: 44px;
@@ -103,12 +106,20 @@ module.exports = {
 .itz_section .alien{
   fill: white;
   width: 200px;
-  animation:alien 10s linear infinite alternate;
+  animation:alien 10s linear infinite;
 }
 .itz_section .robot{
-  height: 500px;
-  animation:robot 4s ease-in-out infinite alternate;
+  width: auto;
+  height: 450px;
+  animation:robot 4s ease-in-out infinite;
   fill: #333;
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+}
+.robot #r-eye{
+  transform-origin: 50% 59%;
+  animation:eyes 3s linear infinite;
+  transform-origin: 50% 50%;
 }
 .itz_section .robot_container{
   height: 200px;
@@ -119,28 +130,43 @@ module.exports = {
 {
   0% {
     margin-left: 0;
-    transform: rotate(0);
+    transform: rotate(0) scale(0.7);
     fill: #FFFFFF;
+    opacity: 0;
   }
   50%{
-    margin-left: 40%;
-    transform: rotate(-20deg);
+    margin-left: 50%;
+    transform: rotate(-20deg) scale(1.3);
     fill: #7D47BB;
+    opacity: 1;
   }
   100% {
-    margin-left: 80%;
-    transform: rotate(0);
+    margin-left: 100%;
+    transform: rotate(0) scale(0.9);
     fill: #FFFFFF;
+    opacity: 0;
   }
 }
 
 @keyframes robot
 {
-0% {
+  0% {
     transform: rotate(-10deg);
   }
   100% {
     transform: rotate(-20deg);
+  }
+}
+@keyframes eyes
+{
+  0% {
+    opacity: 1;
+  }
+  5% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
   }
 }
 </style>
