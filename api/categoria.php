@@ -1,6 +1,9 @@
 <?php
-header("Content-Type:application/json");
-require "data-categories.php";
+require_once "data-categories.php";
+require_once "response.php";
+
+use IntoTheZone\JsonResponse;
+
 
 if(!empty($_GET['name']))
 {
@@ -9,29 +12,17 @@ if(!empty($_GET['name']))
 	
 	if(empty($cat))
 	{
-		response(200,"Categories Not Found",NULL);
+		new JsonResponse('ok', 'Categories Not Found', NULL);
 	}
 	else
 	{
-		response(200,"Category Found",$cat);
+		new JsonResponse('ok', 'Category Found', $cat);
 	}
 	
 }
 else
 {
-	response(400,"Invalid Request",NULL);
-}
-
-function response($status,$status_message,$data)
-{
-	header("HTTP/1.1 ".$status);
-	
-	$response['status']=$status;
-	$response['status_message']=$status_message;
-	$response['data']=$data;
-	
-	$json_response = json_encode($response);
-	echo $json_response;
+	new JsonResponse('badrequest', 'Invalid Request', NULL);
 }
 
 

@@ -1,18 +1,20 @@
 <template>
+<div>
+    <titulo>{{product.nombreProducto}}</titulo>
     <div class="wrapper">
       <div class="flex product-single">
         <div class="productLeft">
           <img :src="base_url+product.url_imagen" alt="">
         </div>
-        <div class="productRight">
-          <h1>{{product.nombreProducto}} </h1>
-          <p>{{product.descripProducto}} </p>
+        <div class="productRight">          
+          <p>Descripcion: {{product.descripProducto}} </p>
           <p>Precio: {{product.precioVenta}} </p>
           <p>Marca: {{product.nombreMarca}} </p>
           <p>Categoria: <router-link :to="'/category/'+product.idCategoria">{{product.nombreCategoria}}</router-link></p>
         </div>
       </div>
     </div>
+</div>
 </template>
 
 <script>
@@ -31,6 +33,9 @@ module.exports = {
       .then(response => (this.product = response.data.data[0]))
       .catch(error => console.log(error));
     
+  },
+  components: {
+    'titulo': httpVueLoader(site_url + 'js/componentes/titulo.vue')
   }
 }
 </script>

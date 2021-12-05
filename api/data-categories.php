@@ -1,9 +1,8 @@
 <?php
+require_once '../php/connectionDB.php';
 
 function get_categories()
 {
-	require_once '../php/connectionDB.php';
-
     $conexion = new ConnectionDB();
     $statement = "Select * From Categorias";
 
@@ -15,8 +14,6 @@ function get_categories()
 
 function get_category($name)
 {
-	require_once '../php/connectionDB.php';
-
     $conexion = new ConnectionDB();
     $statement = "Select * From Categorias where nombreCategoria = '".pg_escape_string($name)."'";
 
@@ -28,7 +25,6 @@ function get_category($name)
 	foreach($cats as $cat) {
 		if($product==$name) { return $price; break; }
 	}
-	*/
-	
+	*/	
 }
 

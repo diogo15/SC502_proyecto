@@ -7,7 +7,7 @@
             
             if (empty($email) || empty($password)) {
                 // Cuando no se inserte un usuario o password en el form
-                echo 'Datos faltantes';
+                return 0;
     
             } else {
                 // Cuando sí se insertó al menos un campo
@@ -21,13 +21,17 @@
         
         // Función para cuando un usuario se logea
         private function getDataUser ($usuario, $password) {
-            $query = "SELECT  idUsuario, passwordUsuario FROM usuarios WHERE mailUsuario = '".$usuario."' AND passwordUsuario = '".$password."' ";
+            $query = "SELECT  idUsuario, passwordUsuario, nombreUser FROM usuarios WHERE mailUsuario = '".$usuario."' AND passwordUsuario = '".$password."' ";
             $datos = parent::getAllData($query);
                 // Verificación de que exista la el parámetro en la base de datos
             if (!isset($datos[0]['idUsuario'])) {
                 return 0;
             } else {
-                return 1;
+                session_start();
+                $_SESSION['login']=1;
+                $_SESSION['user']=$datos[0]['idUsuario'];
+                $_SESSION['name']=$datos[0]['nombreUser'];
+                return 1;            
             }
         }
 

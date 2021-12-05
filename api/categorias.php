@@ -1,31 +1,21 @@
 <?php
 
-header("Content-Type:application/json");
-require "data-categories.php";
+require_once "data-categories.php";
+require_once "response.php";
+
+use IntoTheZone\JsonResponse;
 
 $cats = get_categories();
 
 if(empty($cats))
 {
-	response(200,"Categories Not Found",NULL);
+	new JsonResponse('ok', 'Categories Not Found', NULL);
 }
 else
 {
-	response(200,"Categories Found",$cats);
+	new JsonResponse('ok', 'Categories Found', $cats);
 }
 
-
-function response($status,$status_message,$data)
-{
-	header("HTTP/1.1 ".$status);
-	
-	$response['status']=$status;
-	$response['status_message']=$status_message;
-	$response['data']=$data;
-	
-	$json_response = json_encode($response);
-	echo $json_response;
-}
 
 
 

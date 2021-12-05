@@ -1,6 +1,7 @@
 <template>
+<div>
+    <titulo>Carrito de Compras</titulo>
     <div class="wrapper">
-           <h1>Carrito de compras</h1>
     <table class="table_itz">
     <thead>
         <tr>
@@ -40,6 +41,7 @@
     </table>
 
     </div>
+</div>
 </template>
 
 <script>
@@ -63,7 +65,8 @@ module.exports = {
     }    
   },
   components: {
-    'btn': httpVueLoader(site_url + 'js/componentes/btn.vue')
+    'btn': httpVueLoader(site_url + 'js/componentes/btn.vue'),
+    'titulo': httpVueLoader(site_url + 'js/componentes/titulo.vue')
   }
 }
 
