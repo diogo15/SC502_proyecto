@@ -111,7 +111,7 @@ module.exports = {
 .itz_section .robot{
   width: auto;
   height: 450px;
-  animation:robot 4s ease-in-out infinite;
+  animation:robot 4s ease-in-out infinite alternate;
   fill: #333;
   transform-box: fill-box;
   transform-origin: 50% 50%;
