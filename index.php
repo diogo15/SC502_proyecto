@@ -53,8 +53,10 @@
         </modal>
         </transition>
 
+        <myfooter></myfooter>
+
+        
     </div>
-    <footer></footer>
 
     <script src="js/routes.js"></script>
     <script src="js/carrito.js"></script>
