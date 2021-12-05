@@ -1,82 +1,19 @@
-/*
 
-STYLEGUIDE - COLORS
+<script>
+    module.exports ={
+        props: {
 
-NEGRO ::::::::: #333333
-NARANJA ::::::: #C2814D 
-NARANJA_DARK :: #81512a 
-VERDE ::::::::: #45B173 
-VERDE_DARK :::: #3d9b65
-MORADO :::::::: #7D47BB
-MORADO_LIGHT :: #9959e3
+            },
+            methods: {
 
-*/
-body{
-    background: #C2814D;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #333;
-}
-.header{
-    background: #fff;
-    padding: 15px 0;
-}
-.wrapper{
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 1240px;
-    padding: 0 30px;
-    margin: 0 auto;
-}
-@media (max-width: 980px) {
-    .wrapper{
-        padding: 0 15px;
-    }
-}
-.header .flex{
-    justify-content: space-between;
-    align-items: center;
-}
-.pages{
-    display: grid;
-}
-.logo{
-    position: relative;
-    margin: 0;
-    font-size: 33px;
-    width: 185px;
-}
-.nav{
-    margin: 0 auto;
-}
-.nav a{
-    display: inline-block;
-    color: black;
-    margin: 0 15px;
-    min-width: 75px;
-    text-align: center;
-}
-.flex{
-    display: flex;
-}
-.pages > div{
-    grid-row: 1;
-    grid-column: 1;
-    min-width: 0;
-}
-
-.v-enter-active, .v-leave-active {
-    transition: opacity .5s;
-}
-.v-enter, .v-leave-to {
-    opacity: 0;
-}
-.router-link-active{
-    font-weight: bold;
-}
-* footer{
-    margin-top: 10px;
+            },
+            components: {
+                'footer': httpVueLoader(site_url + 'js/componentes/footer.vue')
+            }
+        }
+</script>
+<style>
+    * footer{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -95,7 +32,7 @@ footer{
 }
 .container-body{
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-around; 
 }
 .column{
     max-width: 400px;
@@ -153,10 +90,9 @@ footer{
 .container-footer{
     max-width: 100%;
     background-color: #3f1f06;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 .footer{
-    
     max-width: 1200px;
     margin: auto;
     display: flex;
@@ -184,21 +120,4 @@ footer{
         flex-wrap: wrap;
     }
 }
-       
-.logo:after{
-    content: "";
-    position: absolute;
-    left: 0;
-    right: auto;
-    top: 8%;
-    bottom: 15%;
-    background: black;
-    animation-name: logo_itz;
-    animation-duration: 1s;
-    transform: skew(-33deg);
-}
-
-@keyframes logo_itz {
-    0%  {left:0;right:0;}
-    100%  {left:31%;right:68%;}
-}
+</style>

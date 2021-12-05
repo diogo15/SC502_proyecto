@@ -22,7 +22,8 @@ var app = new Vue({
         'carrito': httpVueLoader(site_url + 'js/componentes/btn-carrito.vue'),
         'btn-login': httpVueLoader(site_url + 'js/componentes/btn-login.vue'),
         'modal': httpVueLoader(site_url + 'js/componentes/modal.vue'),
-        'login': httpVueLoader(site_url + 'js/paginas/login.vue')
+        'login': httpVueLoader(site_url + 'js/paginas/login.vue'),
+        'footer': httpVueLoader(site_url + 'js/paginas/footer.vue')
     }
 }).$mount('#app');
 
