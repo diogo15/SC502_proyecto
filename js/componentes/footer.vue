@@ -73,9 +73,8 @@ footer{
 }
 .container-footer-all{
     width: 100%;
-    max-width: 1200px;
     margin: auto;
-    padding: 40px;
+    padding: 40px 0;
 }
 .container-body{
     display: flex;
