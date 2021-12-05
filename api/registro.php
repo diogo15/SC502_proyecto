@@ -5,35 +5,35 @@ require_once "response.php";
 use IntoTheZone\JsonResponse;
 
 if(empty($_POST['nombre'])){
-	new JsonResponse('badrequest', 'Falta parametro', NULL);
+	new JsonResponse('badrequest', 'Falta nombre');
 	die();
 }
 if(empty($_POST['apellidos'])){
-	new JsonResponse('badrequest', 'Falta parametro', NULL);
+	new JsonResponse('badrequest', 'Falta apellidos');
 	die();
 }
 if(empty($_POST['fechaNacimiento'])){
-	new JsonResponse('badrequest', 'Falta parametro', NULL);
+	new JsonResponse('badrequest', 'Falta fechaNacimiento');
 	die();
 }
 if(empty($_POST['correo'])){
-	new JsonResponse('badrequest', 'Falta parametro', NULL);
+	new JsonResponse('badrequest', 'Falta correo');
 	die();
 }
 if(empty($_POST['passwordConfirm'])){
-	new JsonResponse('badrequest', 'Falta parametro', NULL);
+	new JsonResponse('badrequest', 'Falta passwordConfirm');
 	die();
 }
 if(empty($_POST['telefono'])){
-	new JsonResponse('badrequest', 'Falta parametro', NULL);
+	new JsonResponse('badrequest', 'Falta telefono');
 	die();
 }
 
-$usuario = registrar_usuario($_POST["nombre"],$_POST["password"],$_POST["correo"],$_POST["fechaNacimineto"],$_POST["passwordConfirm"],$_POST["telefono"]);
+$usuario = registrar_usuario($_POST["nombre"],$_POST["password"],$_POST["correo"],$_POST["fechaNacimiento"],$_POST["passwordConfirm"],$_POST["telefono"]);
 
 if(empty($usuario))
 {
-	new JsonResponse('ok', 'user not added', NULL);
+	new JsonResponse('ok', 'user not added');
 }
 else
 {

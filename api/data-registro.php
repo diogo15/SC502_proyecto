@@ -9,10 +9,10 @@ function registrar_usuario($nombre,$password,$correo,$fechaNacimineto,$passwordC
     $apellido1 = "";
     $apellido2 = "";
     $direccion = "San Jose, Costa Rica";
-    $statement =$conexion->prepare ("INSERT INTO `usuarios` (`nombreUser`, `apellido1Usuario`, `apellido2Ususario`, `passwordUsuario`, `mailUsuario`, `direccion`, `idRol`, `idPais`, `idProvincia`) VALUES ('?', '?', '?', '?', '?', '?', '?', '?', '?');");
-    $statement ->bind_param("ssssssiii", $nombre, $apellido1, $apellido2, $password, $correo, $direccion, $rol, $pais, $provincia);
-    $product = $conexion->getAllData($statement);
+    $query = "INSERT INTO usuarios (nombreUser, apellido1Usuario, apellido2Usuario, passwordUsuario, mailUsuario) VALUES (?,?,?,?,?);";
+    
+	$conexion->queryPrepared($query,[$nombre, $apellido1, $apellido2, $password, $correo]);
 
-	return $product;
+    return false;
 	
 }

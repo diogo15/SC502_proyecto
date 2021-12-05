@@ -9,7 +9,7 @@ $cats = get_categories();
 
 if(empty($cats))
 {
-	new JsonResponse('ok', 'Categories Not Found', NULL);
+	new JsonResponse('ok', 'Categories Not Found' );
 }
 else
 {

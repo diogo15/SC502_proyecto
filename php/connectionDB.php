@@ -33,6 +33,7 @@
 
         }
 
+
             // Esta función obtendrá el JSON de config para realizar la conexión al DB de XAMPP
         private function connection() {
             $pathFile = dirname(__FILE__);  //Obtiene la ruta dentro del proyecto
@@ -62,6 +63,37 @@
                 $resultArray[] = $key;
             }
             return $this -> formatUTF8($resultArray);
+        }
+
+        public function queryPrepared($query, $args)
+        {
+            $stmt = $this-> connection ->prepare($query);
+
+            if ($stmt === false) {
+                return [ 'ok' => 'false' ];
+            }
+
+            $types = array_reduce($args, function($reduced, $type) {
+                
+                if (is_float($type))
+                    $reduced .= 'd';
+                elseif (is_integer($type))
+                    $reduced .= 'i';
+                elseif (is_string($type))    
+                    $reduced .= 's';
+                else
+                    $reduced .= 'b';
+                
+                return $reduced;
+            });
+
+            $stmt->bind_param($types, ...$args);
+
+            $result = $stmt->execute() ? $stmt->get_result() : false;
+
+            $stmt->close();
+
+            return $result;
         }
 
         //  INSERT ON TABLE (Afecta todas las filas de la tabla)

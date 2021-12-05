@@ -9,7 +9,7 @@ $products = get_all_products();
 
 if(empty($products))
 {
-	new JsonResponse('ok', 'Products Not Found', NULL);
+	new JsonResponse('ok', 'Products Not Found');
 }
 else
 {

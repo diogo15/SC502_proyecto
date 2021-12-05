@@ -1,14 +1,16 @@
 <template>
     <div class="wrapper">
         <h1>Registrar</h1>
-        <form class="registro">
-        <input type="text" placeHolder="correo" v-model="correo">
-        <input type="text" placeHolder="nombre" v-model="nombre">
-        <input type="text" placeHolder="fechaNacimiento" v-model="fechaNacimiento">
-        <input type="text" placeHolder="telefono" v-model="telefono">
-        <input type="text" placeHolder="password" v-model="password">
-        <input type="text" placeHolder="passwordConfirm" v-model="passwordConfirm">
-        <button v-on:click="registrar()">Registrar</button>    
+        <form class="registro" v-on:submit.prevent="">
+            <input type="text" placeHolder="correo" v-model="correo">
+            <input type="text" placeHolder="nombre" v-model="nombre">
+            <input type="text" placeHolder="Apellidos" v-model="apellidos">
+            <input type="text" placeHolder="fechaNacimiento" v-model="fechaNacimiento">
+            <input type="text" placeHolder="telefono" v-model="telefono">
+            <input type="text" placeHolder="password" v-model="password">
+            <input type="text" placeHolder="passwordConfirm" v-model="passwordConfirm">
+            <button v-on:click="enviarDatos()">Registrar</button>  
+            <p v-if="errorRegistro">{{errorRegistro}}</p>  
         </form>
     </div>
 </template>
@@ -20,9 +22,11 @@ module.exports = {
       correo: "",
       password: "",
       nombre: "",
+      apellidos: "",
       fechaNacimiento: "",
       passwordConfirm: "",
-      telefono: ""
+      telefono: "",
+      errorRegistro: ""
     }
   },
   methods : {
@@ -33,15 +37,17 @@ module.exports = {
                 formData.append("correo", this.correo);
                 formData.append("password", this.password);
                 formData.append("nombre", this.nombre);
+                formData.append("apellidos", this.apellidos);
                 formData.append("fechaNacimiento", this.fechaNacimiento);
                 formData.append("passwordConfirm", this.passwordConfirm);
                 formData.append("telefono", this.telefono);     
 
                 axios.post(site_url + 'api/registro.php', formData, {
                     headers: { 'Content-Type': 'multipart/form-data' }
-                }).then(data =>
-                    console.log(data)
-                ).catch(err => {
+                }).then(data => {
+                    console.log(data);
+                }).catch(err => {
+                    this.errorRegistro = err.response.data.message;
                     console.log(err)
                 })  
             }

@@ -12,7 +12,7 @@ if(!empty($_GET['name']))
 	
 	if(empty($cat))
 	{
-		new JsonResponse('ok', 'Categories Not Found', NULL);
+		new JsonResponse('ok', 'Categories Not Found' );
 	}
 	else
 	{
@@ -22,7 +22,7 @@ if(!empty($_GET['name']))
 }
 else
 {
-	new JsonResponse('badrequest', 'Invalid Request', NULL);
+	new JsonResponse('badrequest', 'Invalid Request' );
 }
 
 

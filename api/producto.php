@@ -13,7 +13,7 @@ if(!empty($_GET['pid']) && is_numeric($_GET['pid']))
 	
 	if(empty($product))
 	{
-		new JsonResponse('ok', 'Product Not Found', NULL);
+		new JsonResponse('ok', 'Product Not Found' );
 	}
 	else
 	{
@@ -23,5 +23,5 @@ if(!empty($_GET['pid']) && is_numeric($_GET['pid']))
 }
 else
 {
-	new JsonResponse('badrequest', 'Invalid Request', NULL);
+	new JsonResponse('badrequest', 'Invalid Request' );
 }
