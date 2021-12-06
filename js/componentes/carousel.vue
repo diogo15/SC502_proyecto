@@ -1,11 +1,11 @@
 <template>
 
 <div class="carousel-container" v-bind:class="type">
-  <button class="arrow left" v-on:click="prev">PREV</button>
+  <button class="arrow left" v-on:click="prev()">PREV</button>
   <div class="carousel" ref="carousel">
       <slot></slot>
   </div>
-  <button class="arrow right" v-on:click="next">NEXT</button>
+  <button class="arrow right" v-on:click="next()">NEXT</button>
 </div>
 
 </template>
@@ -17,7 +17,7 @@ module.exports = {
   },
   methods: {
     next() {
-      this.$refs.carousel.scrollBy(1, 0);
+      this.$refs.carousel.scrollBy(200, 0);
     },
     prev() {
       this.$refs.carousel.scrollBy(-1, 0);
