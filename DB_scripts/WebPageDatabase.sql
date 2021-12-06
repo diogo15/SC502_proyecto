@@ -40,6 +40,7 @@ insert into categorias(nombreCategoria) values
 	(	'VIDEOJUEGOS'	), 
     (	'CONSOLAS'	),
     (	'FIGURAS'	),
+    (	'CAMISAS'	),
     (	'ACCESORIOS'	);
 
 drop table if exists marcas;
@@ -51,13 +52,13 @@ create table marcas(
 );
     
 INSERT INTO `marcas` (`nombreMarca`) 
-	VALUES 	('funko'),
-			('reddragon'),
-            ('amazon');
+	VALUES 	('Funko'),
+			('RedDragon'),
+            ('BeDifferentCR');
             
 insert into marcas(nombreMarca) values 
-	(	'NINTENDO'	), 
-    (	'XBOX'	);
+	(	'Nintendo'	), 
+    (	'Xbox'	);
 
 create table paises(
 	idPais int primary key auto_increment not null,
@@ -119,7 +120,8 @@ create table usuarios(
 );
 
 INSERT INTO usuarios (nombreUser, apellido1Usuario, apellido2Usuario, passwordUsuario, mailUsuario)
-	values 	('Fabián', 'Madriz', 'Villalta', md5(12345), 'fabimv23@gmail.com');
+	values 	('Fabián', 'Madriz', 'Villalta', md5(12345), 'fabimv23@gmail.com'),
+            ('Luis', 'R', 'E', md5(123), 'asd@asd.com');
 
 create table empleados(
 	idEmpleado int primary key auto_increment not null,
@@ -193,7 +195,13 @@ INSERT INTO `productos` (`codBarras`, `nombreProducto`, `descripProducto`, `url_
 	VALUES 	('1232', 'Funko Loki', 'Funko Loki', 'img/productos/loki.jpg', '8000', '1', '3', '1'),
 			('1233', 'Funko Vader', 'Funko Vader', 'img/productos/vader.jpg', '8000', '1', '3', '1'),
             ('1234', 'Funko Navas', 'Funko Navas', 'img/productos/navas.jpg', '8000', '1', '3', '2'),
-            ('1235', 'Funko Navas', 'Funko Deathpool', 'img/productos/navas.jpg', '8000', '1', '3', '2');
+            ('1235', 'Funko Navas', 'Funko Navas', 'img/productos/navas.jpg', '8000', '1', '3', '2'),
+            ('1236', 'Camisa Squirtle', 'Camisa negra con impresion', 'img/productos/squartle.jpg', '15000', '1', '4', '3'),
+            ('1237', 'Camisa Demon Slayer', 'Camisa negra con impresion', 'img/productos/demon-slayer.jpg', '15000', '1', '4', '3'),
+            ('1238', 'Camisa Demon Slayer2', 'Camisa negra con impresion', 'img/productos/demon-slayer2.jpg', '15000', '1', '4', '3'),
+            ('1239', 'Camisa Jujutsu Kaisen', 'Camisa negra con impresion', 'img/productos/jujutsu-kaisen.jpg', '15000', '1', '4', '3'),
+            ('1240', 'Camisa Evangeleon', 'Camisa negra con impresion', 'img/productos/evangeleon.jpg', '15000', '1', '4', '3'),
+            ('1241', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '4', '3');
 
 drop table if exists repartidores;
 create table repartidores(
