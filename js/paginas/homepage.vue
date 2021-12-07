@@ -1,7 +1,14 @@
 <template>
 <div>
+  <carousel cantidad="1">
+      <img class="PS5" src="img/productos/PS5Imagen.png">
+      <img src="img/productos/PS5.png">
+      <img src="img/productos/PS5.png">
+      <img src="img/productos/PS5.png">
+      <div>hola hola</div>
+    </carousel>  
   <titulo>Productos Nuevos</titulo>
-  <div class="wrapper">    
+  <div class="wrapper">  
     <carousel>
       <producto
         v-for="product in productos"

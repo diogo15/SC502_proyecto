@@ -1,6 +1,6 @@
 <template>
 
-<div class="carousel-container" v-bind:class="type">
+<div class="carousel-container" v-bind:class="type + ' c'+cantidad">
   <button class="arrow left" v-on:click="prev()">PREV</button>
   <div class="carousel" ref="carousel">
       <slot></slot>
@@ -13,8 +13,20 @@
 <script>
 module.exports = {
   props: {
-    type: String,
+    cantidad: {
+      type: String,
+      default: function () {
+        return "3"
+      }
+    },
+    type: {
+      type: String,
+      default: function () {
+        return ""
+      }
+    },
   },
+  
   methods: {
     next() {
       this.$refs.carousel.scrollBy(200, 0);
@@ -45,6 +57,9 @@ module.exports = {
   flex-shrink: 0;
   scroll-snap-align: start;
 }
+.c1 .carousel> * {
+  width: 100%;
+}
 
 /** 
 .carousel::-webkit-scrollbar {
@@ -74,6 +89,9 @@ module.exports = {
 .carousel::-webkit-scrollbar-thumb {
 	background: #c99a75;
 	border-radius: 10px;
+}
+.PS5{
+  width: 1035px;
 }
 
 </style>

@@ -7,7 +7,7 @@ const facturar = httpVueLoader(site_url + 'js/paginas/facturar.vue');
 const login     = httpVueLoader(site_url + 'js/paginas/login.vue');
 const product     = httpVueLoader(site_url + 'js/paginas/product.vue');
 const registro     = httpVueLoader(site_url + 'js/paginas/registro.vue');
-const footer     = httpVueLoader(site_url + 'js/paginas/footer.vue');
+
 
 const ruticas = [
     { path: '/', component: home },
@@ -16,8 +16,8 @@ const ruticas = [
     { path: '/tienda', component: tienda },
     { path: '/facturar', component: facturar },
     { path: '/login',       component: login },
-    { path: '/registro',       component: registro },
-    { path: '/footer',       component: footer },
+    { path: '/registro',       component: registro }
+    
 ]
 
 const router = new VueRouter({
