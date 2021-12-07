@@ -18,10 +18,13 @@
             <td> {{ product.nombreProducto }}</td>
             <td> {{ product.precioVenta }}</td>
             <td> {{product.quantity}}</td> 
-            <td> <btn class="white" v-on:click="sumarCarrito(product)">+</btn> <btn>-</btn></td>
+            <td> 
+              <btn class="white" v-on:click="sumarCarrito(product)">+</btn> 
+              <btn v-on:click="restarCarrito(product.idProducto)">-</btn>
+            </td>
             <td> {{ (product.precioVenta*product.quantity) }}</td>
             <td>
-                <btn>Eliminar</btn>
+                <btn v-on:click="eliminarCarrito(product.idProducto)">Eliminar</btn>
             </td>
         </tr>
     </tbody>
@@ -58,11 +61,15 @@ module.exports = {
   mounted () {
   },
   methods: {
-    eliminarProducto(){      
-    },
     sumarCarrito(product){
       carrito.addItem(product);
-    }    
+    },
+    restarCarrito(id){
+      carrito.removeItem(id);
+    },
+    eliminarCarrito(id){
+      carrito.deleteItem(id);
+    }
   },
   components: {
     'btn': httpVueLoader(site_url + 'js/componentes/btn.vue'),

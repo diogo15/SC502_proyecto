@@ -33,13 +33,6 @@
       </div>
     </div>
     <!-- End SECOND Section -->
-    <div class="itz_section">
-      <div class="wrapper">
-        <div class="itz_hero_full bigger robot_container">
-          <robot class="robot"></robot>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -61,8 +54,7 @@ module.exports = {
   },
   components: {
     'titulo': httpVueLoader(site_url + 'js/componentes/titulo.vue'),
-    'alien' : httpVueLoader(site_url + 'js/svg/alien.vue'),
-    'robot' : httpVueLoader(site_url + 'js/svg/robot.vue')
+    'alien' : httpVueLoader(site_url + 'js/svg/alien.vue')
   }
 }
 </script>
@@ -108,23 +100,7 @@ module.exports = {
   width: 200px;
   animation:alien 10s linear infinite;
 }
-.itz_section .robot{
-  width: auto;
-  height: 450px;
-  animation:robot 4s ease-in-out infinite alternate;
-  fill: #333;
-  transform-box: fill-box;
-  transform-origin: 50% 50%;
-}
-.robot #r-eye{
-  transform-origin: 50% 59%;
-  animation:eyes 3s linear infinite;
-  transform-origin: 50% 50%;
-}
-.itz_section .robot_container{
-  height: 200px;
-  overflow: hidden;
-}
+
 
 @keyframes alien
 {
@@ -148,25 +124,4 @@ module.exports = {
   }
 }
 
-@keyframes robot
-{
-  0% {
-    transform: rotate(-10deg);
-  }
-  100% {
-    transform: rotate(-20deg);
-  }
-}
-@keyframes eyes
-{
-  0% {
-    opacity: 1;
-  }
-  5% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-}
 </style>

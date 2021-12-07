@@ -18,20 +18,39 @@ var carrito = {
         } else {
             currentProduct[0].quantity += 1;
         }
-
-        localStorage.setItem('carritoLocal', JSON.stringify(this.state.items)); 
+        
+        this.updateCartCookies();
         this.getTotal();
     },
     removeItem(id) {
         let id2Delete = this.state.items.findIndex(item => item.idProducto == id);
+        let qty = this.state.items[id2Delete].quantity;
+        
+        if(qty>1){
+            this.state.items[id2Delete].quantity = (qty - 1);
+        }else{
+            this.state.items.splice(id2Delete, 1);
+        }
+        this.updateCartCookies();
+        this.getTotal();        
+    },
+    deleteItem(id){
+        let id2Delete = this.state.items.findIndex(item => item.idProducto == id);
         this.state.items.splice(id2Delete, 1);
+        this.updateCartCookies();
+        this.getTotal();        
     },
     clearItems () {
         this.state.items = '';
+        this.updateCartCookies();
+        this.getTotal();        
     },
     loadItems(localItems){
         this.state.items = localItems;
         this.getTotal();
+    },
+    updateCartCookies: function () { 
+        localStorage.setItem('carritoLocal', JSON.stringify(this.state.items));
     },
     getTotal: function () { 
         var resultado=0;
