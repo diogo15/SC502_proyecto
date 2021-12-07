@@ -1,5 +1,13 @@
 <template>
 <div>
+    <!-- End SECOND Section -->
+    <div class="itz_section">
+      <div class="wrapper">
+        <div class="itz_hero_full bigger robot_container">
+          <robot class="robot"></robot>
+        </div>
+      </div>
+    </div>
     <footer>
         <div class="container-footer-all">
             
@@ -55,7 +63,11 @@
 
 <script>
        
-    module.exports = {}
+module.exports = {        
+    components: {
+        'robot' : httpVueLoader(site_url + 'js/svg/robot.vue')
+    }
+}
 
 </script>
 
@@ -159,4 +171,48 @@ footer{
         flex-wrap: wrap;
     }
 }
+
+.itz_section .robot{
+  width: auto;
+  height: 450px;
+  animation:robot 4s ease-in-out infinite alternate;
+  fill: #333;
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+}
+.robot #r-eye{
+  transform-origin: 50% 59%;
+  animation:eyes 3s linear infinite;
+  transform-origin: 50% 50%;
+}
+.itz_section .robot_container{
+  margin-top: 20px;
+  text-align: center;
+  height: 200px;
+  overflow: hidden;
+}
+
+
+@keyframes robot
+{
+  0% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(-20deg);
+  }
+}
+@keyframes eyes
+{
+  0% {
+    opacity: 1;
+  }
+  5% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+}
+
 </style>
