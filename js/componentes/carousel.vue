@@ -29,10 +29,12 @@ module.exports = {
   
   methods: {
     next() {
-      this.$refs.carousel.scrollBy(200, 0);
+      let itemWidth = this.$refs.carousel.firstElementChild.offsetWidth;
+      this.$refs.carousel.scrollBy(itemWidth, 0);
     },
     prev() {
-      this.$refs.carousel.scrollBy(-1, 0);
+      let itemWidth = this.$refs.carousel.firstElementChild.offsetWidth;
+      this.$refs.carousel.scrollBy(-itemWidth, 0);
     }
   }
 }
