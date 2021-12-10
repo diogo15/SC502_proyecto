@@ -1,13 +1,24 @@
 <template>
 <div>
+  <section id="banner">
   <carousel cantidad="1">
-      <img class="PS5" src="img/productos/PS5Imagen.png">
       <img src="img/productos/PS5.png">
-      <img src="img/productos/PS5.png">
-      <img src="img/productos/PS5.png">
-      <div>hola hola</div>
+      <img src="img/productos/Juegosd.jpg">
+      <img src="img/productos/Xbox.jpeg">
+      <img src="img/productos/xgames.png">
+      <div class="contenedor">
+        <h1>Llegaron Nuevos Productos!!</h1>
+        <p>Reserva Ya!!</p>
+      </div>
     </carousel>  
-  <titulo>Productos Nuevos</titulo>
+    </section>
+  
+  <div>
+    <img class="img-Back1" src="img/productos/FunkoB.png">
+    <img class="img-Back2" src="img/productos/consolas.png">
+    <img class="img-Back3" src="img/productos/camisaO.png">
+  </div>
+   <titulo>Productos Nuevos</titulo>
   <div class="wrapper">  
     <carousel>
       <producto

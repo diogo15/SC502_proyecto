@@ -24,6 +24,7 @@ var app = new Vue({
         'modal': httpVueLoader(site_url + 'js/componentes/modal.vue'),
         'login': httpVueLoader(site_url + 'js/paginas/login.vue'),
         'myfooter': httpVueLoader(site_url + 'js/componentes/footer.vue')
+        
     }
 }).$mount('#app');
 
