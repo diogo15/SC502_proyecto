@@ -1,8 +1,9 @@
 <template>
 <div>
+  <section v-if="step == 1">
     <titulo>Carrito de Compras</titulo>
     <div class="wrapper">
-    <table class="table_itz">
+      <table class="table_itz">
     <thead>
         <tr>
             <th>Producto</th>
@@ -38,12 +39,32 @@
             <td>Total</td>
             <td colspan="3"></td>
             <td class="text-center"><strong>{{carro.total}}</strong></td>
-            <td><btn class="green">Pagar</btn></td>
         </tr>
     </tfoot>
     </table>
-
     </div>
+    </section>
+
+    <section v-if="step == 2">
+      <titulo>Agregar Dirección</titulo>
+
+      <div class="wrapper">
+        <form action="" method="post">
+          <label for="#address">Punto de llegada:</label> <br> <br>
+          <textarea name="address" id="address" cols="30" rows="10"></textarea>
+          <br>
+          <br>
+          <input type="submit" value="">
+        </form>
+      </div>
+
+    </section>
+
+    <div class="wrapper btns-checkin" v-if="carro.items.length > 0">
+      <btn class="white" v-if="step > 1" v-on:click="previous()">Anterior</btn>
+      <btn class="green" v-if="step <= 2" v-on:click="next()">Siguiente</btn>
+    </div>
+
 </div>
 </template>
 
@@ -51,6 +72,8 @@
 module.exports = {
   data: function() {
     return{
+      step : 1,
+      stepTotal : 3,
       mostrar: false,
       message: "text por defecto",
       carro: carrito.state
@@ -69,6 +92,12 @@ module.exports = {
     },
     eliminarCarrito(id){
       carrito.deleteItem(id);
+    },
+    next () {
+      this.step += 1;
+    },
+    previous () {
+      this.step -= 1;
     }
   },
   components: {
