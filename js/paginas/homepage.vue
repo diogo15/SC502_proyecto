@@ -1,23 +1,33 @@
 <template>
 <div>
   <section id="banner">
-  <carousel cantidad="1">
+    <carousel cantidad="1">
       <img src="img/productos/PS5.png">
       <img src="img/productos/Juegosd.jpg">
       <img src="img/productos/Xbox.jpeg">
+      <img src="img/productos/Xbox.jpeg">
+      <img src="img/productos/Xbox.jpeg">
+      <img src="img/productos/Xbox.jpeg">
       <img src="img/productos/xgames.png">
-      <div class="contenedor">
-        <h1>Llegaron Nuevos Productos!!</h1>
-        <p>Reserva Ya!!</p>
-      </div>
+      <img src="img/productos/xgames.png">
+      <img src="img/productos/xgames.png">
+      <img src="img/productos/xgames.png">
+      <img src="img/productos/xgames.png">      
     </carousel>  
-    </section>
+    <div class="contenedor">
+      <h1>Llegaron Nuevos Productos!!</h1>
+      <p>Reserva Ya!!</p>
+    </div>
+  </section>
   
-  <div>
-    <img class="img-Back1" src="img/productos/FunkoB.png">
-    <img class="img-Back2" src="img/productos/consolas.png">
-    <img class="img-Back3" src="img/productos/camisaO.png">
+  <div class="wrapper">
+    <div class="flex">
+      <categorytile imagen="FunkoB.png">Funko</categorytile>
+      <categorytile imagen="consolas.png">Consolas</categorytile>
+      <categorytile imagen="camisaO.png">Camisas</categorytile>
+    </div>
   </div>
+
    <titulo>Productos Nuevos</titulo>
   <div class="wrapper">  
     <carousel>
@@ -47,7 +57,8 @@ module.exports = {
   components: {
     'producto': httpVueLoader(site_url + 'js/componentes/producto.vue'),
     'carousel': httpVueLoader(site_url + 'js/componentes/carousel.vue'),
-    'titulo': httpVueLoader(site_url + 'js/componentes/titulo.vue')
+    'titulo': httpVueLoader(site_url + 'js/componentes/titulo.vue'),
+    'categorytile': httpVueLoader(site_url + 'js/componentes/category-tile.vue')
   }
 }
 </script>

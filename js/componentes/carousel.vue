@@ -102,7 +102,7 @@ margin-bottom: 25px;
 }
 #banner .contenedor{
   position: absolute;
-  top: 50px;
+  top: 50%;
   left: 100px;
   color: white;
   transform: translateY(-50px) translateX(-0px);
@@ -123,39 +123,8 @@ margin-bottom: 25px;
 }
 #banner h1{
   display: block;
-  margin-top: 500px;
 }
-.img-Back1{
-  position: relative;
-  display: block;
-  text-decoration: none;
-  padding: 10px;
-  margin-top: 20px;
-  width: 30%;
-  
-}
-.img-Back2{
-  position: absolute;
-  display: flex;
-  text-decoration: none;
-  padding: 10px;
-  margin-top: -314px;
-  width: 30%;
-  left: 32%;
-  height: 39%;
-  justify-content: center;
-}
-.img-Back3{
-  position: absolute;
-  display: flex;
-  text-decoration: none;
-  padding: 10px;
-  margin-top: -314px;
-  width: 30%;
-  left: 64%;
-  height: 39%;
-  
-}
+
 
 
 
