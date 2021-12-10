@@ -25,3 +25,4 @@ else
 {
 	new JsonResponse('badrequest', 'Invalid Request' );
 }
+?>

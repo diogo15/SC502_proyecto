@@ -1,16 +1,13 @@
 <?php
 require_once '../php/connectionDB.php';
 
-function prepare_detalle () {
+function insert_pedido ($local, $repartido, $estado, $fecha, $paga) {
     $conexion = new ConnectionDB;
-    $statement = "INSERT INTO DetallePedido VALUES ()";
+    
+    $query = "INSERT INTO Pedidos (idLocal, idRepartidor, estadoPedido, fecha, paga) VALUES (?, ?, ?, ?, ?);";
+    
+	return $conexion->queryPrepared($query, [$local, $repartido, $estado, $fecha, $paga]);
 
-    $detalle = $conexion -> insert();
-}
-
-function insert_pedido () {
-    $conexion = new ConnectionDB;
-    $statement = "";
 }
 
 ?>

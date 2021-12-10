@@ -70,7 +70,7 @@
             $stmt = $this-> connection ->prepare($query);
 
             if ($stmt === false) {
-                return [ 'ok' => 'false' ];
+                return false;
             }
 
             $types = array_reduce($args, function($reduced, $type) {

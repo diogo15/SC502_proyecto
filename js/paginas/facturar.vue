@@ -1,6 +1,22 @@
 <template>
 <div>
-  <section v-if="step == 1">
+  <section v-if="!loggedin">
+    <titulo>Unite a nuestra comunidad</titulo>
+    <div class="wrapper">
+      <p>Parece que no formas parte de nuestra tienda!</p>
+      <p>Registrate o inicia sesión para proceder con tu compra online</p>
+
+      <btn class="link purple">
+        <router-link to="/registro">Registro</router-link>
+      </btn>
+      <br>
+      <btn class="link green">
+        <router-link to="/login">Iniciar Sesión</router-link>
+      </btn>
+    </div>
+  </section>
+
+  <section v-if="step == 1 && loggedin">
     <titulo>Carrito de Compras</titulo>
     <div class="wrapper">
       <table class="table_itz">
@@ -45,24 +61,53 @@
     </div>
     </section>
 
-    <section v-if="step == 2">
+    <section v-if="step == 2 && loggedin">
       <titulo>Agregar Dirección</titulo>
 
       <div class="wrapper">
         <form action="" method="post">
           <label for="#address">Punto de llegada:</label> <br> <br>
-          <textarea name="address" id="address" cols="30" rows="10"></textarea>
+          <textarea v-model="Address" name="address" id="address" cols="30" rows="10"></textarea>
           <br>
+          <select name="Provincias" id="dropbox" v-model="provincia">
+            <option value="1">San José</option>
+            <option value="2">Heredia</option>
+            <option value="3">Cartago</option>
+            <option value="4">Alajuela</option>
+            <option value="5">Limón</option>
+            <option value="6">Guanacaste</option>
+            <option value="7">Puntarenas</option>
+          </select>
           <br>
-          <input type="submit" value="">
         </form>
       </div>
+    </section>
 
+    <section v-if="step == 3  && loggedin">
+      <div class="wrapper">
+        <form method="post">
+        <label for="tarjeta">Efectivo o Tarjeta</label>
+        <br><br>
+        <input type="radio" v-model="TipoPago" value="Efectivo" id="Efectivo"/> <label for="Efectivo">Efectivo</label>
+        <input type="radio" v-model="TipoPago" value="Tarjeta" id="Tarjeta"/> <label for="Tarjeta">Tarjeta</label>
+        <br><br>
+        <label for="">Número de Tarjeta</label>
+        <input type="text" name="datosTarjeta" v-model="Tarjeta">
+        <br><br>
+        <input type="radio" v-model="TipoTarjeta" value="Visa" id="Visa"/> <label for="Visa">Visa</label>
+        <input type="radio" v-model="TipoTarjeta" value="MasterCard" id="MasterCard"/> <label for="MasterCard">MasterCard</label>
+        <br><br>
+        <label for="">Código de Seguridad</label>
+        <input type="text" name="seguridad" v-model="CodSeguridad">
+      </form>
+      </div>
     </section>
 
     <div class="wrapper btns-checkin" v-if="carro.items.length > 0">
       <btn class="white" v-if="step > 1" v-on:click="previous()">Anterior</btn>
       <btn class="green" v-if="step <= 2" v-on:click="next()">Siguiente</btn>
+      <btn class="purple" v-if="step == 3" v-on:click="facturar()">Enviar pedido</btn>
+
     </div>
 
 </div>
@@ -73,10 +118,16 @@ module.exports = {
   data: function() {
     return{
       step : 1,
-      stepTotal : 3,
       mostrar: false,
       message: "text por defecto",
-      carro: carrito.state
+      carro: carrito.state,
+      provincia : 1,
+      TipoPago : "",
+      Tarjeta : "",
+      Address : "",
+      TipoTarjeta : "",
+      CodSeguridad : "",
+      loggedin : true//current_user[0],
     }
   },
   computed: {
@@ -98,7 +149,36 @@ module.exports = {
     },
     previous () {
       this.step -= 1;
-    }
+    },
+    facturar(){
+      var productos = null;
+
+      for (let index = 0; index < carro.items.lenght; index++) {
+        productos.push([
+          carro.items[index].idProducto,
+          carro.items[index].quantity]
+          );
+      }
+
+      var formData = new FormData();
+            formData.append("provincia", this.provincia);
+            formData.append("items", JSON.stringify(productos));
+            formData.append("total", this.carro.total);
+
+            axios.post(site_url + 'api/pedido.php', formData, {
+                headers: { 'Content-Type': 'multipart/form-data' }
+            }).then(response => {
+                if(response.data.data.login == 1){
+                    this.message= "Ingreso Exitoso!";
+                    setTimeout(function(){ location.reload(); }, 1500);
+                }else{
+                    this.message= "Error Intenta de Nuevo";
+                }
+            }).catch(err => {
+                console.log(err)
+            })
+
+    },
   },
   components: {
     'btn': httpVueLoader(site_url + 'js/componentes/btn.vue'),
