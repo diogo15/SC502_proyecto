@@ -4,10 +4,11 @@ require_once "response.php";
 
 use IntoTheZone\JsonResponse;
 
-if(!empty($_GET['total'])){
-    //$datos = unserialize($_GET['items']);
+if(!empty($_POST['items'])){
+	
+    $items = json_decode($_POST['items'],true);
 
-	$pedido = insert_pedido("1" , "1", 0, '2021-12-22', $_GET['total']);
+	$pedido = insert_pedido("1" , "1", 0, '2021-12-22', 0);
 
 	if(isset($pedido["error"]))
 	{
@@ -15,13 +16,11 @@ if(!empty($_GET['total'])){
 	}
 	else
 	{
-		$detalle = insert_detalle($pedido["id"], 1, 1);
-
-		if(isset($detalle["error"])){
-			new JsonResponse('ok', 'Error al agregar Detalle', $detalle );
-		}else{
-			new JsonResponse('ok', 'Pedido y Detalle Agregado', array_merge($detalle,$pedido));
+		foreach($items as $item){
+			$detalle = insert_detalle($pedido["id"], $item["idProducto"], $item["cantidad"]);
 		}
+		
+		new JsonResponse('ok', 'Pedido y Detalle Agregado', $pedido );		
 		
 	}
 	

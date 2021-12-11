@@ -108,6 +108,8 @@
       <btn class="green" v-if="step <= 2" v-on:click="next()">Siguiente</btn>
       <btn class="purple" v-if="step == 3" v-on:click="facturar()">Enviar pedido</btn>
 
+      <p>{{message}}</p>
+
     </div>
 
 </div>
@@ -119,7 +121,7 @@ module.exports = {
     return{
       step : 1,
       mostrar: false,
-      message: "text por defecto",
+      message: "",
       carro: carrito.state,
       provincia : 1,
       TipoPago : "",
@@ -151,32 +153,32 @@ module.exports = {
       this.step -= 1;
     },
     facturar(){
-      var productos = null;
+      var productos = [];
 
-      for (let index = 0; index < carro.items.lenght; index++) {
-        productos.push([
-          carro.items[index].idProducto,
-          carro.items[index].quantity]
-          );
+      for (let index = 0; index < this.carro.items.length; index++) {
+        productos.push({
+          "idProducto": this.carro.items[index].idProducto,
+          "cantidad": this.carro.items[index].quantity
+        });
       }
 
       var formData = new FormData();
-            formData.append("provincia", this.provincia);
-            formData.append("items", JSON.stringify(productos));
-            formData.append("total", this.carro.total);
 
-            axios.post(site_url + 'api/pedido.php', formData, {
-                headers: { 'Content-Type': 'multipart/form-data' }
-            }).then(response => {
-                if(response.data.data.login == 1){
-                    this.message= "Ingreso Exitoso!";
-                    setTimeout(function(){ location.reload(); }, 1500);
-                }else{
-                    this.message= "Error Intenta de Nuevo";
-                }
-            }).catch(err => {
-                console.log(err)
-            })
+      formData.append("provincia", this.provincia);
+      formData.append("items", JSON.stringify(productos));
+      formData.append("total", this.carro.total);
+
+      axios.post(site_url + 'api/pedido.php', formData, {
+          headers: { 'Content-Type': 'multipart/form-data' }
+      }).then(response => {
+          if(response.data.error){
+            this.message= "Error Intenta de Nuevo";                    
+          }else{
+            this.message= "Pedido Agregado Exitoso!";
+          }
+      }).catch(err => {
+          console.log(err)
+      });
 
     },
   },
