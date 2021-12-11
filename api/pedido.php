@@ -15,7 +15,14 @@ if(!empty($_GET['total'])){
 	}
 	else
 	{
-		new JsonResponse('ok', 'Pedido Agregado', $pedido);
+		$detalle = insert_detalle($pedido["id"], 1, 1);
+
+		if(isset($detalle["error"])){
+			new JsonResponse('ok', 'Error al agregar Detalle', $detalle );
+		}else{
+			new JsonResponse('ok', 'Pedido y Detalle Agregado', array_merge($detalle,$pedido));
+		}
+		
 	}
 	
 }
