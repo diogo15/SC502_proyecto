@@ -70,7 +70,7 @@
             $stmt = $this-> connection ->prepare($query);
 
             if ($stmt === false) {
-                return false;
+                return [ 'status' => 'Preparacion Malaaa, cuenten BIEN los: ????' ];
             }
 
             $types = array_reduce($args, function($reduced, $type) {
@@ -89,7 +89,11 @@
 
             $stmt->bind_param($types, ...$args);
 
-            $result = $stmt->execute() ? $stmt->get_result() : false;
+            if ($stmt === false) {
+                return [ 'status' => 'Binding de parametros malo :(' ];
+            }
+
+            $result = $stmt->execute() ? $stmt->get_result() : [ 'status' => $stmt->error ];
 
             $stmt->close();
 
