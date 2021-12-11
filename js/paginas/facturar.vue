@@ -107,10 +107,9 @@
       <btn class="white" v-if="step > 1" v-on:click="previous()">Anterior</btn>
       <btn class="green" v-if="step <= 2" v-on:click="next()">Siguiente</btn>
       <btn class="purple" v-if="step == 3" v-on:click="facturar()">Enviar pedido</btn>
-
-      <p>{{message}}</p>
-
     </div>
+
+    <p v-if="message">{{message}}</p>
 
 </div>
 </template>
@@ -175,6 +174,7 @@ module.exports = {
             this.message= "Error Intenta de Nuevo";                    
           }else{
             this.message= "Pedido Agregado Exitoso!";
+            carrito.clearItems();
           }
       }).catch(err => {
           console.log(err)
