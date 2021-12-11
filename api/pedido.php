@@ -7,13 +7,11 @@ use IntoTheZone\JsonResponse;
 if(!empty($_GET['total'])){
     //$datos = unserialize($_GET['items']);
 
-	$pedido = insert_pedido("1" , "1", false, '2021-12-22', $_GET['total']);
-	
+	$pedido = insert_pedido("1" , "1", 0, '2021-12-22', $_GET['total']);
 
-
-	if($pedido == false)
+	if(isset($pedido["error"]))
 	{
-		new JsonResponse('ok', 'Pedido No Insertado' );
+		new JsonResponse('ok', 'Pedido No Insertado', $pedido );
 	}
 	else
 	{
