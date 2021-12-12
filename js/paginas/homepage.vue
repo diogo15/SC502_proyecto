@@ -3,8 +3,12 @@
    <div class="wrapperCarrrusel">  
     <carousel cantidad="1">
       
-
-      <imagenl-banner id="banner" class="contenedor"></imagenl-banner>   
+      
+      <banner imagen="banner-consolas.png">Llegaron Nuevos Productos!!</banner>   
+      <banner imagen="banner-PS5.jpg"></banner>   
+      <banner imagen="banner-Xbox.jpg">Llegaron Nuevos Productos!!</banner>   
+      <banner imagen="banner-xgames.jpg">Llegaron Nuevos Productos!!</banner>   
+      
     
     </carousel> 
    </div> 
@@ -15,7 +19,7 @@
   <div class="wrapper">
     <div class="flex">
       <categorytile imagen="FunkoB.png">Funko</categorytile>
-      <categorytile imagen="consolas.png">Consolas</categorytile>
+      <categorytile imagen="banner-consolas.png">Consolas</categorytile>
       <categorytile imagen="camisaO.png">Camisas</categorytile>
     </div>
   </div>
@@ -51,7 +55,7 @@ module.exports = {
     'carousel': httpVueLoader(site_url + 'js/componentes/carousel.vue'),
     'titulo': httpVueLoader(site_url + 'js/componentes/titulo.vue'),
     'categorytile': httpVueLoader(site_url + 'js/componentes/category-tile.vue'),
-    'imagenl-banner': httpVueLoader(site_url + 'js/componentes/imagenl-banner.vue')
+    'banner': httpVueLoader(site_url + 'js/componentes/banner.vue')
   }
 }
 </script>
