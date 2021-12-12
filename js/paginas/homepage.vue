@@ -2,13 +2,7 @@
 <div>
    <div class="wrapperCarrrusel">  
     <carousel cantidad="1">
-      <img src="img/productos/PS5.png">
-      <img src="img/productos/Juegosd.jpg">
-      <img src="img/productos/Xbox.jpeg">
-      <img src="img/productos/Xbox.jpeg">
-      <img src="img/productos/Xbox.jpeg">
-      <img src="img/productos/Xbox.jpeg">
-      <img src="img/productos/xgames.png"> 
+      
 
       <imagenl-banner id="banner" class="contenedor"></imagenl-banner>   
     
@@ -16,6 +10,7 @@
    </div> 
     
   
+    
   
   <div class="wrapper">
     <div class="flex">
