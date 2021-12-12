@@ -66,13 +66,9 @@
 
       <div class="wrapper">
         <div class="form-style">
-          <div>
-          <form action="" method="post">
             <label for="#address">Punto de llegada:</label> <br> <br>
             <textarea v-model="Address" name="address" id="address" cols="55" rows="10" placeholder="Agregue la dirección a donde quiere que su pedido llegue."></textarea>
-            </div>
-            <div>
-            <label for="#dropbox">Seleccione la provincia en donde reside usted actualmente:</label>
+       <label for="#dropbox">Seleccione la provincia en donde reside usted actualmente:</label>
             <br>
             <select name="Provincias" id="dropbox" v-model="provincia">
               <option value="1">San José</option>
@@ -83,9 +79,8 @@
               <option value="6">Guanacaste</option>
               <option value="7">Puntarenas</option>
             </select>
-            </div>
-          </form>
         </div>
+
       </div>
     </section>
 
