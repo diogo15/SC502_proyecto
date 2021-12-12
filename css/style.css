@@ -33,6 +33,13 @@ img{
     padding: 0 30px;
     margin: 0 auto;
 }
+.wrapperCarrrusel{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0px 0px;
+  
+    
+}
 @media (max-width: 980px) {
     .wrapper{
         padding: 0 15px;

@@ -1,6 +1,6 @@
 <template>
 <div>
-  <section id="banner">
+   <div class="wrapperCarrrusel">  
     <carousel cantidad="1">
       <img src="img/productos/PS5.png">
       <img src="img/productos/Juegosd.jpg">
@@ -8,17 +8,14 @@
       <img src="img/productos/Xbox.jpeg">
       <img src="img/productos/Xbox.jpeg">
       <img src="img/productos/Xbox.jpeg">
-      <img src="img/productos/xgames.png">
-      <img src="img/productos/xgames.png">
-      <img src="img/productos/xgames.png">
-      <img src="img/productos/xgames.png">
-      <img src="img/productos/xgames.png">      
-    </carousel>  
-    <div class="contenedor">
-      <h1>Llegaron Nuevos Productos!!</h1>
-      <p>Reserva Ya!!</p>
-    </div>
-  </section>
+      <img src="img/productos/xgames.png"> 
+
+      <imagenl-banner id="banner" class="contenedor"></imagenl-banner>   
+    
+    </carousel> 
+   </div> 
+    
+  
   
   <div class="wrapper">
     <div class="flex">
@@ -58,7 +55,8 @@ module.exports = {
     'producto': httpVueLoader(site_url + 'js/componentes/producto.vue'),
     'carousel': httpVueLoader(site_url + 'js/componentes/carousel.vue'),
     'titulo': httpVueLoader(site_url + 'js/componentes/titulo.vue'),
-    'categorytile': httpVueLoader(site_url + 'js/componentes/category-tile.vue')
+    'categorytile': httpVueLoader(site_url + 'js/componentes/category-tile.vue'),
+    'imagenl-banner': httpVueLoader(site_url + 'js/componentes/imagenl-banner.vue')
   }
 }
 </script>
