@@ -2,17 +2,10 @@
 <div>
   <section id="banner">
     <carousel cantidad="1">
-      <img src="img/productos/PS5.png">
-      <img src="img/productos/Juegosd.jpg">
-      <img src="img/productos/Xbox.jpeg">
-      <img src="img/productos/Xbox.jpeg">
-      <img src="img/productos/Xbox.jpeg">
-      <img src="img/productos/Xbox.jpeg">
-      <img src="img/productos/xgames.png">
-      <img src="img/productos/xgames.png">
-      <img src="img/productos/xgames.png">
-      <img src="img/productos/xgames.png">
-      <img src="img/productos/xgames.png">      
+      <img src="img/productos/banner-PS5.jpg">
+      <img src="img/productos/banner-consolas.png">
+      <img src="img/productos/banner-Xbox.jpg">
+      <img src="img/productos/banner-xgames.jpg"> 
     </carousel>  
     <div class="contenedor">
       <h1>Llegaron Nuevos Productos!!</h1>
