@@ -137,7 +137,7 @@ module.exports = {
       Address : "",
       TipoTarjeta : "",
       CodSeguridad : "",
-      loggedin : true//current_user[0],
+      loggedin : current_user[0],
     }
   },
   computed: {
