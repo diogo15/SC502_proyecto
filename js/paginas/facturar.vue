@@ -65,48 +65,62 @@
       <titulo>Agregar Dirección</titulo>
 
       <div class="wrapper">
-        <form action="" method="post">
-          <label for="#address">Punto de llegada:</label> <br> <br>
-          <textarea v-model="Address" name="address" id="address" cols="30" rows="10"></textarea>
-          <br>
-          <select name="Provincias" id="dropbox" v-model="provincia">
-            <option value="1">San José</option>
-            <option value="2">Heredia</option>
-            <option value="3">Cartago</option>
-            <option value="4">Alajuela</option>
-            <option value="5">Limón</option>
-            <option value="6">Guanacaste</option>
-            <option value="7">Puntarenas</option>
-          </select>
-          <br>
-        </form>
+        <div class="form-style">
+          <div>
+          <form action="" method="post">
+            <label for="#address">Punto de llegada:</label> <br> <br>
+            <textarea v-model="Address" name="address" id="address" cols="55" rows="10" placeholder="Agregue la dirección a donde quiere que su pedido llegue."></textarea>
+            </div>
+            <div>
+            <label for="#dropbox">Seleccione la provincia en donde reside usted actualmente:</label>
+            <br>
+            <select name="Provincias" id="dropbox" v-model="provincia">
+              <option value="1">San José</option>
+              <option value="2">Heredia</option>
+              <option value="3">Cartago</option>
+              <option value="4">Alajuela</option>
+              <option value="5">Limón</option>
+              <option value="6">Guanacaste</option>
+              <option value="7">Puntarenas</option>
+            </select>
+            </div>
+          </form>
+        </div>
       </div>
     </section>
 
     <section v-if="step == 3  && loggedin">
+      <titulo>Datos de tarjeta</titulo>
+
       <div class="wrapper">
-        <form method="post">
-        <label for="tarjeta">Efectivo o Tarjeta</label>
-        <br><br>
-        <input type="radio" v-model="TipoPago" value="Efectivo" id="Efectivo"/> <label for="Efectivo">Efectivo</label>
-        <input type="radio" v-model="TipoPago" value="Tarjeta" id="Tarjeta"/> <label for="Tarjeta">Tarjeta</label>
-        <br><br>
-        <label for="">Número de Tarjeta</label>
-        <input type="text" name="datosTarjeta" v-model="Tarjeta">
-        <br><br>
-        <input type="radio" v-model="TipoTarjeta" value="Visa" id="Visa"/> <label for="Visa">Visa</label>
-        <input type="radio" v-model="TipoTarjeta" value="MasterCard" id="MasterCard"/> <label for="MasterCard">MasterCard</label>
-        <br><br>
-        <label for="">Código de Seguridad</label>
-        <input type="text" name="seguridad" v-model="CodSeguridad">
-      </form>
+        <div class="form-style">
+          <div>
+            <form method="post">
+            <label for="tarjeta">Efectivo o Tarjeta</label>
+            <br><br>
+            <input type="radio" v-model="TipoPago" value="Efectivo" id="Efectivo"/> <label for="Efectivo">Efectivo</label>
+            <input type="radio" v-model="TipoPago" value="Tarjeta" id="Tarjeta"/> <label for="Tarjeta">Tarjeta</label>
+            <br><br>
+            <label for="">Número de Tarjeta</label>
+            <input type="text" name="datosTarjeta" v-model="Tarjeta">
+            <br><br>
+            <input type="radio" v-model="TipoTarjeta" value="Visa" id="Visa"/> <label for="Visa">Visa</label>
+            <input type="radio" v-model="TipoTarjeta" value="MasterCard" id="MasterCard"/> <label for="MasterCard">MasterCard</label>
+            <br><br>
+            <label for="">Código de Seguridad</label>
+            <input type="text" name="seguridad" v-model="CodSeguridad">
+            </form>
+          </div>
+      </div>
       </div>
     </section>
 
-    <div class="wrapper btns-checkin" v-if="carro.items.length > 0">
-      <btn class="white" v-if="step > 1" v-on:click="previous()">Anterior</btn>
-      <btn class="green" v-if="step <= 2" v-on:click="next()">Siguiente</btn>
-      <btn class="purple" v-if="step == 3" v-on:click="facturar()">Enviar pedido</btn>
+    <div class="wrapper" v-if="carro.items.length > 0">
+      <div class="btns-checkin">
+        <btn class="white" v-if="step > 1" v-on:click="previous()">Anterior</btn>
+        <btn class="green" v-if="step <= 2" v-on:click="next()">Siguiente</btn>
+        <btn class="purple" v-if="step == 3" v-on:click="facturar()">Enviar pedido</btn>
+      </div>
     </div>
 
     <p v-if="message">{{message}}</p>
@@ -194,7 +208,7 @@ module.exports = {
 <style>
 .table_itz {
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px;
   background: rgba(255,255,255,0.15);
   text-align: left;
   border-collapse: collapse;
@@ -223,5 +237,26 @@ module.exports = {
 }
 tbody tr td:nth-child(3){
   text-align: center;
+}
+.btns-checkin{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50px;
+  padding: 10px;
+}
+.form-style {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+}
+.form-style textarea{
+  position: relative;
+  border-radius: 10px;
+}
+select{
+  width: 100%;
 }
 </style>
