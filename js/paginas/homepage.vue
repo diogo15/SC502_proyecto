@@ -22,9 +22,10 @@ module.exports = {
   },
   mounted () {
     axios
-      .get(site_url + 'api/productos.php')
+      .get(site_url + 'api/productos-categoria.php', { params: { idCategoria: 3 } })
       .then(response => (this.productos = response.data.data))
       .catch(error => console.log(error));
+
   },
   components: {
     'producto': httpVueLoader(site_url + 'js/componentes/producto.vue'),

@@ -28,7 +28,7 @@ function get_all_products()
 function get_productosByCategory($idCategory) {
 
     $conexion = new ConnectionDB();
-    $statement = "SELECT * FROM productos where idCategoria = '".(int)$idCategory."'";
+    $statement = "SELECT * FROM productos where idCategoria = ".(int)$idCategory;
 
     $products = $conexion -> getAllData($statement);
 
