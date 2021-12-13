@@ -40,10 +40,10 @@ var carrito = {
         this.updateCartCookies();
         this.getTotal();        
     },
-    clearItems () {
-        this.state.items = '';
+    clearItems() {
+        this.state.items = [];
         this.updateCartCookies();
-        this.getTotal();        
+        this.getTotal();
     },
     loadItems(localItems){
         this.state.items = localItems;

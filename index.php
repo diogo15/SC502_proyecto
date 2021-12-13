@@ -25,10 +25,8 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue-router@3.5.3/dist/vue-router.js"></script>
 
-    
-
     <link rel="stylesheet" href="css/style.css">
-</head>
+    </head>
 <body>
 
     <div id="app">

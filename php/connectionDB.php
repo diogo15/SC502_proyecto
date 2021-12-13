@@ -70,7 +70,7 @@
             $stmt = $this-> connection ->prepare($query);
 
             if ($stmt === false) {
-                return [ 'ok' => 'false' ];
+                return [ 'error' => 'Preparacion Malaaa, cuenten BIEN los: ????' ];
             }
 
             $types = array_reduce($args, function($reduced, $type) {
@@ -79,7 +79,7 @@
                     $reduced .= 'd';
                 elseif (is_integer($type))
                     $reduced .= 'i';
-                elseif (is_string($type))    
+                elseif (is_string($type))
                     $reduced .= 's';
                 else
                     $reduced .= 'b';
@@ -89,7 +89,11 @@
 
             $stmt->bind_param($types, ...$args);
 
-            $result = $stmt->execute() ? $stmt->get_result() : false;
+            if ($stmt === false) {
+                return [ 'error' => 'Binding de parametros malo :(' ];
+            }
+
+            $result = $stmt->execute() ? ['id' => $stmt->insert_id] : [ 'error' => $stmt->error ];
 
             $stmt->close();
 

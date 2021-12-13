@@ -8,27 +8,6 @@ flush privileges;
 
 use WebPage;
 
-/*
-	usuarios	X
-	empleados	X
-    proveedores	X
-    facturaProveedores
-    detalleFacturaProveedor
-    productos
-    entregas
-    locales
-    categorias	X
-    marcas		X
-    inventario
-    clientes
-    repartidor
-    facturaCliente
-    detallefacturaCliente
-    paises		X
-    provincias	X
-    
-*/
-
 create table categorias(
 	idCategoria int primary key auto_increment not null,
     nombreCategoria varchar(50) not null,
@@ -105,18 +84,6 @@ create table usuarios(
     apellido2Usuario varchar(30) not null,
     passwordUsuario varchar(255) not null,
     mailUsuario varchar(50) not null
-    /*
-    direccion varchar(200) not null,
-    
-    idRol int not null,
-    idPais int not null,
-    idProvincia int not null,
-    
-    unique key idUsuario(idUsuario),
-    constraint FK_IDROL foreign key (idRol) references roles(idRol),
-    foreign key (idPais) references paises(idPais),
-    constraint FK_IDPROVINCIA foreign key (idProvincia) references provincias(idProvincia)
-    */
 );
 
 INSERT INTO usuarios (nombreUser, apellido1Usuario, apellido2Usuario, passwordUsuario, mailUsuario)
@@ -131,7 +98,10 @@ create table empleados(
 );
 
 INSERT INTO `empleados` (`cedulaEmpleado`, `nombreEmpleado`, `apellidoEmpleado`) 
-	VALUES ('114180039', 'luis', 'ramirez');
+	VALUES 	('114180039', 'luis', 'ramirez'),
+			('118065478', 'fabian', 'madriz'),
+            ('151307035', 'andres', 'brizuela'),
+            ('193110484', 'isaac', 'chacon');
 
 drop table if exists locales;
 Create Table locales (
@@ -156,21 +126,16 @@ drop table if exists Proveedores;
 create table Proveedores(
     idProveedor int primary key auto_increment not null,
     nombreProveedor varchar(50) not null,
-    telefono int null,
+    telefono varchar(9) null,
     email varchar(50) null
 );
 
-drop table if exists R_LocProv;
-create table R_LocProv(
-
-    idLocal int not null,
-    idProveedor int not null,
-    
-    constraint FK_IDLOCAL foreign key(idLocal) references Locales(idLocal),
-    constraint FK_IDPROVEEDOR foreign key(idProveedor) references Proveedores(idProveedor),
-    
-    primary key(idLocal, idProveedor)
-);
+INSERT INTO Proveedores(nombreProveedor, telefono, email)
+	value	('Alfredo', 	7777-2222, 'alfredo@gmail.com'),
+			('Marcos', 		8888-8888, 'marcos@gmail.com'),
+			('Jose', 		9999-1111, 'jose@gmail.com'),
+            ('Alexander', 	2222-3333, 'alex@gmail.com'),
+            ('Spencer', 	1111-4444, 'spencer@gmail.com');
 
 drop table if exists Productos;
 create table Productos(
@@ -208,9 +173,16 @@ create table repartidores(
 	idRepartidor int primary key auto_increment not null,
     nombreRepartidor varchar(30) not null,
     apellidoRepartidor varchar(30) not null,
-    telefono int null,
+    telefono varchar(9) not null,
     email varchar(30) null
 );
+
+INSERT INTO Repartidores (nombreRepartidor, apellidoRepartidor, telefono, email)
+	VALUES 	('María', 'Venegas', '1111-2222', 'mvenegas@gmail.com'),
+			('Leonardo', 'Vinicio', '3333-4444', 'lvinicio@gmail.com'),
+			('Juan', 'Granados', '5555-6666', 'jgranados@gmail.com'),
+			('Mario', 'Cascante', '7777-8888', 'mcascante@gmail.com'),
+			('Sofía', 'Castro', '9999-1111', 'scastro@gmail.com');
 
 drop table if exists Pedidos;
 create table pedidos(
