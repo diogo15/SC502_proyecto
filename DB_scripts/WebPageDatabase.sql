@@ -40,7 +40,8 @@ insert into categorias(nombreCategoria) values
 	(	'VIDEOJUEGOS'	), 
     (	'CONSOLAS'	),
     (	'FIGURAS'	),
-    (	'ACCESORIOS'	);
+    (	'ACCESORIOS'	),
+     (	'MEDIAS'	);
 
 drop table if exists marcas;
 create table marcas(
@@ -53,7 +54,8 @@ create table marcas(
 INSERT INTO `marcas` (`nombreMarca`) 
 	VALUES 	('funko'),
 			('reddragon'),
-            ('amazon');
+            ('amazon')
+            ('superchiva');
             
 insert into marcas(nombreMarca) values 
 	(	'NINTENDO'	), 
@@ -192,8 +194,16 @@ ALTER TABLE productos ADD COLUMN url_imagen VARCHAR(150) AFTER `descripProducto`
 INSERT INTO `productos` (`codBarras`, `nombreProducto`, `descripProducto`, `url_imagen`, `precioVenta`, `idLocal`, `idCategoria`, `idMarca`) 
 	VALUES 	('1232', 'Funko Loki', 'Funko Loki', 'img/productos/loki.jpg', '8000', '1', '3', '1'),
 			('1233', 'Funko Vader', 'Funko Vader', 'img/productos/vader.jpg', '8000', '1', '3', '1'),
-            ('1234', 'Funko Navas', 'Funko Navas', 'img/productos/navas.jpg', '8000', '1', '3', '2'),
-            ('1235', 'Funko Navas', 'Funko Deathpool', 'img/productos/navas.jpg', '8000', '1', '3', '2');
+            ('1234', 'Funko Naruto', 'Funko Naruto', 'img/productos/Naruto.jpg', '8000', '1', '3', '1'),
+            ('1235', 'Funko Iron Man', 'Funko Iron Man', 'img/productos/Iron Man.jpg', '8000', '1', '3', '1'),
+            ('1236', 'Funko joker', 'Funko joker', 'img/productos/joker.jpg', '8000', '1', '3', '1'),
+            ('1237', 'Medias caballeros del zodiaco', 'Medias caballeros del zodiaco', 'img/productos/caballeros del zodiaco.jpg', '5000', '1', '5', '4'),
+            ('1238', 'Medias Calicaturas navideñas', 'Medias Calicaturas navideñas', 'img/productos/Calicaturas navideñas.jpg', '5000', '1', '5', '4'),
+            ('1239', 'Medias Gunns and Roses', 'Medias Gunns and Roses', 'img/productos/Gunns and Roses.jpg', '5000', '1', '5', '4'),
+            ('1240', 'Medias Mario Bros', 'Medias Mario Bros', 'img/productos/Mario Bros.jpg', '5000', '1', '5', '4'),
+            ('1241', 'Medias pink floyd', 'Medias pink floyd', 'img/productos/pink floyd.jpg', '5000', '1', '5', '4'),
+            ('1242', 'Medias Pinky y Cerebro', 'Medias Pinky y Cerebro', 'img/productos/Pinky y cerebro.jpg', '5000', '1', '5', '4'),
+            ('1243', 'Medias Pac-man', 'Medias Pac-man', 'img/productos/Pac-man.jpg', '5000', '1', '5', '4');
 
 drop table if exists repartidores;
 create table repartidores(
