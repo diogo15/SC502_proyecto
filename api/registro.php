@@ -31,7 +31,7 @@ if(empty($_POST['telefono'])){
 
 $usuario = registrar_usuario($_POST["nombre"],$_POST["password"],$_POST["correo"],$_POST["fechaNacimiento"],$_POST["passwordConfirm"],$_POST["telefono"]);
 
-if(empty($usuario))
+if(isset($usuario["error"]))
 {
 	new JsonResponse('ok', 'user not added');
 }
