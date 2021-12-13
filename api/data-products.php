@@ -42,5 +42,5 @@ function get_productosByMarca($idMarca) {
 
     $productos = $conexion -> getAllData($statement);
 
-    return $products;
+    return $productos;
 }
