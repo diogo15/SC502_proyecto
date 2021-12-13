@@ -28,14 +28,21 @@
   <div class="wrapper">  
     <carousel>
       <producto
-        v-for="product in productos"
+        v-for="product in funkos"
         v-bind:key="product.idProducto"
         v-bind:product="product"
       ></producto>
     </carousel>
     <carousel>
       <producto
-        v-for="product in productos2"
+        v-for="product in medias"
+        v-bind:key="product.idProducto"
+        v-bind:product="product"
+      ></producto>
+    </carousel>
+    <carousel>
+      <producto
+        v-for="product in camisas"
         v-bind:key="product.idProducto"
         v-bind:product="product"
       ></producto>
@@ -48,8 +55,9 @@
 module.exports = {
   data: function() {
     return{
-      productos: null,
-      productos2: null
+      funkos: null,
+      medias: null,
+      camisas: null
       
       //sera agregar aqui algo como productos 2 o algo asi
       
@@ -59,12 +67,17 @@ module.exports = {
 
     axios
       .get(site_url + 'api/productos-categoria.php', { params: { idCategoria: 3 } })
-      .then(response => (this.productos = response.data.data))
+      .then(response => (this.funkos = response.data.data))
       .catch(error => console.log(error));
 
-      axios
-      .get(site_url + 'api/productos-marca.php', { params: { idMarca: 3 } })
-      .then(response => (this.productos2 = response.data.data))
+    axios
+      .get(site_url + 'api/productos-marca.php', { params: { idMarca: 4 } })
+      .then(response => (this.medias = response.data.data))
+      .catch(error => console.log(error));
+
+    axios
+      .get(site_url + 'api/productos-categoria.php', { params: { idCategoria: 5 } })
+      .then(response => (this.camisas = response.data.data))
       .catch(error => console.log(error));
     
   },
