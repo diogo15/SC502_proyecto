@@ -125,7 +125,7 @@
         // Este método se usa para encriptar la contraseña que brinda el usuario
         // Esto para validar el logjn
         // MD5 es un formato de encriptación, útil para contraseñas
-        protected function encript ($string) {
+        public function encript ($string) {
             return md5 ($string);
         }
         
