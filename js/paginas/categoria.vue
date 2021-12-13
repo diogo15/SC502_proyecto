@@ -1,8 +1,14 @@
 <template>
 <div>
-    <titulo>Categoria: {{cid}}</titulo>
+    <titulo>{{categoria.nombreCategoria}}</titulo>
     <div class="wrapper">
-      
+      <carousel>
+      <producto
+        v-for="product in productos"
+        v-bind:key="product.idProducto"
+        v-bind:product="product"
+      ></producto>
+    </carousel>
     </div>
 </div>
 </template>
@@ -12,21 +18,27 @@ module.exports = {
   data: function() {
     return{
       base_url: site_url,
-      cid: this.$route.params.cid
+      cid: this.$route.params.cid,
+      productos: {},
+      categoria: {}
     }
   },
   mounted () {
-    /*
     axios
-      .get(site_url + 'api/producto.php', { params: { pid: this.pid } })
-      .then(response => (this.product = response.data.data[0]))
+      .get(site_url + 'api/productos-categoria.php', { params: { idCategoria: this.cid } })
+      .then(response => (this.productos = response.data.data))
       .catch(error => console.log(error));
-    */
-   this.cid
+
+      axios
+      .get(site_url + 'api/categoria.php', { params: { idCategoria: this.cid } })
+      .then(response => (this.categoria = response.data.data[0]))
+      .catch(error => console.log(error));
     
   },
   components: {
-    'titulo': httpVueLoader(site_url + 'js/componentes/titulo.vue')
+    'titulo': httpVueLoader(site_url + 'js/componentes/titulo.vue'),
+    'producto': httpVueLoader(site_url + 'js/componentes/producto.vue'),
+    'carousel': httpVueLoader(site_url + 'js/componentes/carousel.vue')
   }
 }
 </script>
