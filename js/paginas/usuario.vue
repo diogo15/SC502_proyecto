@@ -1,13 +1,18 @@
 <template>
 <div>
-  <titulo>{{user.nombreUser}}</titulo>
+  <titulo>Historial de {{user.username}}</titulo>
   <div class="wrapper">
     <table>
       <thead>
-        <th>
-          <tr>Historial de Compras</tr>
-        </th>
+        <tr>
+          <th>Nombre del Producto</th>
+          <th>Cantidad</th>
+          <th>Total del Producto</th>
+        </tr>
       </thead>
+      <tbody>
+        
+      </tbody>
     </table>
   </div>
 </div>
@@ -17,9 +22,12 @@
 module.exports = {
   data: function() {
     return{
-      user: {}
+      user: {
+        username : current_user[1]
+      }
     }
   },
+  computed : {  },
   mounted () {
     axios
       .get(site_url + 'api/usuario.php')
@@ -33,3 +41,7 @@ module.exports = {
   }
 }
 </script>
+
+<style>
+
+</style>

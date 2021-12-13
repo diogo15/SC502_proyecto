@@ -4,11 +4,14 @@ require_once "response.php";
 
 use IntoTheZone\JsonResponse;
 
-if(!empty($_POST['items'])){
+session_start();
+
+if(!empty($_POST['items']) && isset($_SESSION['user'])){
+	$userID = $_SESSION['user'];
 	
     $items = json_decode($_POST['items'],true);
 
-	$pedido = insert_pedido("1" , "1", 0, '2021-12-22', 0);
+	$pedido = insert_pedido("1" , "1", $userID, 0, '2021-12-22', 0);
 
 	if(isset($pedido["error"]))
 	{
