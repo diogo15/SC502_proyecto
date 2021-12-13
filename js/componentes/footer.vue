@@ -83,12 +83,6 @@ footer{
     background:#884511;
     color: black;
 }
-.container-footer-all{
-    width: 100%;
-    margin: auto;
-    max-width: 1200px;
-    padding: 40px;
-}
 .container-body{
     display: flex;
     justify-content: space-between; 
@@ -146,15 +140,18 @@ footer{
     display: flex;
     justify-content: space-between;
 }
-.footer{
-    
+.footer{    
     max-width: 100%;
     margin: auto;
     display: flex;
     justify-content: space-between;
     padding: 15px;
 }
-
+@media screen and (max-width: 1100px) {
+    .footer{  
+        flex-wrap: wrap;
+    }
+}
 .copyright{
     color: #C7C7C7;
 
