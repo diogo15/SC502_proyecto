@@ -9,6 +9,13 @@
         v-bind:product="product"
       ></producto>
     </carousel>
+    <carousel>
+      <producto
+        v-for="product in productos"
+        v-bind:key="product.idProducto"
+        v-bind:product="product"
+      ></producto>
+    </carousel>
   </div>
 </div>
 </template>
@@ -17,7 +24,10 @@
 module.exports = {
   data: function() {
     return{
-      productos: null
+      productos: null,
+      
+      //sera agregar aqui algo como productos 2 o algo asi
+      
     }
   },
   mounted () {
@@ -25,7 +35,14 @@ module.exports = {
       .get(site_url + 'api/productos-categoria.php', { params: { idCategoria: 3 } })
       .then(response => (this.productos = response.data.data))
       .catch(error => console.log(error));
+      axios
+      .get(site_url + 'api/productos-marca.php', { params: { idMarca: 1 } })
+      .then(response => (this.productos = response.data.data))
+      .catch(error => console.log(error));
 
+    
+
+    
   },
   components: {
     'producto': httpVueLoader(site_url + 'js/componentes/producto.vue'),

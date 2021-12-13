@@ -34,3 +34,13 @@ function get_productosByCategory($idCategory) {
 
     return $products;
 }
+
+function get_productosByMarca($idMarca) {
+
+    $conexion = new ConnectionDB();
+    $statement = "SELECT * FROM productos where idMarca = ".(int)$idMarca;
+
+    $productos = $conexion -> getAllData($statement);
+
+    return $products;
+}

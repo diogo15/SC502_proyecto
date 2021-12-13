@@ -86,19 +86,21 @@ footer{
 .container-footer-all{
     width: 100%;
     margin: auto;
-    padding: 40px 0;
+    max-width: 1200px;
+    padding: 40px;
 }
 .container-body{
     display: flex;
     justify-content: space-between; 
 }
 .column{
-    width: 30%;
+    width: 100%;
 }
 .column h1{
     font-size: 20px;
 }
 .column p{
+    
     font-size: 13px;
     margin-top: 14px;
     color: #C7C7C7;
@@ -141,10 +143,12 @@ footer{
 .container-footer{
     max-width: 100%;
     background-color: #3f1f06;
+    display: flex;
+    justify-content: space-between;
 }
 .footer{
     
-    max-width: 1200px;
+    max-width: 100%;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -166,9 +170,14 @@ footer{
     color: #C7C7C7;
     font-size: small;
 }
-@media screen and (max-width: 1000px) {
-    .container-body{
+@media screen and (max-width: 1100px) {
+    .container-body{ 
         flex-wrap: wrap;
+
+    }
+    .column2
+    .column3{
+        margin-top: 40px;
     }
 }
 
