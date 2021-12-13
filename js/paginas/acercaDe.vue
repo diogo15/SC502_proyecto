@@ -27,8 +27,8 @@
     <div class="itz_section white">
       <div class="wrapper">
         <div class="itz_hero_full bigger">
-          En IntoTheZone podras encontrar los mejores diseños en tazas de 
-          cafe y camisas hechos por diseñadores ticos!
+          En IntoTheZone podras encontrar los mejores diseños en medias
+          y camisas hechas por diseñadores ticos!
         </div>
       </div>
     </div>
