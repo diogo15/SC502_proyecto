@@ -9,6 +9,8 @@
 
             <btn class="green" v-on:click="enviarDatos()">Iniciar sesión</btn>
 
+            <btn class="link registerBtn"><router-link to="/registro">Regístrate</router-link></btn>
+
             <p class="message">{{ message }}</p>
         </form>
     </div>
@@ -62,13 +64,13 @@ module.exports = {
     }
 
     .login .form {
+        box-sizing: border-box;
         margin: 3rem auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 20%;
-        min-width: 350px;
-        max-width: 100%;
+        width: 100%;
+        max-width: 350px;
         background: #333333;
         border-radius: 5px;
         padding: 40px;
@@ -92,10 +94,24 @@ module.exports = {
         margin-top: 3rem;
     }
 
+    .login .button.registerBtn{
+        margin-top: 10px;
+    }
+
     .close{
         padding: 10px 15px;
     }
     .login .message{
         color: #FFF;
+    }
+
+    .modal .login .title{
+        display: none;
+    }
+
+    .modal .login {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
     }
 </style>
