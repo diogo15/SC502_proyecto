@@ -25,12 +25,22 @@ function get_all_products()
 
 // Agregar algun botón que selecciones únicamente los productos por categoría o marca
 
-function get_products_by_cat () {
+function get_productosByCategory($idCategory) {
 
     $conexion = new ConnectionDB();
-    $statement = "SELECT * FROM Productos where nombreCategoria = ?";
+    $statement = "SELECT * FROM productos where idCategoria = ".(int)$idCategory;
 
-    $cats = $conexion -> getAllData($statement);
+    $products = $conexion -> getAllData($statement);
 
-    return $cats;
+    return $products;
+}
+
+function get_productosByMarca($idMarca) {
+
+    $conexion = new ConnectionDB();
+    $statement = "SELECT * FROM productos where idMarca = ".(int)$idMarca;
+
+    $productos = $conexion -> getAllData($statement);
+
+    return $productos;
 }

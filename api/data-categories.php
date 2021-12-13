@@ -15,8 +15,23 @@ function get_categories()
 function get_category($name)
 {
     $conexion = new ConnectionDB();
-    $statement = "Select * From Categorias where nombreCategoria = '".pg_escape_string($name)."'";
+    $statement = "Select * From Categorias where nombreCategoria = '".$name."'";
 
+    $cat = $conexion->getAllData($statement);
+
+	return $cat;
+
+	/*
+	foreach($cats as $cat) {
+		if($product==$name) { return $price; break; }
+	}
+	*/	
+}
+function get_categoryById($id)
+{
+    $conexion = new ConnectionDB();
+    $statement = "Select * From categorias where idCategoria =".(int)$id;
+	
     $cat = $conexion->getAllData($statement);
 
 	return $cat;

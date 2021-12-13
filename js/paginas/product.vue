@@ -9,8 +9,8 @@
         <div class="productRight">          
           <p>Descripcion: {{product.descripProducto}} </p>
           <p>Precio: {{product.precioVenta}} </p>
-          <p>Marca: {{product.nombreMarca}} </p>
-          <p>Categoria: <router-link :to="'/category/'+product.idCategoria">{{product.nombreCategoria}}</router-link></p>
+          <p>Marca: <router-link :to="'/marca/'+product.idMarca">{{product.nombreMarca}}</router-link></p>
+          <p>Categoria: <router-link :to="'/categoria/'+product.idCategoria">{{product.nombreCategoria}}</router-link></p>
         </div>
       </div>
     </div>

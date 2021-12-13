@@ -5,10 +5,10 @@ require_once "response.php";
 use IntoTheZone\JsonResponse;
 
 
-if(!empty($_GET['name']))
+if(!empty($_GET['idCategoria']))
 {
-	$name = $_GET['name'];
-	$cat = get_category($name);
+	$idCategoria = $_GET['idCategoria'];
+	$cat = get_categoryById($idCategoria);
 	
 	if(empty($cat))
 	{
