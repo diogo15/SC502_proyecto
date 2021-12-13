@@ -19,7 +19,7 @@ insert into categorias(nombreCategoria) values
 	(	'VIDEOJUEGOS'	), 
     (	'CONSOLAS'	),
     (	'FIGURAS'	),
-    (	'MEDIAS'	);
+    (	'MEDIAS'	),
     (	'CAMISAS'	),
     (	'ACCESORIOS'	);
 
