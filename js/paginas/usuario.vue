@@ -2,7 +2,13 @@
 <div>
   <titulo>{{user.nombreUser}}</titulo>
   <div class="wrapper">
-
+    <table>
+      <thead>
+        <th>
+          <tr>Historial de Compras</tr>
+        </th>
+      </thead>
+    </table>
   </div>
 </div>
 </template>

@@ -15,6 +15,11 @@ function get_usuario($userID)
 
 function get_pedidosPasados($userID)
 {
-	return $pedidos;
+    $conexion = new ConnectionDB();
+    $statement = "CALL spGetUsuarioPedido ('".$userID."')";
+
+    $historial = $conexion->getAllData($statement);
+
+	return $historial;
 }
 
