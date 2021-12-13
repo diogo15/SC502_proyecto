@@ -1,37 +1,54 @@
 <template>
     <div class="login">
         <h1 class="title">Inicio de Sesión</h1>
-        
-        <form v-on:submit.prevent="hacerlogin()" class="form">
+        <form v-on:submit.prevent="" class="form">
             <label class="form-label" for="#email">Correo de usuario:</label>
             <input v-model="email" class="form-input" type="email" required placeholder="Email">
             <label class="form-label" for="#password">Contraseña:</label>
-            <input v-model="password" class="form-input" type="password" placeholder="Contraseña">
+            <input v-model="password" class="form-input" type="password" required placeholder="Contraseña">
 
-            <input class="form-submit" type="submit" value="login">
+            <btn class="green" v-on:click="enviarDatos()">Iniciar sesión</btn>
+
+            <p class="message">{{ message }}</p>
         </form>
     </div>
 </template>
 
 <script>
 module.exports = {
-  data: function() {
-    return{
-      email: "",
-      password: ""
+    data: function() {
+        return {
+            message: "",
+            email: "",
+            password: ""
+        }   
+    },
+    
+    methods : {
+        enviarDatos () {
+
+            var formData = new FormData();
+            formData.append("email", this.email);
+            formData.append("password", this.password);
+
+            axios.post(site_url + 'php/login.php', formData, {
+                headers: { 'Content-Type': 'multipart/form-data' }
+            }).then(response => {
+                if(response.data.data.login == 1){
+                    this.message= "Ingreso Exitoso!";
+                    setTimeout(function(){ location.reload(); }, 1500);
+                }else{
+                    this.message= "Error Intenta de Nuevo";
+                }
+            }).catch(err => {
+                console.log(err)
+            })
+
+        }
+    },
+    components: {
+        'btn': httpVueLoader(site_url + 'js/componentes/btn.vue')
     }
-  },
-  methods: {
-      hacerlogin() {
-              axios
-      .post(site_url + 'php/login.php', {
-          email: this.email,
-          password : this.password
-      })
-        .then(response => console.log(response))
-        .catch(error => console.log(error));
-      }
-  }
 }
 </script>
 
@@ -40,11 +57,11 @@ module.exports = {
         padding: 10px;
     }
 
-    .title {
+    .login .title {
         text-align: center;
     }
 
-    .form {
+    .login .form {
         margin: 3rem auto;
         display: flex;
         flex-direction: column;
@@ -52,18 +69,18 @@ module.exports = {
         width: 20%;
         min-width: 350px;
         max-width: 100%;
-        background: rgba(19, 35, 47, 0.9);
+        background: #333333;
         border-radius: 5px;
         padding: 40px;
         box-shadow: 0 4px 10px 4px rgba(0, 0, 0, 0.3);
     }
-    .form-label {
+    .login .form-label {
         margin-top: 2rem;
         color: white;
         margin-bottom: 0.5rem;
     }
 
-    .form-input {
+    .login .form-input {
         padding: 10px 15px;
         background: none;
         background-image: none;
@@ -71,12 +88,14 @@ module.exports = {
         color: white;
     }
 
-    .form-submit {
-        background: #1ab188;
-        border: none;
-        color: white;
+    .login .button  {
         margin-top: 3rem;
-        padding: 1rem 0;
-        cursor: pointer;
+    }
+
+    .close{
+        padding: 10px 15px;
+    }
+    .login .message{
+        color: #FFF;
     }
 </style>

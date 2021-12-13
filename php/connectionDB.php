@@ -33,6 +33,7 @@
 
         }
 
+
             // Esta función obtendrá el JSON de config para realizar la conexión al DB de XAMPP
         private function connection() {
             $pathFile = dirname(__FILE__);  //Obtiene la ruta dentro del proyecto
@@ -64,6 +65,41 @@
             return $this -> formatUTF8($resultArray);
         }
 
+        public function queryPrepared($query, $args)
+        {
+            $stmt = $this-> connection ->prepare($query);
+
+            if ($stmt === false) {
+                return [ 'error' => 'Preparacion Malaaa, cuenten BIEN los: ????' ];
+            }
+
+            $types = array_reduce($args, function($reduced, $type) {
+                
+                if (is_float($type))
+                    $reduced .= 'd';
+                elseif (is_integer($type))
+                    $reduced .= 'i';
+                elseif (is_string($type))
+                    $reduced .= 's';
+                else
+                    $reduced .= 'b';
+                
+                return $reduced;
+            });
+
+            $stmt->bind_param($types, ...$args);
+
+            if ($stmt === false) {
+                return [ 'error' => 'Binding de parametros malo :(' ];
+            }
+
+            $result = $stmt->execute() ? ['id' => $stmt->insert_id] : [ 'error' => $stmt->error ];
+
+            $stmt->close();
+
+            return $result;
+        }
+
         //  INSERT ON TABLE (Afecta todas las filas de la tabla)
 
         public function insert($statement){
@@ -93,7 +129,7 @@
         // Este método se usa para encriptar la contraseña que brinda el usuario
         // Esto para validar el logjn
         // MD5 es un formato de encriptación, útil para contraseñas
-        protected function encript ($string) {
+        public function encript ($string) {
             return md5 ($string);
         }
         

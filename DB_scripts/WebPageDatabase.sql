@@ -8,27 +8,6 @@ flush privileges;
 
 use WebPage;
 
-/*
-	usuarios	X
-	empleados	X
-    proveedores	X
-    facturaProveedores
-    detalleFacturaProveedor
-    productos
-    entregas
-    locales
-    categorias	X
-    marcas		X
-    inventario
-    clientes
-    repartidor
-    facturaCliente
-    detallefacturaCliente
-    paises		X
-    provincias	X
-    
-*/
-
 create table categorias(
 	idCategoria int primary key auto_increment not null,
     nombreCategoria varchar(50) not null,
@@ -40,8 +19,9 @@ insert into categorias(nombreCategoria) values
 	(	'VIDEOJUEGOS'	), 
     (	'CONSOLAS'	),
     (	'FIGURAS'	),
-    (	'ACCESORIOS'	),
-     (	'MEDIAS'	);
+    (	'MEDIAS'	);
+    (	'CAMISAS'	),
+    (	'ACCESORIOS'	);
 
 drop table if exists marcas;
 create table marcas(
@@ -54,12 +34,14 @@ create table marcas(
 INSERT INTO `marcas` (`nombreMarca`) 
 	VALUES 	('funko'),
 			('reddragon'),
-            ('amazon')
-            ('superchiva');
+            ('amazon'),
+            ('superchiva'),
+			('RedDragon'),
+            ('BeDifferentCR');
             
 insert into marcas(nombreMarca) values 
-	(	'NINTENDO'	), 
-    (	'XBOX'	);
+	(	'Nintendo'	), 
+    (	'Xbox'	);
 
 create table paises(
 	idPais int primary key auto_increment not null,
@@ -106,22 +88,11 @@ create table usuarios(
     apellido2Usuario varchar(30) not null,
     passwordUsuario varchar(255) not null,
     mailUsuario varchar(50) not null
-    /*
-    direccion varchar(200) not null,
-    
-    idRol int not null,
-    idPais int not null,
-    idProvincia int not null,
-    
-    unique key idUsuario(idUsuario),
-    constraint FK_IDROL foreign key (idRol) references roles(idRol),
-    foreign key (idPais) references paises(idPais),
-    constraint FK_IDPROVINCIA foreign key (idProvincia) references provincias(idProvincia)
-    */
 );
 
 INSERT INTO usuarios (nombreUser, apellido1Usuario, apellido2Usuario, passwordUsuario, mailUsuario)
-	values 	('Fabián', 'Madriz', 'Villalta', md5(12345), 'fabimv23@gmail.com');
+	values 	('Fabián', 'Madriz', 'Villalta', md5(12345), 'fabimv23@gmail.com'),
+            ('Luis', 'R', 'E', md5(123), 'asd@asd.com');
 
 create table empleados(
 	idEmpleado int primary key auto_increment not null,
@@ -131,7 +102,10 @@ create table empleados(
 );
 
 INSERT INTO `empleados` (`cedulaEmpleado`, `nombreEmpleado`, `apellidoEmpleado`) 
-	VALUES ('114180039', 'luis', 'ramirez');
+	VALUES 	('114180039', 'luis', 'ramirez'),
+			('118065478', 'fabian', 'madriz'),
+            ('151307035', 'andres', 'brizuela'),
+            ('193110484', 'isaac', 'chacon');
 
 drop table if exists locales;
 Create Table locales (
@@ -156,21 +130,16 @@ drop table if exists Proveedores;
 create table Proveedores(
     idProveedor int primary key auto_increment not null,
     nombreProveedor varchar(50) not null,
-    telefono int null,
+    telefono varchar(9) null,
     email varchar(50) null
 );
 
-drop table if exists R_LocProv;
-create table R_LocProv(
-
-    idLocal int not null,
-    idProveedor int not null,
-    
-    constraint FK_IDLOCAL foreign key(idLocal) references Locales(idLocal),
-    constraint FK_IDPROVEEDOR foreign key(idProveedor) references Proveedores(idProveedor),
-    
-    primary key(idLocal, idProveedor)
-);
+INSERT INTO Proveedores(nombreProveedor, telefono, email)
+	value	('Alfredo', 	7777-2222, 'alfredo@gmail.com'),
+			('Marcos', 		8888-8888, 'marcos@gmail.com'),
+			('Jose', 		9999-1111, 'jose@gmail.com'),
+            ('Alexander', 	2222-3333, 'alex@gmail.com'),
+            ('Spencer', 	1111-4444, 'spencer@gmail.com');
 
 drop table if exists Productos;
 create table Productos(
@@ -197,22 +166,36 @@ INSERT INTO `productos` (`codBarras`, `nombreProducto`, `descripProducto`, `url_
             ('1234', 'Funko Naruto', 'Funko Naruto', 'img/productos/Naruto.jpg', '8000', '1', '3', '1'),
             ('1235', 'Funko Iron Man', 'Funko Iron Man', 'img/productos/Iron Man.jpg', '8000', '1', '3', '1'),
             ('1236', 'Funko joker', 'Funko joker', 'img/productos/joker.jpg', '8000', '1', '3', '1'),
+            ('1235', 'Funko Navas', 'Funko Navas', 'img/productos/navas.jpg', '8000', '1', '3', '1'),
             ('1237', 'Medias caballeros del zodiaco', 'Medias caballeros del zodiaco', 'img/productos/caballeros del zodiaco.jpg', '5000', '1', '5', '4'),
             ('1238', 'Medias Calicaturas navideñas', 'Medias Calicaturas navideñas', 'img/productos/Calicaturas navideñas.jpg', '5000', '1', '5', '4'),
             ('1239', 'Medias Gunns and Roses', 'Medias Gunns and Roses', 'img/productos/Gunns and Roses.jpg', '5000', '1', '5', '4'),
             ('1240', 'Medias Mario Bros', 'Medias Mario Bros', 'img/productos/Mario Bros.jpg', '5000', '1', '5', '4'),
             ('1241', 'Medias pink floyd', 'Medias pink floyd', 'img/productos/pink floyd.jpg', '5000', '1', '5', '4'),
             ('1242', 'Medias Pinky y Cerebro', 'Medias Pinky y Cerebro', 'img/productos/Pinky y cerebro.jpg', '5000', '1', '5', '4'),
-            ('1243', 'Medias Pac-man', 'Medias Pac-man', 'img/productos/Pac-man.jpg', '5000', '1', '5', '4');
+            ('1243', 'Medias Pac-man', 'Medias Pac-man', 'img/productos/Pac-man.jpg', '5000', '1', '5', '4'),
+            ('1236', 'Camisa Squirtle', 'Camisa negra con impresion', 'img/productos/squartle.jpg', '15000', '1', '4', '3'),
+            ('1237', 'Camisa Demon Slayer', 'Camisa negra con impresion', 'img/productos/demon-slayer.jpg', '15000', '1', '4', '3'),
+            ('1238', 'Camisa Demon Slayer2', 'Camisa negra con impresion', 'img/productos/demon-slayer2.jpg', '15000', '1', '4', '3'),
+            ('1239', 'Camisa Jujutsu Kaisen', 'Camisa negra con impresion', 'img/productos/jujutsu-kaisen.jpg', '15000', '1', '4', '3'),
+            ('1240', 'Camisa Evangeleon', 'Camisa negra con impresion', 'img/productos/evangeleon.jpg', '15000', '1', '4', '3'),
+            ('1241', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '4', '3');
 
 drop table if exists repartidores;
 create table repartidores(
 	idRepartidor int primary key auto_increment not null,
     nombreRepartidor varchar(30) not null,
     apellidoRepartidor varchar(30) not null,
-    telefono int null,
+    telefono varchar(9) not null,
     email varchar(30) null
 );
+
+INSERT INTO Repartidores (nombreRepartidor, apellidoRepartidor, telefono, email)
+	VALUES 	('María', 'Venegas', '1111-2222', 'mvenegas@gmail.com'),
+			('Leonardo', 'Vinicio', '3333-4444', 'lvinicio@gmail.com'),
+			('Juan', 'Granados', '5555-6666', 'jgranados@gmail.com'),
+			('Mario', 'Cascante', '7777-8888', 'mcascante@gmail.com'),
+			('Sofía', 'Castro', '9999-1111', 'scastro@gmail.com');
 
 drop table if exists Pedidos;
 create table pedidos(

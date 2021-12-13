@@ -1,47 +1,80 @@
 /*
 
-#C2814D 
-#45B173 
-#7D47BB
+STYLEGUIDE - COLORS
+
+NEGRO ::::::::: #333333
+NARANJA ::::::: #C2814D 
+NARANJA_DARK :: #81512a 
+VERDE ::::::::: #45B173 
+VERDE_DARK :::: #3d9b65
+MORADO :::::::: #7D47BB
+MORADO_LIGHT :: #9959e3
 
 */
 body{
     background: #C2814D;
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans',Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: #333;    
+}
+img{
+    max-width: 100%;
 }
 .header{
     background: #fff;
-    padding: 20px 0;
+    padding: 15px 0;
 }
 .wrapper{
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1240px;
     padding: 0 30px;
+    margin: 0 auto;
+}
+.wrapperCarrrusel{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0px 0px;
+  
+    
+}
+@media (max-width: 980px) {
+    .wrapper{
+        padding: 0 15px;
+    }
 }
 .header .flex{
     justify-content: space-between;
+    align-items: center;
 }
 .pages{
     display: grid;
 }
 .logo{
+    position: relative;
     margin: 0;
     font-size: 33px;
-
+    width: 185px;
+}
+.nav{
+    margin: 0 auto;
+}
+.nav a{
+    display: inline-block;
+    color: black;
+    margin: 0 15px;
+    min-width: 75px;
+    text-align: center;
 }
 .flex{
     display: flex;
 }
-.products-4row{
-    display: flex;
-    justify-content: space-between;
-}
-.products-4row > div{
-    width: 23%;
-}
 .pages > div{
     grid-row: 1;
     grid-column: 1;
+    min-width: 0;
 }
 
 .v-enter-active, .v-leave-active {
@@ -49,4 +82,52 @@ body{
 }
 .v-enter, .v-leave-to {
     opacity: 0;
+}
+.router-link-active{
+    font-weight: bold;
+}
+       
+.logo:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: auto;
+    top: 8%;
+    bottom: 15%;
+    background: #7D47BB;
+    animation-name: logo_itz;
+    animation-duration: 1s;
+    transform: skew(-33deg);
+}
+
+@keyframes logo_itz {
+    0%  {left:0;right:0;}
+    100%  {left:31%;right:68%;}
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: local(''),
+         url('../fonts/open-sans-v27-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/open-sans-v27-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* open-sans-700 - latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: bold;
+    src: local(''),
+        url('../fonts/open-sans-v27-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('../fonts/open-sans-v27-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* open-sans-300 - latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: lighter;
+    src: local(''),
+        url('../fonts/open-sans-v27-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('../fonts/open-sans-v27-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
