@@ -20,6 +20,12 @@ function get_pedidosPasados($userID)
 
     $historial = $conexion->getAllData($statement);
 
-	return $historial;
+    $pedidosbyID = [];
+
+    foreach ($historial as $pedido) {
+        $pedidosbyID[$pedido['idPedido']][] = $pedido;
+    }
+
+	return $pedidosbyID;
 }
 

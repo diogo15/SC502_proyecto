@@ -230,7 +230,7 @@ module.exports = {
 .table_itz a{
   color: white;
 }
-tbody tr td:nth-child(3){
+.table_itz tbody tr td:nth-child(3){
   text-align: center;
 }
 .btns-checkin{
