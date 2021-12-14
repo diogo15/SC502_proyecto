@@ -11,7 +11,9 @@ if(!empty($_POST['items']) && isset($_SESSION['user'])){
 	
     $items = json_decode($_POST['items'],true);
 
-	$pedido = insert_pedido("1" , "1", $userID, 0, '2000-01-01', 0);
+	$fecha = date('y-m-d');
+
+	$pedido = insert_pedido("1" , "1", $userID, 0, $fecha, 0);
 
 	if(isset($pedido["error"]))
 	{

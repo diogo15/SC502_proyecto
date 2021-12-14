@@ -4,10 +4,9 @@
     <carousel cantidad="1">
       
       
-      <banner imagen="banner-consolas.png">Llegaron Nuevos Productos!!</banner>   
-      <banner imagen="banner-PS5.jpg"></banner>   
-      <banner imagen="banner-Xbox.jpg">Llegaron Nuevos Productos!!</banner>   
-      <banner imagen="banner-xgames.jpg">Llegaron Nuevos Productos!!</banner>   
+      <banner imagen="banner-consolas.png" color="white">Llegaron Nuevos Productos!!</banner>
+      <banner imagen="banner-Xbox.jpg" color="#2a292e">Llegaron Nuevos Productos!!</banner>   
+      <banner imagen="banner-xgames.jpg" color="black">Llegaron Nuevos Productos!!</banner>   
       
     
     </carousel> 
