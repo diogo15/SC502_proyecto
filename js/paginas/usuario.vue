@@ -13,7 +13,7 @@
       <tbody>
         <tr v-for="pedido in user.pedidos" v-bind:key="pedido.idPedido">
           <td> {{ pedido.fecha }} </td>
-          <td> {{ pedido.estadoPedido }} </td>
+          <td> {{ (pedido.estadoPedido == 0) ? 'En proceso' : 'Entregado' }} </td>
           <td> {{ pedido.paga }} </td>
         </tr>
       </tbody>
@@ -41,7 +41,7 @@ module.exports = {
   mounted () {
     axios
       .get(site_url + 'api/usuario.php')
-      .then(response => (this.user.pedidos = response.data.data))
+      .then(response => (this.user.pedidos = response.data.data[1]))
       .catch(error => console.log(error));
   },
   components: {
