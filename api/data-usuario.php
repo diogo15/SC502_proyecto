@@ -5,7 +5,7 @@ require_once '../php/connectionDB.php';
 function get_usuario($userID)
 {
     $conexion = new ConnectionDB();
-    $statement = "Select mailUsuario,nombreUser From usuarios where idUsuario = '".$userID."'";
+    $statement = "Select mailUsuario,nombreUser From usuarios where idUsuario = '".(int)$userID."'";
 
     $user = $conexion->getAllData($statement);
 
@@ -16,7 +16,7 @@ function get_usuario($userID)
 function get_pedidosPasados($userID)
 {
     $conexion = new ConnectionDB();
-    $statement = "CALL spGetUsuarioPedido ('".$userID."')";
+    $statement = "CALL spGetUsuarioPedido ('".(int)$userID."')";
 
     $historial = $conexion->getAllData($statement);
 
