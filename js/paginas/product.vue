@@ -4,7 +4,7 @@
     <div class="wrapper">
       <div class="flex product-single">
         <div class="productLeft">
-          <img :src="base_url+product.url_imagen" alt="">
+          <img :src="product.url_imagen" alt="">
         </div>
         <div class="productRight">          
           <p>Descripcion: {{product.descripProducto}} </p>
@@ -30,7 +30,10 @@ module.exports = {
     
     axios
       .get(site_url + 'api/producto.php', { params: { pid: this.pid } })
-      .then(response => (this.product = response.data.data[0]))
+      .then(response => {
+        response.data.data[0].url_imagen = site_url + response.data.data[0].url_imagen;
+        this.product = response.data.data[0];
+      })
       .catch(error => console.log(error));
     
   },
