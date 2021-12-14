@@ -25,7 +25,7 @@ module.exports = {
   methods: {
     gotoFacturar(){      
       if (this.$route.path != '/facturar') {
-          router.push('facturar');
+          router.push('/facturar');
       }
     }    
   },

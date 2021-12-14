@@ -31,7 +31,7 @@ module.exports = {
   methods : {
     goToUsuario : function () {      
       if (this.$route.path != '/usuario') {
-          router.push('usuario');
+          router.push('/usuario');
       }
     }
   },
