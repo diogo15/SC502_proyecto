@@ -24,6 +24,8 @@
     <script src="https://unpkg.com/http-vue-loader"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue-router@3.5.3/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/vue-observe-visibility/dist/vue-observe-visibility.min.js"></script>
+
 
     <link rel="stylesheet" href="css/style.css">
     </head>

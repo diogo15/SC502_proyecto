@@ -1,52 +1,28 @@
 <template>
 <div>
-   <div class="wrapperCarrrusel">  
+  <div class="wrapperCarrrusel">  
     <carousel cantidad="1">
-      
       
       <banner imagen="banner-consolas.png" color="white">Llegaron Nuevos Productos!!</banner>
       <banner imagen="banner-Xbox.jpg" color="#2a292e">Llegaron Nuevos Productos!!</banner>   
       <banner imagen="banner-xgames.jpg" color="black">Llegaron Nuevos Productos!!</banner>   
       
-    
     </carousel> 
-   </div> 
+  </div> 
     
-  
-    
-  
   <div class="wrapper">
-    <div class="flex">
+    <div class="flex between showcase">
       <categorytile imagen="FunkoB.png">Funko</categorytile>
       <categorytile imagen="banner-consolas.png">Consolas</categorytile>
       <categorytile imagen="camisaO.png">Camisas</categorytile>
     </div>
   </div>
 
-   <titulo>Productos Nuevos</titulo>
-  <div class="wrapper">  
-    <carousel>
-      <producto
-        v-for="product in funkos"
-        v-bind:key="product.idProducto"
-        v-bind:product="product"
-      ></producto>
-    </carousel>
-    <carousel>
-      <producto
-        v-for="product in medias"
-        v-bind:key="product.idProducto"
-        v-bind:product="product"
-      ></producto>
-    </carousel>
-    <carousel>
-      <producto
-        v-for="product in camisas"
-        v-bind:key="product.idProducto"
-        v-bind:product="product"
-      ></producto>
-    </carousel>
-  </div>
+  <split v-observe-visibility="visibilityChanged">
+    <p>CLICK ME PLEASEE</p>
+  </split>
+  
+
 </div>
 </template>
 
@@ -80,12 +56,26 @@ module.exports = {
       .catch(error => console.log(error));
     
   },
+  methods: {
+    visibilityChanged (isVisible, entry) {
+      if (entry.intersectionRatio > 0) {
+        entry.target.classList.add('showAnim');
+      }
+    }
+  },
   components: {
     'producto': httpVueLoader(site_url + 'js/componentes/producto.vue'),
     'carousel': httpVueLoader(site_url + 'js/componentes/carousel.vue'),
     'titulo': httpVueLoader(site_url + 'js/componentes/titulo.vue'),
     'categorytile': httpVueLoader(site_url + 'js/componentes/category-tile.vue'),
-    'banner': httpVueLoader(site_url + 'js/componentes/banner.vue')
+    'banner': httpVueLoader(site_url + 'js/componentes/banner.vue'),
+    'split': httpVueLoader(site_url + 'js/componentes/split-section.vue')
   }
 }
 </script>
+
+<style scoped>
+.showcase{
+  margin: 40px 0 80px;
+}
+</style>

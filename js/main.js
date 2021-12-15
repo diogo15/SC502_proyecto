@@ -2,6 +2,8 @@ Vue.use(VueMeta, {
     refreshOnceOnNavigation: true
 });
 
+Vue.use(VueObserveVisibility);
+
 var app = new Vue({
     router,
     metaInfo: {
@@ -23,8 +25,7 @@ var app = new Vue({
         'btn-login': httpVueLoader(site_url + 'js/componentes/btn-login.vue'),
         'modal': httpVueLoader(site_url + 'js/componentes/modal.vue'),
         'login': httpVueLoader(site_url + 'js/paginas/login.vue'),
-        'myfooter': httpVueLoader(site_url + 'js/componentes/footer.vue')
-        
+        'myfooter': httpVueLoader(site_url + 'js/componentes/footer.vue')        
     }
 }).$mount('#app');
 

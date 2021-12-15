@@ -1,10 +1,12 @@
 <template>
 
-<div class="imgHolder">
-    <router-link :to="'/category/1'">
-        <img class="img-carousel3" v-bind:src="'img/productos/'+imagen"/>
-    </router-link>
-    <p class="categoryName"><slot></slot></p>
+<div class="showcaseItem">
+    <div class="circle">
+        <router-link :to="'/category/1'">
+            <img v-bind:src="'img/productos/'+imagen"/>
+        </router-link>
+    </div>
+    <p class="cName"><slot></slot></p>
 </div>
 
 </template>
@@ -16,30 +18,38 @@ module.exports = {
 }
 </script>
 <style>
-
-.imgHolder{
-  position: relative;
-  background: white;
-  width: 33.3333%;
-  height: 400px;
-  line-height: 400px;
-  text-align: center;
-  border: 10px solid #C2814D;
+.showcaseItem * {
+    box-sizing: border-box; 
 }
-
-.imgHolder img{
-  max-width: 80%;
-  vertical-align: middle;
+.showcaseItem{
+    width: 30%;
+    position: relative;
+    padding-bottom: 30%;
+    text-align: center;
 }
-
-.categoryName{
+.showcaseItem .circle{  
+    display: flex;
     position: absolute;
-    box-sizing: border-box;
-    bottom: 0;
-    z-index: 2;
-    line-height: 1;
-    background: #333;
     width: 100%;
+    height: 100%;
+    background: white;
+    border: 10px solid #C2814D;     
+    overflow: hidden;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.showcaseItem img{
+    max-width: 80%;
+    width: 100%;
+}
+
+.showcaseItem .cName{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    transform: translateY(110%);
     color: white;
     padding: 15px;
     font-weight: 300;
