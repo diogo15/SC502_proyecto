@@ -2,6 +2,7 @@
   <div>
     <titulo>Videojuegos</titulo>
     <div class="wrapper">   
+
         <carousel>
         <producto
           v-for="product in videojuegos"
@@ -9,28 +10,35 @@
           v-bind:product="product"
         ></producto>
       </carousel>
-     
-      <titulo>Consolas</titulo>
-      <carousel>
-        
+
+    </div>
+    <titulo>Consolas</titulo>
+    <div class="wrapper">
+
+      <carousel>        
         <producto
           v-for="product in consolas"
           v-bind:key="product.idProducto"
           v-bind:product="product"
-        ></producto>
-        
+        ></producto>        
       </carousel>
-      <titulo>Figuras</titulo>
-       <carousel>
-        
+      
+    </div>
+    <titulo>Figuras</titulo>
+    <div class="wrapper">
+
+       <carousel>        
         <producto
           v-for="product in funkos"
           v-bind:key="product.idProducto"
           v-bind:product="product"
-        ></producto>
-        
+        ></producto>        
       </carousel>
-      <titulo>Medias</titulo>
+
+    </div>
+    <titulo>Medias</titulo>
+    <div class="wrapper">
+
       <carousel>
         <producto
           v-for="product in medias"
@@ -38,7 +46,11 @@
           v-bind:product="product"
         ></producto>
       </carousel>
-      <titulo>Camisas</titulo>
+
+    </div>
+    <titulo>Camisas</titulo>
+    <div class="wrapper">
+
         <carousel>
         <producto
           v-for="product in camisas"
@@ -46,7 +58,11 @@
           v-bind:product="product"
         ></producto>
       </carousel>
-      <titulo>Accesorios</titulo>
+
+    </div>
+    <titulo>Accesorios</titulo>
+    <div class="wrapper">
+
       <carousel>
         <producto
           v-for="product in accesorios"
@@ -54,10 +70,6 @@
           v-bind:product="product"
         ></producto>
       </carousel>
-
-      <p v-for="cat in categories" v-bind:key="cat.idCategoria" >
-        {{ cat.nombreCategoria }}
-      </p>
 
     </div>
   </div>
