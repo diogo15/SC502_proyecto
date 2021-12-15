@@ -56,4 +56,23 @@ module.exports = {
     font-size: 25px;
 }
 
+.showcaseItem.showAnim:nth-child(1){
+  animation: slideDown 1s ease-in-out forwards;
+}
+
+.showcaseItem.showAnim:nth-child(2){
+  animation: slideDown 1s 0.2s ease-in-out forwards;
+}
+
+.showcaseItem.showAnim:nth-child(3){
+  animation: slideDown 1s 0.4s ease-in-out forwards;
+}
+
+
+@keyframes slideDown {
+  0%    { transform: translateY(0)   }
+  40%   { transform: translateY(-10%) }
+  100%   { transform: translateY(0)   }
+}
+
 </style>

@@ -12,9 +12,9 @@
     
   <div class="wrapper">
     <div class="flex between showcase">
-      <categorytile imagen="FunkoB.png">Funko</categorytile>
-      <categorytile imagen="banner-consolas.png">Consolas</categorytile>
-      <categorytile imagen="camisaO.png">Camisas</categorytile>
+      <categorytile v-observe-visibility="visibilityChanged" imagen="FunkoB.png">Funko</categorytile>
+      <categorytile v-observe-visibility="visibilityChanged" imagen="banner-consolas.png">Consolas</categorytile>
+      <categorytile v-observe-visibility="visibilityChanged" imagen="camisaO.png">Camisas</categorytile>
     </div>
   </div>
 

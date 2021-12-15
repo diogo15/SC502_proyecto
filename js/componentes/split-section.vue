@@ -57,4 +57,6 @@ module.exports = {
   from { transform: translateX(100%) skewX(-20deg);  }
   to   { transform: translateX(20%) skewX(-20deg); }
 }
+
+
 </style>
