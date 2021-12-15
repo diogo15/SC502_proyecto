@@ -1,7 +1,7 @@
 <template>
 
 <div class="imgHolder">
-    <router-link :to="'/category/1'">
+    <router-link :to="'/tienda'">
         <img class="img-carousel3" v-bind:src="'img/productos/'+imagen"/>
     </router-link>
     <p class="categoryName"><slot></slot></p>

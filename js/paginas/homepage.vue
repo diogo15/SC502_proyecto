@@ -4,10 +4,10 @@
     <carousel cantidad="1">
       
       
-      <banner imagen="banner-consolas.png">Llegaron Nuevos Productos!!</banner>   
-      <banner imagen="banner-PS5.jpg"></banner>   
-      <banner imagen="banner-Xbox.jpg">Llegaron Nuevos Productos!!</banner>   
-      <banner imagen="banner-xgames.jpg">Llegaron Nuevos Productos!!</banner>   
+      <banner imagen="banner-consolas.png">Llegaron nuevas consolas!!</banner>   
+      <banner imagen="banner-PS5.jpg">Nuevo Playstation 5, reserva ya!</banner>    
+      <banner imagen="banner-Xbox.jpg">Nuevo Xbox Series X, reserva ya!</banner>   
+      <banner imagen="banner-xgames.jpg">Llegaron Nuevos Juegos Ilimitados, Reserva Ya!</banner>   
       
     
     </carousel> 
@@ -58,8 +58,6 @@ module.exports = {
       funkos: null,
       medias: null,
       camisas: null
-      
-      //sera agregar aqui algo como productos 2 o algo asi
       
     }
   },

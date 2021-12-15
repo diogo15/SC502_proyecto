@@ -41,7 +41,9 @@ INSERT INTO `marcas` (`nombreMarca`)
             
 insert into marcas(nombreMarca) values 
 	(	'Nintendo'	), 
-    (	'Xbox'	);
+    (	'Xbox'	),
+    (	'Hot Toys'	),
+    (	'Playstation'	);
 
 create table paises(
 	idPais int primary key auto_increment not null,
@@ -179,7 +181,45 @@ INSERT INTO `productos` (`codBarras`, `nombreProducto`, `descripProducto`, `url_
             ('1247', 'Camisa Demon Slayer2', 'Camisa negra con impresion', 'img/productos/demon-slayer2.jpg', '15000', '1', '5', '6'),
             ('1248', 'Camisa Jujutsu Kaisen', 'Camisa negra con impresion', 'img/productos/jujutsu-kaisen.jpg', '15000', '1', '5', '6'),
             ('1249', 'Camisa Evangeleon', 'Camisa negra con impresion', 'img/productos/evangeleon.jpg', '15000', '1', '5', '6'),
-            ('1250', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '5', '6');
+            ('1250', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '5', '6'),
+
+
+            ('1251', 'Consola Atari', 'consola', 'img/productos/atari.png', '80000', '1', '2', '3'),
+            ('1252', 'figura Back to the Future', 'Figura Vuelta al Futuro', 'img/productos/backToTheFutureFigures.jpg', '170000', '1', '3', '9'),
+            ('1253', 'figura Boba Fett', 'Figura BobaFett', 'img/productos/boba-fettFigures.png', '300000', '1', '3', '9'),
+            ('1254', 'control de Ps5', 'Control de Playstation 5', 'img/productos/control-de-ps5.jpg', '50000', '1', '6', '10'),
+            ('1255', 'control de xbox edicion carbon', 'Control de Xbox carbon Edition', 'img/productos/control-xbox-series-sx-carbon-black1.jpg', '50000', '1', '6', '8'),
+            ('1256', 'control switch', 'Control de Switch', 'img/productos/controlSwitch.jpg', '30000', '1', '6', '7'),
+            ('1257', 'figura DBZ', 'Figura de Dragon Ball Z', 'img/productos/DBZFigure.jpg', '15000', '1', '3', '3'),
+            ('1258', 'figura DBZ2', 'Figura de Dragon Ball Z Hot Toys Edition', 'img/productos/magicarp.jpg', '100000', '1', '3', '9'),
+            ('1259', 'figura deadpool', 'Figura DeadPool', 'img/productos/deadpoolFigures.jpg', '160000', '1', '3', '9'),
+            ('1260', 'figura demons slayer', 'Figura Demons Slayer', 'img/productos/demon-slayerFigure.png', '35000', '1', '3', '3'),
+
+            ('1261', 'juego demons slayer', 'Juego Demons Slayer', 'img/productos/demons_slayer_PS5.jpg', '30000', '1', '1', '10'),
+            ('1262', 'juego forza horizon', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '5', '6'),
+            ('1263', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '5', '6'),
+            ('1264', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '5', '6'),
+            ('1265', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '5', '6'),
+            ('1266', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '5', '6'),
+            ('1267', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '5', '6'),
+            ('1268', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '5', '6'),
+            ('1269', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '5', '6'),
+            ('1270', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '5', '6'),
+            ('1271', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '5', '6'),
+            ('1272', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '5', '6'),
+            ('1273', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '5', '6'),
+            ('1274', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '5', '6'),
+            ('1275', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '5', '6'),
+            ('1276', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '5', '6'),
+            ('1277', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '5', '6'),
+            ('1278', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '5', '6'),
+            ('1279', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '5', '6'),
+            ('1280', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '5', '6'),
+            ('1281', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '5', '6'),
+            ('1282', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '5', '6'),
+            ('1283', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '5', '6');
+
+
 
 drop table if exists repartidores;
 create table repartidores(
