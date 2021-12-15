@@ -1,16 +1,17 @@
 <template>
 <div>
-    <titulo>{{product.nombreProducto}}</titulo>
     <div class="wrapper">
       <div class="flex product-single">
         <div class="productLeft">
           <img :src="product.url_imagen" alt="">
         </div>
         <div class="productRight">          
-          <p>Descripcion: {{product.descripProducto}} </p>
-          <p>Precio: {{product.precioVenta}} </p>
-          <p>Marca: <router-link :to="'/marca/'+product.idMarca">{{product.nombreMarca}}</router-link></p>
-          <p>Categoria: <router-link :to="'/categoria/'+product.idCategoria">{{product.nombreCategoria}}</router-link></p>
+          <titulo>{{product.nombreProducto}}</titulo>
+          <p class="price">{{product.precioVenta}} </p>
+          <btn class="purple" v-on:click="comprar(product)" >Añadir al Carrito</btn>
+          <p><span class="product-subtitle">Descripcion:</span> {{product.descripProducto}} </p>
+          <p><span class="product-subtitle">Marca:</span><btn class="link"><router-link :to="'/marca/'+product.idMarca">{{product.nombreMarca}}</router-link></btn></p>
+          <p><span class="product-subtitle">Categoria: </span><btn class="link"><router-link :to="'/categoria/'+product.idCategoria">{{product.nombreCategoria}}</router-link></btn></p>
         </div>
       </div>
     </div>
@@ -26,6 +27,14 @@ module.exports = {
       pid: this.$route.params.pid
     }
   },
+  methods: {
+    
+    comprar(product) {
+      carrito.addItem(product);
+      this.agregado = true;
+    }
+    
+  },
   mounted () {
     
     axios
@@ -38,15 +47,49 @@ module.exports = {
     
   },
   components: {
-    'titulo': httpVueLoader(site_url + 'js/componentes/titulo.vue')
+    'titulo': httpVueLoader(site_url + 'js/componentes/titulo.vue'),
+    'btn': httpVueLoader(site_url + 'js/componentes/btn.vue')
   }
 }
 </script>
 <style scoped>
-img{
-  max-width: 100%;
+
+.product-single{
+  justify-content: space-between;
+  margin-top: 30px;
 }
 .product-single .productLeft{
-  max-width: 40%;
+  max-width: 45%;
+  padding: 20px;
+  background: rgba(255,255,255,0.2);
+}
+.product-single .productRight{
+  width: 50%;
+}
+.product-single .bigTitle{
+  margin-left: -50px;
+  padding-left: 20px;
+}
+
+@media (max-width: 980px) {
+  .product-single .bigTitle .wrapper{
+    padding: 0 30px;
+  }
+}
+
+.product-single .price{
+  font-size: 35px;
+  line-height: 1;
+}
+.product-single .price:before{
+  content: "¢";
+}
+.product-single .button{
+  text-transform: capitalize;
+}
+
+.product-single .product-subtitle{
+  display: block;
+  font-weight: bold;
 }
 </style>

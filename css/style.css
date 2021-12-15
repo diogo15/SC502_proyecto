@@ -71,6 +71,9 @@ img{
 .flex{
     display: flex;
 }
+.between{
+    justify-content: space-between;
+}
 .pages > div{
     grid-row: 1;
     grid-column: 1;
