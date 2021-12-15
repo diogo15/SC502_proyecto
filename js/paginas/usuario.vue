@@ -26,6 +26,12 @@
 
 <script>
 module.exports = {
+    metaInfo: {
+    title: 'Usuarios',
+    meta: [
+      { name: 'description', content: 'Apartado de nuestro usuarios.' },
+    ]
+  },
   data: function() {
     return{
       username : current_user[1],

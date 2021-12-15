@@ -17,6 +17,12 @@
 
 <script>
 module.exports = {
+      metaInfo: {
+    title: 'Registro',
+    meta: [
+      { name: 'description', content: 'Registrate y unete a la tienda más grande de productos geeks en Costa Rica.' },
+    ]
+  },
   data: function() {
     return{
       correo: "",

@@ -15,6 +15,12 @@
 
 <script>
 module.exports = {
+  metaInfo: {
+    tittle: 'Categorias',
+    meta: [
+      { name: 'description', content: 'Apartado de Categorias disponibles para nuestros clientes.'},
+    ]
+  },
   data: function() {
     return{
       base_url: site_url,

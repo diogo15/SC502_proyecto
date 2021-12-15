@@ -29,6 +29,12 @@
 
 <script>
 module.exports = {
+  metaInfo: {
+        title: 'Página Principal',
+    meta: [
+      { name: 'description', content: 'Bienvenidos a IntotheZone. Su mejor opcion en productos geeks.' },
+    ]
+  },
   data: function() {
     return{
       funkos: null,

@@ -23,6 +23,12 @@
 
 <script>
 module.exports = {
+    metaInfo: {
+    title: 'Bienvenidos a nuestra tienda online IntotheZone',
+    meta: [
+      { name: 'description', content: 'Apartado donde puede seleccionar y escojer sus productos favoritos.' },
+    ]
+  },
   data: function() {
     return{
       productos: null,

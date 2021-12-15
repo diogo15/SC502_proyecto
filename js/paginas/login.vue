@@ -18,6 +18,12 @@
 
 <script>
 module.exports = {
+  metaInfo: {
+    title: 'Acceso',
+    meta: [
+      { name: 'description', content: 'Página de acceso para nuetros clientes.' },
+    ]
+  },
     data: function() {
         return {
             message: "",

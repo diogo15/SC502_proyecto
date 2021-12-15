@@ -41,7 +41,7 @@ module.exports = {
   metaInfo: {
     title: 'Acerca de Nosotros',
     meta: [
-      { name: 'description', content: 'Somos una tienda virtual especializada en traer lo ultimo en juguetes geek.' },
+      { name: 'description', content: 'Somos una tienda virtual especializada en traer lo ultimo en productos geek.' },
     ]
   },
   data: function() {

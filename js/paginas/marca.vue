@@ -15,6 +15,12 @@
 
 <script>
 module.exports = {
+    metaInfo: {
+    title: 'Marcas',
+    meta: [
+      { name: 'description', content: 'Nuestras marcas disponibles de nuestros productos.' },
+    ]
+  },
   data: function() {
     return{
       base_url: site_url,

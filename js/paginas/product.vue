@@ -20,6 +20,12 @@
 
 <script>
 module.exports = {
+    metaInfo: {
+    title: 'Productos',
+    meta: [
+      { name: 'description', content: 'Bienvinidos al apartado de nuestros productos a disposición del cliente.' },
+    ]
+  },
   data: function() {
     return{
       base_url: site_url,

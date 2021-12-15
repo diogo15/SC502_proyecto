@@ -125,6 +125,12 @@
 
 <script>
 module.exports = {
+  metaInfo: {
+     title: 'Facturar',
+    meta: [
+      { name: 'description', content: 'Apartado de facturar donde usted podra realiza el pago de la compra adquirida, Muchas Gracias' },
+    ]
+  },
   data: function() {
     return{
       step : 1,
