@@ -59,9 +59,12 @@
             $results = $this -> connection -> query($statement);
             $resultArray = array();
 
-            foreach ($results as $key) {
-                $resultArray[] = $key;
+            if ($results!==false){
+                foreach ($results as $key) {
+                    $resultArray[] = $key;
+                }
             }
+            
             return $this -> formatUTF8($resultArray);
         }
 

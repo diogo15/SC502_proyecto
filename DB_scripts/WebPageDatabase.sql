@@ -242,12 +242,14 @@ create table pedidos(
 	idPedido int primary key auto_increment not null,
     idLocal int not null,
     idRepartidor int not null,
+    idUsuario int not null,
     estadoPedido boolean not null,
     fecha date not null,
     paga double not null,
     
     foreign key (idLocal) references locales(idLocal),
-    constraint FK_IDREPARTIDOR foreign key(idRepartidor) references Repartidores(idRepartidor)
+    constraint FK_IDREPARTIDOR foreign key(idRepartidor) references Repartidores(idRepartidor),
+    constraint FK_IDUSUARIO foreign key (idUsuario) references Usuarios(idUsuario)
 );
 
 drop table if exists DetallePedidos;

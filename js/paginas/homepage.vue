@@ -3,12 +3,9 @@
    <div class="wrapperCarrrusel">  
     <carousel cantidad="1">
       
-      
-      <banner imagen="banner-consolas.png">Llegaron nuevas consolas!!</banner>   
-      <banner imagen="banner-PS5.jpg">Nuevo Playstation 5, reserva ya!</banner>    
-      <banner imagen="banner-Xbox.jpg">Nuevo Xbox Series X, reserva ya!</banner>   
-      <banner imagen="banner-xgames.jpg">Llegaron Nuevos Juegos Ilimitados, Reserva Ya!</banner>   
-      
+      <banner imagen="banner-consolas.png" color="white">Llegaron nuevas consolas!!</banner>
+      <banner imagen="banner-Xbox.jpg" color="#2a292e">Nuevo Xbox Series X, reserva ya!</banner>   
+      <banner imagen="banner-xgames.jpg" color="black">Llegaron Nuevos Juegos Ilimitados, Reserva Ya!</banner>       
     
     </carousel> 
    </div> 

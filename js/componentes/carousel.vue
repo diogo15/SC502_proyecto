@@ -43,6 +43,7 @@ module.exports = {
 <style>
 .carousel-container {
   position: relative;
+  overflow: hidden;
 }
 
 .carousel {
@@ -73,12 +74,33 @@ module.exports = {
   position: absolute;
   top: 40%;
   z-index: 2;
-  left: -20px;
+  font-size: 0;
+  border: none;
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-bottom: 8px solid #333;
+  padding: 0;  
 }
 
+.carousel-container .arrow:before{
+  content: "";
+  display: block;
+  height: 100%;
+  box-sizing: border-box;
+  border-bottom: 2px solid #FFF;
+}
+.carousel-container .arrow.left{
+  left: 10px;
+  transform: rotate(45deg);
+  border-left: 8px solid #C2814D;
+}
+  
 .carousel-container .arrow.right{
-  right: -20px;
-  left: auto;
+  right: 10px;
+  transform: rotate(-45deg);
+  border-right: 8px solid #C2814D;
 }
 
 .carousel::-webkit-scrollbar {

@@ -54,6 +54,10 @@ module.exports = {
   text-decoration: none;
 }
 
+.button.link.white a{
+  color: #934a10;
+}
+
 /*
 HOVER STYLES:
 */

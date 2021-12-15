@@ -1,9 +1,15 @@
 <template>
 
-<div class="header-login"><span v-if="username!=0">Hola{{"&nbsp;"}}<span>{{username}}</span>!</span>
-  <div v-bind:class="[{ active : isActive }, 'btn-login']" v-on:click="$emit('click', $event)">
+<div class="header-login"><span v-if="username!=0">Hola <router-link to="/usuario">{{username}}</router-link>!</span>
+
+  <div v-if="!loggedin" v-bind:class="[{ active : isActive }, 'btn-login']" v-on:click="$emit('click', $event)">
     <p class="user-icon"> <icono></icono></p>
   </div>
+
+  <div v-if="loggedin" v-bind:class="[{ active : isActive }, 'btn-login']" v-on:click="goToUsuario()">
+    <p class="user-icon"> <icono></icono></p>
+  </div>
+
 </div>
 
 </template>
@@ -22,6 +28,13 @@ module.exports = {
       return  this.loggedin;
     }
   },
+  methods : {
+    goToUsuario : function () {      
+      if (this.$route.path != '/usuario') {
+          router.push('/usuario');
+      }
+    }
+  },
   components : {
     'icono' : httpVueLoader(site_url + 'js/svg/user-unlogged.vue')
   }
@@ -34,9 +47,12 @@ module.exports = {
     align-items: center;
     margin: 0 10px 0 auto;
   }
-  .header-login span span{
+  .header-login span a{
     font-weight: bold;
     text-transform: capitalize;
+  }
+  .header-login a{
+    color: #333;
   }
   .btn-login {
     display: flex;
