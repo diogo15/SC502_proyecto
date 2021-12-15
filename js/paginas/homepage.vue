@@ -18,8 +18,9 @@
     </div>
   </div>
 
-  <split v-observe-visibility="visibilityChanged">
-    <p>CLICK ME PLEASEE</p>
+  <split v-observe-visibility="visibilityChanged" imagen="banner2.png">
+    <p>Los mejores :&nbsp;</p><br>
+    <btn class="link"><router-link to="/marca/1">Funko</router-link></btn>
   </split>
   
 
@@ -69,7 +70,8 @@ module.exports = {
     'titulo': httpVueLoader(site_url + 'js/componentes/titulo.vue'),
     'categorytile': httpVueLoader(site_url + 'js/componentes/category-tile.vue'),
     'banner': httpVueLoader(site_url + 'js/componentes/banner.vue'),
-    'split': httpVueLoader(site_url + 'js/componentes/split-section.vue')
+    'split': httpVueLoader(site_url + 'js/componentes/split-section.vue'),
+    'btn': httpVueLoader(site_url + 'js/componentes/btn.vue')
   }
 }
 </script>
