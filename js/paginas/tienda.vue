@@ -46,19 +46,7 @@
           v-bind:product="product"
         ></producto>
       </carousel>
-      <titulo>Accesorios</titulo>
-      <carousel>
-        <producto
-          v-for="product in accesorios"
-          v-bind:key="product.idProducto"
-          v-bind:product="product"
-        ></producto>
-      </carousel>
-
-      <p v-for="cat in categories" v-bind:key="cat.idCategoria" >
-        {{ cat.nombreCategoria }}
-      </p>
-
+     
     </div>
   </div>
 </template>
