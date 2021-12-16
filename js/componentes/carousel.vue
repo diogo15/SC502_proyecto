@@ -52,11 +52,11 @@ module.exports = {
   overflow-x: scroll;
   scroll-behavior: smooth;
   padding-bottom: 20px;
+  gap: 15px;
 }
 
 .carousel > * {
   width: 28%;
-  margin-right: 15px;
   flex-shrink: 0;
   scroll-snap-align: start;
 }
