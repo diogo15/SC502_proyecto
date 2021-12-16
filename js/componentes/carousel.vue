@@ -124,7 +124,11 @@ module.exports = {
 	border-radius: 10px;
 }
 
-
+@media (max-width: 980px) {
+  .carousel-container .arrow{
+    opacity: 1;
+  }
+}
 
 
 

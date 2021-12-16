@@ -72,6 +72,10 @@ module.exports = {
 </script>
 
 <style>
+.container-footer-all{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
 footer{
     margin-top: 10px;
     margin: 0px;
@@ -85,6 +89,7 @@ footer{
 }
 .container-body{
     display: flex;
+    gap: 20px;
     justify-content: space-between; 
 }
 .column{
@@ -147,7 +152,7 @@ footer{
     justify-content: space-between;
     padding: 15px;
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 980px) {
     .footer{  
         flex-wrap: wrap;
     }
@@ -167,7 +172,7 @@ footer{
     color: #C7C7C7;
     font-size: small;
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 980px) {
     .container-body{ 
         flex-wrap: wrap;
 

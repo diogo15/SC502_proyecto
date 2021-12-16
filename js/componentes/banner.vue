@@ -64,5 +64,18 @@ module.exports = {
   color: #333;
 }
 
+@media (max-width: 980px) {
+  #banner .promoText{
+    position: relative;
+    display: block;
+    margin: 0 -15px;
+  }
+  #banner h2{
+    font-size: 16px;
+  }
+  #banner .promoText:after{
+    transform: skew(0);
+  }
+}
 
 </style>

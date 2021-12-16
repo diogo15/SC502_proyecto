@@ -5,12 +5,12 @@
       
       <banner imagen="banner-consolas.png" color="white">Llegaron nuevas consolas!!</banner>
       <banner imagen="banner-Xbox.jpg" color="#2a292e">Nuevo Xbox Series X, reserva ya!</banner>   
-      <banner imagen="banner-xgames.jpg" color="black">Llegaron Nuevos Juegos Ilimitados, Reserva Ya!</banner>       
+      <banner imagen="banner-xgames.jpg" color="black">Llegaron Nuevos Juegos Ilimitados!</banner>       
     
     </carousel> 
   </div> 
 
-  <split v-observe-visibility="visibilityChanged" imagen="banner2.png">
+  <split v-observe-visibility="visibilityChanged" imagen="about-us.png">
     <btn class="link"><router-link to="/acercade">Conócenos</router-link></btn>
   </split>
     
