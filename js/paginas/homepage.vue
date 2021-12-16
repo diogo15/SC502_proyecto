@@ -1,6 +1,6 @@
 <template>
 <div>
-   <div class="wrapperCarrrusel">  
+  <div class="wrapperCarrrusel">  
     <carousel cantidad="1">
       
       <banner imagen="banner-consolas.png" color="white">Llegaron nuevas consolas!!</banner>
@@ -8,43 +8,22 @@
       <banner imagen="banner-xgames.jpg" color="black">Llegaron Nuevos Juegos Ilimitados, Reserva Ya!</banner>       
     
     </carousel> 
-   </div> 
+  </div> 
     
-  
-    
-  
   <div class="wrapper">
-    <div class="flex">
-      <categorytile imagen="FunkoB.png">Funko</categorytile>
-      <categorytile imagen="banner-consolas.png">Consolas</categorytile>
-      <categorytile imagen="camisaO.png">Camisas</categorytile>
+    <div class="flex between showcase">
+      <categorytile v-observe-visibility="visibilityChanged" imagen="FunkoB.png">Funko</categorytile>
+      <categorytile v-observe-visibility="visibilityChanged" imagen="banner-consolas.png">Consolas</categorytile>
+      <categorytile v-observe-visibility="visibilityChanged" imagen="camisaO.png">Camisas</categorytile>
     </div>
   </div>
 
-   <titulo>Productos Nuevos</titulo>
-  <div class="wrapper">  
-    <carousel>
-      <producto
-        v-for="product in funkos"
-        v-bind:key="product.idProducto"
-        v-bind:product="product"
-      ></producto>
-    </carousel>
-    <carousel>
-      <producto
-        v-for="product in medias"
-        v-bind:key="product.idProducto"
-        v-bind:product="product"
-      ></producto>
-    </carousel>
-    <carousel>
-      <producto
-        v-for="product in camisas"
-        v-bind:key="product.idProducto"
-        v-bind:product="product"
-      ></producto>
-    </carousel>
-  </div>
+  <split v-observe-visibility="visibilityChanged" imagen="banner2.png">
+    <p>Los mejores :&nbsp;</p><br>
+    <btn class="link"><router-link to="/marca/1">Funko</router-link></btn>
+  </split>
+  
+
 </div>
 </template>
 
@@ -76,12 +55,27 @@ module.exports = {
       .catch(error => console.log(error));
     
   },
+  methods: {
+    visibilityChanged (isVisible, entry) {
+      if (entry.intersectionRatio > 0) {
+        entry.target.classList.add('showAnim');
+      }
+    }
+  },
   components: {
     'producto': httpVueLoader(site_url + 'js/componentes/producto.vue'),
     'carousel': httpVueLoader(site_url + 'js/componentes/carousel.vue'),
     'titulo': httpVueLoader(site_url + 'js/componentes/titulo.vue'),
     'categorytile': httpVueLoader(site_url + 'js/componentes/category-tile.vue'),
-    'banner': httpVueLoader(site_url + 'js/componentes/banner.vue')
+    'banner': httpVueLoader(site_url + 'js/componentes/banner.vue'),
+    'split': httpVueLoader(site_url + 'js/componentes/split-section.vue'),
+    'btn': httpVueLoader(site_url + 'js/componentes/btn.vue')
   }
 }
 </script>
+
+<style scoped>
+.showcase{
+  margin: 40px 0 80px;
+}
+</style>
