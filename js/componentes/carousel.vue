@@ -118,6 +118,11 @@ module.exports = {
 	background-color: #81512a;
   border-radius: 10px;
 }
+.carousel::-webkit-scrollbar-thumb {
+	background: #c99a75;
+	border-radius: 10px;
+}
+
 
 
 
