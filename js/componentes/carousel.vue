@@ -81,9 +81,9 @@ module.exports = {
   height: 40px;
   overflow: hidden;
   border-bottom: 8px solid #333;
-  padding: 0;  
- 
-  
+  padding: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;  
 }
 
 .carousel-container .arrow:before{
@@ -92,9 +92,10 @@ module.exports = {
   height: 100%;
   box-sizing: border-box;
   border-bottom: 2px solid #FFF;
-  
-  
-  
+}
+
+.carousel-container:hover .arrow{
+  opacity: 1;
 }
 
 .carousel-container  .arrow.left{

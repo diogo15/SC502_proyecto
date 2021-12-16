@@ -1,29 +1,5 @@
 <template>
   <div>
-    <titulo>Videojuegos</titulo>
-    <div class="wrapper">   
-
-        <carousel>
-        <producto
-          v-for="product in videojuegos"
-          v-bind:key="product.idProducto"
-          v-bind:product="product"
-        ></producto>
-      </carousel>
-
-    </div>
-    <titulo>Consolas</titulo>
-    <div class="wrapper">
-
-      <carousel>        
-        <producto
-          v-for="product in consolas"
-          v-bind:key="product.idProducto"
-          v-bind:product="product"
-        ></producto>        
-      </carousel>
-      
-    </div>
     <titulo>Figuras</titulo>
     <div class="wrapper">
 
@@ -60,17 +36,36 @@
       </carousel>
     </div>
 
+    <titulo>Videojuegos</titulo>
+    <div class="wrapper">   
+
+        <carousel>
+        <producto
+          v-for="product in videojuegos"
+          v-bind:key="product.idProducto"
+          v-bind:product="product"
+        ></producto>
+      </carousel>
+
+    </div>
+    <titulo>Consolas</titulo>
+    <div class="wrapper">
+
+      <carousel>        
+        <producto
+          v-for="product in consolas"
+          v-bind:key="product.idProducto"
+          v-bind:product="product"
+        ></producto>        
+      </carousel>
+      
+    </div>
+
   </div>
 </template>
 
 <script>
 module.exports = {
-    metaInfo: {
-    title: 'Bienvenidos a nuestra tienda online IntotheZone',
-    meta: [
-      { name: 'description', content: 'Apartado donde puede seleccionar y escojer sus productos favoritos.' },
-    ]
-  },
   data: function() {
     return{
       funkos: null,

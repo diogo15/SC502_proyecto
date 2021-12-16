@@ -37,7 +37,6 @@
             <div class="wrapper flex">
                 <p class="logo"><router-link exact to="/"><img src="img/icons/logo-into-the-zone.svg"></router-link></p>   
                 <div class="nav">
-                    <router-link to="/acercade">Nosotros</router-link> |
                     <router-link to="/tienda">Tienda</router-link>
                 </div>             
 

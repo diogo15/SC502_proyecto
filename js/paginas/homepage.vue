@@ -9,6 +9,10 @@
     
     </carousel> 
   </div> 
+
+  <split v-observe-visibility="visibilityChanged" imagen="banner2.png">
+    <btn class="link"><router-link to="/acercade">Conócenos</router-link></btn>
+  </split>
     
   <div class="wrapper">
     <div class="flex between showcase">
