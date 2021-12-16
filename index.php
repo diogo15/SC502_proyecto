@@ -4,7 +4,7 @@
 <head>
     <script>
         <?php $config = json_decode(file_get_contents(dirname(__FILE__).'\php\config-local'), true); ?>
-        window.site_url = "<?php echo $config["connection"]["xamp_path"]; ?>/";
+        window.site_url = "https://<?php echo $_SERVER['HTTP_HOST'];?>/";
         <?php
         if (isset($_SESSION['login']) && $_SESSION['login']=="1") {
             echo "const current_user = [true,'".$_SESSION['name']."'];";
