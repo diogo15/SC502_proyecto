@@ -188,7 +188,7 @@ INSERT INTO `productos` (`codBarras`, `nombreProducto`, `descripProducto`, `url_
             ('1254', 'control de xbox edicion carbon', 'Control de Xbox carbon Edition', 'img/productos/control-xbox-series-sx-carbon-black1.jpg', '50000', '1', '6', '8'),
             ('1255', 'control switch', 'Control de Switch', 'img/productos/controlSwitch.jpg', '30000', '1', '6', '7'),
             ('1256', 'figura DBZ', 'Figura de Dragon Ball Z', 'img/productos/DBZFigure.jpg', '15000', '1', '3', '3'),
-            ('1257', 'figura DBZ2', 'Figura de Dragon Ball Z Hot Toys Edition', 'img/productos/magicarp.jpg', '100000', '1', '3', '9'),
+            ('1257', 'figura DBZ2', 'Figura de Dragon Ball Z Hot Toys Edition', 'img/productos/DBZFigures.jpg', '100000', '1', '3', '9'),
             ('1258', 'figura deadpool', 'Figura DeadPool', 'img/productos/deadpoolFigures.jpg', '160000', '1', '3', '9'),
             ('1259', 'figura demons slayer', 'Figura Demons Slayer', 'img/productos/demon-slayerFigure.png', '35000', '1', '3', '3'),
             ('1260', 'juego demons slayer', 'Juego Demons Slayer', 'img/productos/demons_slayer_PS5.jpg', '30000', '1', '1', '10'),
