@@ -59,18 +59,7 @@
         ></producto>
       </carousel>
     </div>
-    <titulo>Accesorios</titulo>
-    <div class="wrapper">
 
-      <carousel>
-        <producto
-          v-for="product in accesorios"
-          v-bind:key="product.idProducto"
-          v-bind:product="product"
-        ></producto>
-      </carousel>
-
-    </div>
   </div>
 </template>
 
