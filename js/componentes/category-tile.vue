@@ -2,7 +2,7 @@
 
 <div class="showcaseItem">
     <div class="circle">
-        <router-link :to="'/category/1'">
+        <router-link :to="'/tienda'">
             <img v-bind:src="'img/productos/'+imagen"/>
         </router-link>
     </div>
