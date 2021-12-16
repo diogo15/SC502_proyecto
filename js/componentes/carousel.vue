@@ -82,6 +82,8 @@ module.exports = {
   overflow: hidden;
   border-bottom: 8px solid #333;
   padding: 0;  
+ 
+  
 }
 
 .carousel-container .arrow:before{
@@ -90,17 +92,23 @@ module.exports = {
   height: 100%;
   box-sizing: border-box;
   border-bottom: 2px solid #FFF;
+  
+  
+  
 }
-.carousel-container .arrow.left{
+
+.carousel-container  .arrow.left{
   left: 10px;
   transform: rotate(45deg);
   border-left: 8px solid #C2814D;
+  color: black;
 }
   
 .carousel-container .arrow.right{
   right: 10px;
   transform: rotate(-45deg);
   border-right: 8px solid #C2814D;
+  
 }
 
 .carousel::-webkit-scrollbar {

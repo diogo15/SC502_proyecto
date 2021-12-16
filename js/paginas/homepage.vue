@@ -3,10 +3,10 @@
   <div class="wrapperCarrrusel">  
     <carousel cantidad="1">
       
-      <banner imagen="banner-consolas.png" color="white">Llegaron Nuevos Productos!!</banner>
-      <banner imagen="banner-Xbox.jpg" color="#2a292e">Llegaron Nuevos Productos!!</banner>   
-      <banner imagen="banner-xgames.jpg" color="black">Llegaron Nuevos Productos!!</banner>   
-      
+      <banner imagen="banner-consolas.png" color="white">Llegaron nuevas consolas!!</banner>
+      <banner imagen="banner-Xbox.jpg" color="#2a292e">Nuevo Xbox Series X, reserva ya!</banner>   
+      <banner imagen="banner-xgames.jpg" color="black">Llegaron Nuevos Juegos Ilimitados, Reserva Ya!</banner>       
+    
     </carousel> 
   </div> 
     
@@ -40,8 +40,6 @@ module.exports = {
       funkos: null,
       medias: null,
       camisas: null
-      
-      //sera agregar aqui algo como productos 2 o algo asi
       
     }
   },

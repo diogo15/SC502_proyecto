@@ -41,7 +41,9 @@ INSERT INTO `marcas` (`nombreMarca`)
             
 insert into marcas(nombreMarca) values 
 	(	'Nintendo'	), 
-    (	'Xbox'	);
+    (	'Xbox'	),
+    (	'Hot Toys'	),
+    (	'Playstation'	);
 
 create table paises(
 	idPais int primary key auto_increment not null,
@@ -179,7 +181,39 @@ INSERT INTO `productos` (`codBarras`, `nombreProducto`, `descripProducto`, `url_
             ('1247', 'Camisa Demon Slayer2', 'Camisa negra con impresion', 'img/productos/demon-slayer2.jpg', '15000', '1', '5', '6'),
             ('1248', 'Camisa Jujutsu Kaisen', 'Camisa negra con impresion', 'img/productos/jujutsu-kaisen.jpg', '15000', '1', '5', '6'),
             ('1249', 'Camisa Evangeleon', 'Camisa negra con impresion', 'img/productos/evangeleon.jpg', '15000', '1', '5', '6'),
-            ('1250', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '5', '6');
+            ('1250', 'Camisa Magicarp', 'Camisa negra con impresion', 'img/productos/magicarp.jpg', '15000', '1', '5', '6'),
+            ('1251', 'figura Back to the Future', 'Figura Vuelta al Futuro', 'img/productos/backToTheFutureFigures.jpg', '170000', '1', '3', '9'),
+            ('1252', 'figura Boba Fett', 'Figura BobaFett', 'img/productos/boba-fettFigures.png', '300000', '1', '3', '9'),
+            ('1253', 'control de Ps5', 'Control de Playstation 5', 'img/productos/control-de-ps5.jpg', '50000', '1', '6', '10'),
+            ('1254', 'control de xbox edicion carbon', 'Control de Xbox carbon Edition', 'img/productos/control-xbox-series-sx-carbon-black1.jpg', '50000', '1', '6', '8'),
+            ('1255', 'control switch', 'Control de Switch', 'img/productos/controlSwitch.jpg', '30000', '1', '6', '7'),
+            ('1256', 'figura DBZ', 'Figura de Dragon Ball Z', 'img/productos/DBZFigure.jpg', '15000', '1', '3', '3'),
+            ('1257', 'figura DBZ2', 'Figura de Dragon Ball Z Hot Toys Edition', 'img/productos/magicarp.jpg', '100000', '1', '3', '9'),
+            ('1258', 'figura deadpool', 'Figura DeadPool', 'img/productos/deadpoolFigures.jpg', '160000', '1', '3', '9'),
+            ('1259', 'figura demons slayer', 'Figura Demons Slayer', 'img/productos/demon-slayerFigure.png', '35000', '1', '3', '3'),
+            ('1260', 'juego demons slayer', 'Juego Demons Slayer', 'img/productos/demons_slayer_PS5.jpg', '30000', '1', '1', '10'),
+            ('1261', 'juego forza horizon', 'Juego Forza Horizon', 'img/productos/F5Xbox.jpg', '45000', '1', '1', '8'),
+            ('1262', 'juego fifa22', 'Juego Fifa22', 'img/productos/FIFA-22-PS5.png', '45000', '1', '1', '10'),
+            ('1263', 'juego fifa22X', 'Juego Fifa22X', 'img/productos/fifa22Xbox.jpg', '45000', '1', '1', '8'),
+            ('1264', 'figura joker', 'Figura Joker', 'img/productos/JokerFigure.jpg', '200000', '1', '3', '9'),
+            ('1265', 'juego man eater', 'Juego ManEater', 'img/productos/ManEaterPs5.jpg', '45000', '1', '1', '10'),
+            ('1266', 'juego mario 3d switch', 'Juego Mario 3d Switch', 'img/productos/mario3d-switch.png', '35000', '1', '1', '7'),
+            ('1267', 'juego mortal kombat', 'Juego Mortal Kombat', 'img/productos/Mortal-Kombat-11-Ultimate-PS5-2.jpg', '45000', '1', '1', '10'),
+            ('1268', 'juego mortal kombat', 'Juego Mortal KombatX', 'img/productos/mortalXbox.jpg', '45000', '1', '1', '8'),
+            ('1269', 'consola playstation5', 'Consola Playstation 5', 'img/productos/Play5Venta.jpg', '500000', '1', '2', '10'),
+            ('1270', 'Juego Battlefield 2042', 'Juego Battlefield 2042', 'img/productos/ps5-battlefield.jpeg', '45000', '1', '1', '10'),
+            ('1271', 'Juego Rainbow Six', 'Juego Rainbow Six', 'img/productos/rainbow-six-siege-deluxe-year-6-ps5.jpg', '35000', '1', '1', '10'),
+            ('1272', 'Juego Resident Evil 7', 'Juego Resident Evil 7', 'img/productos/ResidenPs5.png', '35000', '1', '1', '10'),
+            ('1273', 'Juego Resident Evil 7X', 'Juego Resident Evil 7X', 'img/productos/ResidenXbox.png', '35000', '1', '1', '8'),
+            ('1274', 'Figura Saitama', 'Figura Saitama', 'img/productos/saitamaFigure.jpg', '150000', '1', '3', '9'),
+            ('1275', 'Figura Spiderman', 'Figura Spiderman', 'img/productos/spidermanHotToys.jpg', '200000', '1', '3', '9'),
+            ('1276', 'Juego Splatoon', 'Juego Splatoon', 'img/productos/splatoon.png', '35000', '1', '1', '7'),
+            ('1277', 'Consola Nintendo Switch', 'Consola Nintendo Switch', 'img/productos/Switch.png', '100000', '1', '2', '7'),
+            ('1278', 'Figura WandaVision', 'Figura WandaVision', 'img/productos/wandavisionFigures.jpg', '150000', '1', '3', '9'),
+            ('1279', 'Consola Xbox Series Halo Edition', 'Consola Xbox Series Halo Edition', 'img/productos/Xbox-Series-X-Halo-Infinite-Edition-Console.png', '300000', '1', '2', '8');
+            
+
+
 
 drop table if exists repartidores;
 create table repartidores(
