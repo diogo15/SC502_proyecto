@@ -75,6 +75,7 @@ module.exports = {
   }
   #banner .promoText:after{
     transform: skew(0);
+    border: none;
   }
 }
 

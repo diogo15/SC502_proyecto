@@ -58,19 +58,38 @@ module.exports = {
   }
 }
 </script>
-<style scoped>
+<style>
 
 .product-single{
   justify-content: space-between;
   margin-top: 30px;
 }
+@media (max-width: 980px) {
+  .product-single{
+    display: block;    
+  }
+}
 .product-single .productLeft{
-  max-width: 45%;
+  width: 45%;
   padding: 20px;
   background: rgba(255,255,255,0.2);
 }
+@media (max-width: 980px) {
+  .product-single .productLeft{
+    width: 75%;
+    margin: 0 auto;
+  }
+}
+.product-single .productLeft img{
+  width: 100%;
+}
 .product-single .productRight{
   width: 50%;
+}
+@media (max-width: 980px) {
+  .product-single .productRight{
+    width: 100%;    
+  }
 }
 .product-single .bigTitle{
   margin-left: -50px;
