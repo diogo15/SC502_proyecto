@@ -84,7 +84,7 @@ module.exports = {
 }
 </script>
 
-<style scoped>
+<style>
 .showcase{
   margin: 40px 0 80px;
 }

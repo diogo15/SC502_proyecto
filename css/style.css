@@ -103,6 +103,22 @@ img{
     transform: skew(-33deg);
 }
 
+#store-icon{
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+@media (max-width: 540px) {
+    .store-link{
+        display: none;
+    }
+}
+
+.router-link-active #store-icon{
+    fill: #7D47BB;
+}
+
 @keyframes logo_itz {
     0%  {left:0;right:0;}
     100%  {left:31%;right:68%;}

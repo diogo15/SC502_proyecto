@@ -37,7 +37,7 @@
             <div class="wrapper flex">
                 <p class="logo"><router-link exact to="/"><img src="img/icons/logo-into-the-zone.svg"></router-link></p>   
                 <div class="nav">
-                    <router-link to="/tienda">Tienda</router-link>
+                    <router-link to="/tienda"><store></store><span class="store-link">Tienda<span></router-link>
                 </div>             
 
                 <btn-login v-on:click="showModal = true"></btn-login>
