@@ -37,7 +37,7 @@ if(isset($usuario["error"]))
 }
 else
 {
-	new JsonResponse('ok', 'user added', $usuario);
+	new JsonResponse('ok', 'user added');
 }
 
 

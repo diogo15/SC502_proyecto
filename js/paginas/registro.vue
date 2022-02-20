@@ -52,6 +52,7 @@ module.exports = {
                     headers: { 'Content-Type': 'multipart/form-data' }
                 }).then(data => {
                     console.log(data);
+                    this.errorRegistro = data.data.message;
                 }).catch(err => {
                     this.errorRegistro = err.response.data.message;
                     console.log(err)
