@@ -33,7 +33,7 @@ $usuario = registrar_usuario($_POST["nombre"],$_POST["password"],$_POST["correo"
 
 if(isset($usuario["error"]))
 {
-	new JsonResponse('ok', 'user not added');
+	new JsonResponse('notfound', 'user not added');
 }
 else
 {
