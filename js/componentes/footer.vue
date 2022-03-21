@@ -20,22 +20,22 @@
                     <h1>Redes Sociales</h1>
                     <div class="row">
                         <img src="img/icons/facebook.png">
-                        <label>Siguenos en Facebook</label>
+                        <a href="http://fb.com" target="_blank">Siguenos en Facebook</a>
                     </div>     
                 </div>
                 <div class="column column3">
                     <h1>Informacion Contactos</h1>
                     <div class="row2">
                         <img src="img/icons/sitio-web.png">
-                        <label>https://www.IntoTheZone.com</label>
+                        <a href="/#/acercade">https://www.IntoTheZone.com</a>
                     </div>
                     <div class="row2">
                         <img src="img/icons/llamada.png">
-                        <label>+506-2245-6432</label>
+                        <a href="tel:50622456432">+506-2245-6432</a>
                     </div>
                     <div class="row2">
                         <img src="img/icons/gmail.png">
-                        <label>IntoTheZone@gmaill.com</label>
+                        <a href="mailto:intothezone@gmaill.com">intothezone@gmaill.com</a>
                     </div>
                 </div>
             </div>
@@ -201,6 +201,12 @@ footer{
   text-align: center;
   height: 200px;
   overflow: hidden;
+}
+
+.container-footer-all a{
+    color: #3f1f06;
+    display: inline-block;
+    margin-left: 5px;
 }
 
 
