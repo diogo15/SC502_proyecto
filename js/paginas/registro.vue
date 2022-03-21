@@ -9,7 +9,8 @@
             <input type="text" placeHolder="telefono" v-model="telefono">
             <input type="text" placeHolder="password" v-model="password">
             <input type="text" placeHolder="passwordConfirm" v-model="passwordConfirm">
-            <button v-on:click="enviarDatos()">Registrar</button>  
+            <button id="submit_signup_data" 
+                    v-on:click="enviarDatos()">Registrar</button>  
             <p v-if="errorRegistro">{{errorRegistro}}</p>  
         </form>
     </div>

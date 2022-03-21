@@ -1,5 +1,7 @@
 <template>
-    <div v-bind:class="[{ active: isActive }, 'btn-carrito']" v-on:click="gotoFacturar()">
+    <div  id="btn_carrito"
+          v-bind:class="[{ active: isActive }, 'btn-carrito']" 
+          v-on:click="gotoFacturar()">
       <p class="cart-icon"><icono></icono></p>
       <p v-if="quantity">{{ quantity }}</p>    
     </div>

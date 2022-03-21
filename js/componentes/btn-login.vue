@@ -2,11 +2,17 @@
 
 <div class="header-login"><span v-if="username!=0">Hola <router-link to="/usuario">{{username}}</router-link>!</span>
 
-  <div v-if="!loggedin" v-bind:class="[{ active : isActive }, 'btn-login']" v-on:click="$emit('click', $event)">
+  <div  id="btn_login_notActive"
+        v-if="!loggedin" 
+        v-bind:class="[{ active : isActive }, 'btn-login']" 
+        v-on:click="$emit('click', $event)">
     <p class="user-icon"> <icono></icono></p>
   </div>
 
-  <div v-if="loggedin" v-bind:class="[{ active : isActive }, 'btn-login']" v-on:click="goToUsuario()">
+  <div  id="btn_login_Active"
+        v-if="loggedin" 
+        v-bind:class="[{ active : isActive }, 'btn-login']" 
+        v-on:click="goToUsuario()">
     <p class="user-icon"> <icono></icono></p>
   </div>
 
