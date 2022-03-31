@@ -11,7 +11,7 @@
             <input type="text" placeHolder="passwordConfirm" v-model="passwordConfirm">
             <button id="submit_signup_data" 
                     v-on:click="enviarDatos()">Registrar</button>  
-            <p v-if="errorRegistro">{{errorRegistro}}</p>  
+            <p id="signup_response" v-if="errorRegistro">{{errorRegistro}}</p>  
         </form>
     </div>
 </template>
