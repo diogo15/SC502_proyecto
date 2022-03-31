@@ -47,7 +47,7 @@
     </tbody>
     <tbody v-if="carro.items.length<1">
       <tr>
-          <td colspan="5"><p>Tu carrito esta vacio.....</p></td>
+          <td colspan="5"><p id="emptyCart">Tu carrito esta vacio.....</p></td>
         </tr>
     </tbody>
     <tfoot>
