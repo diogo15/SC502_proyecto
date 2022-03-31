@@ -36,8 +36,8 @@
             <td> {{ product.precioVenta }}</td>
             <td> {{product.quantity}}</td> 
             <td> 
-              <btn class="white" v-on:click="sumarCarrito(product)">+</btn> 
-              <btn v-on:click="restarCarrito(product.idProducto)">-</btn>
+              <btn class="white btn_mas" v-on:click="sumarCarrito(product)">+</btn> 
+              <btn class="btn_menos" v-on:click="restarCarrito(product.idProducto)">-</btn>
             </td>
             <td> {{ (product.precioVenta*product.quantity) }}</td>
             <td>
