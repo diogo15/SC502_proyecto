@@ -3,11 +3,11 @@
         <h1 class="title">Inicio de Sesión</h1>
         <form v-on:submit.prevent="" class="form">
             <label class="form-label" for="#email">Correo de usuario:</label>
-            <input v-model="email" class="form-input" type="email" required placeholder="Email">
+            <input v-model="email" class="form-input" type="email" required placeholder="Email" id="loginEmail">
             <label class="form-label" for="#password">Contraseña:</label>
-            <input v-model="password" class="form-input" type="password" required placeholder="Contraseña">
+            <input v-model="password" class="form-input" type="password" required placeholder="Contraseña" id="loginPassword">
 
-            <btn class="green" v-on:click="enviarDatos()">Iniciar sesión</btn>
+            <btn class="green" v-on:click="enviarDatos()" id="loginInit">Iniciar sesión</btn>
 
             <btn class="link registerBtn"><router-link to="/registro">Regístrate</router-link></btn>
 
