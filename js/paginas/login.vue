@@ -11,7 +11,7 @@
 
             <btn class="link registerBtn"><router-link to="/registro">Regístrate</router-link></btn>
 
-            <p class="message">{{ message }}</p>
+            <p class="message" id="loginMessage">{{ message }}</p>
         </form>
     </div>
 </template>
