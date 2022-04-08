@@ -1,14 +1,18 @@
 <template>
     <div class="product" :id="'product_'+product.idProducto">
         <p v-if="agregado" class="agregado">+</p>
-        <router-link :to="'/product/'+product.idProducto" class="img_link">
+        <router-link :to="'/product/'+ product.idProducto" 
+                    class="img_link">
           <img :src="base_url+product.url_imagen" alt="">
         </router-link>
         <p class="title">{{ product.nombreProducto }}</p>
         <p class="price">{{ product.precioVenta }}</p>
         <div class="button-wrapper">
-          <btn class="link"><router-link :to="'/product/'+product.idProducto" class="ver_producto">Ver</router-link></btn>
-          <btn class="white agregar_carrito" v-on:click="comprar(product)">Añadir al Carrito</btn>
+          <btn class="link">
+            <router-link :to="'/product/'+product.idProducto" class="ver_producto">Ver</router-link>
+          </btn>
+          <btn class="white agregar_carrito" :id="'add_producto_'+ product.idProducto"
+                v-on:click="comprar(product)">Añadir al Carrito</btn>
         </div>
     </div>
 </template>

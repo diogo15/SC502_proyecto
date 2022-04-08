@@ -41,7 +41,7 @@
             </td>
             <td> {{ (product.precioVenta*product.quantity) }}</td>
             <td>
-                <btn v-on:click="eliminarCarrito(product.idProducto)">Eliminar</btn>
+                <btn v-on:click="eliminarCarrito(product.idProducto)" :id="'eliminar_product_' + product.idProducto">Eliminar</btn>
             </td>
         </tr>
     </tbody>
