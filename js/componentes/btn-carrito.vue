@@ -3,7 +3,7 @@
           v-bind:class="[{ active: isActive }, 'btn-carrito']" 
           v-on:click="gotoFacturar()">
       <p class="cart-icon"><icono></icono></p>
-      <p v-if="quantity">{{ quantity }}</p>    
+      <p id="cart-quantity" v-if="quantity">{{ quantity }}</p>    
     </div>
 </template>
 
